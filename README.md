@@ -1,0 +1,1 @@
+arkivverket.noark5.tjenestegrensesnitt

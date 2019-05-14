@@ -16,7 +16,6 @@ namespace arkitektum.kommit.noark5.api.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="queryOptions"></param>
         /// <returns></returns>
         [Route("api/arkivstruktur/Dokumentbeskrivelse")]
         [HttpGet]
@@ -91,7 +90,6 @@ namespace arkitektum.kommit.noark5.api.Controllers
         }
 
         
-
         //NY
         [Route("api/arkivstruktur/Registrering/{id}/ny-dokumentbeskrivelse")]
         [HttpPost]

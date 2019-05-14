@@ -39,6 +39,14 @@ namespace arkivverket.noark5tj.models
             relField = rel.Insert(rel.Length, "/");
             hrefField = href;
         }
+
+        /// <summary>
+        /// Needed for XML serialization
+        /// </summary>
+        public LinkType()
+        {
+
+        }
     }
 
     public partial class RegistreringType

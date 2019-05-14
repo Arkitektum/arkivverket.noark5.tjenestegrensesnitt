@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 
 
@@ -25,20 +26,29 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddMvc(options =>
+            //    {
+            //        options.RespectBrowserAcceptHeader = true;
+
+            //        var jsonOutputFormatter = options.OutputFormatters.OfType<JsonOutputFormatter>().FirstOrDefault();
+            //        jsonOutputFormatter?.SupportedMediaTypes.Clear();
+            //        jsonOutputFormatter?.SupportedMediaTypes.Add("application/vnd.noark5-v4+json");
+                    
+            //        options.InputFormatters.Add(new XmlSerializerInputFormatter(options));
+            //        var xmlOutputFormatter = new XmlSerializerOutputFormatter();
+            //        xmlOutputFormatter.SupportedMediaTypes.Clear();
+            //        xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.noark5-v4+xml");
+            //        options.OutputFormatters.Add(xmlOutputFormatter);
+            //    })
             services.AddMvc(options =>
                 {
+                    options.FormatterMappings.SetMediaTypeMappingForFormat
+                        ("xml", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+xml"));
+                    options.FormatterMappings.SetMediaTypeMappingForFormat
+                        ("js", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+json"));
                     options.RespectBrowserAcceptHeader = true;
-
-                    var jsonOutputFormatter = options.OutputFormatters.OfType<JsonOutputFormatter>().FirstOrDefault();
-                    jsonOutputFormatter?.SupportedMediaTypes.Clear();
-                    jsonOutputFormatter?.SupportedMediaTypes.Add("application/vnd.noark5-v4+json");
-                    
-                    options.InputFormatters.Add(new XmlSerializerInputFormatter(options));
-                    var xmlOutputFormatter = new XmlSerializerOutputFormatter();
-                    xmlOutputFormatter.SupportedMediaTypes.Clear();
-                    xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.noark5-v4+xml");
-                    options.OutputFormatters.Add(xmlOutputFormatter);
                 })
+                .AddXmlSerializerFormatters()
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.Formatting = Formatting.Indented;

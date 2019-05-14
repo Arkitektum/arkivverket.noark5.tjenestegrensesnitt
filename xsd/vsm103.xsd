@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 13.05.2019 14:33:07-->
+  <xs:element name="Metadata" type="vsm:MetadataType" />
+  <xs:complexType name="MetadataListe">
+    <xs:sequence>
+      <xs:element name="metadata" type="vsm:MetadataType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetadataType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_905E466D_1EFC_4cff_839C_63FF94EC392A">
+    <xs:sequence>
+      <xs:element name="Key" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="Value" minOccurs="1" maxOccurs="1" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

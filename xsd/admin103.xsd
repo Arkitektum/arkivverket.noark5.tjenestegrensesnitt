@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:rest="http://www.kxml.no/rest/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 13.05.2019 09:42:59-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 14:35:06-->
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
   <xs:element name="AdministrativEnhet" type="adm:AdministrativEnhetType" />
@@ -23,7 +23,6 @@
           <xs:element name="referanseOverordnetEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
           <xs:element name="bruker" minOccurs="0" maxOccurs="1" nillable="true" type="adm:BrukerListe" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -35,9 +34,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BrukerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_7B480C69_7D92_4dc6_ADF1_A67E28FBA87F">
-    <xs:annotation>
-      <xs:documentation>definerer alle brukere som har eller har hatt interaksjon med arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i kjernen og bevarer alle brukere for ettertiden. Opprettes nye av kjernen når pålogget bruker ikke finnes fra før.</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
@@ -46,10 +42,8 @@
           <xs:element name="opprettetDato" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
           <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
           <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="enhet" minOccurs="0" maxOccurs="1" nillable="true" type="adm:AdministrativEnhetListe" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -61,9 +55,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TilgangType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C01D4569_8A2B_4d8a_857E_5EFD2F49B7B2">
-    <xs:annotation>
-      <xs:documentation>Styrer tilgang til data i kjernen basert på brukers rolletilknytning</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
@@ -76,7 +67,6 @@
           <xs:element name="ny" minOccurs="1" maxOccurs="1" type="xs:boolean" />
           <xs:element name="endre" minOccurs="1" maxOccurs="1" type="xs:boolean" />
           <xs:element name="slett" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

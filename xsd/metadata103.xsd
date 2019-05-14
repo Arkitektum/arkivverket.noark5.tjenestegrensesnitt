@@ -1,15 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 13.05.2019 09:40:46-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 13:48:18-->
   <xs:element name="Arkivdelstatus" type="n5mdk:ArkivdelstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_FA3D475A_370A_4669_902E_08DDEA0CBFDD" />
   <xs:complexType name="ArkivdelstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Status til den arkivperioden som arkivdelen omfatter
-
-M051</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -17,13 +10,6 @@ M051</xs:documentation>
   </xs:complexType>
   <xs:element name="Arkivstatus" type="n5mdk:ArkivstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_B84CF8F9_61E7_4456_A4C3_505904882E3B" />
   <xs:complexType name="ArkivstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Status til arkivet
-
-M050</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -31,13 +17,6 @@ M050</xs:documentation>
   </xs:complexType>
   <xs:element name="Avskrivningsmaate" type="n5mdk:AvskrivningsmaateType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_129FE93A_B66B_4cfa_B99F_8B27B2757E61" />
   <xs:complexType name="AvskrivningsmaateType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Måten en journalpost har blitt avskrevet på
-
-M619</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -45,13 +24,6 @@ M619</xs:documentation>
   </xs:complexType>
   <xs:element name="Dokumentmedium" type="n5mdk:DokumentmediumType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A3473DD9_3671_41eb_AD26_B62B08C1E108" />
   <xs:complexType name="DokumentmediumType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter
-
-M300</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -59,13 +31,6 @@ M300</xs:documentation>
   </xs:complexType>
   <xs:element name="Dokumentstatus" type="n5mdk:DokumentstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A0BF6F8B_E92F_44b0_A697_1F16CFC50DD2" />
   <xs:complexType name="DokumentstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Status til dokumentet
-
-M054</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -73,13 +38,6 @@ M054</xs:documentation>
   </xs:complexType>
   <xs:element name="Dokumenttype" type="n5mdk:DokumenttypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C758AD4E_73CA_4201_BCEC_EEBCBE65A8BB" />
   <xs:complexType name="DokumenttypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Navn på type dokument
-
-M083</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -87,18 +45,6 @@ M083</xs:documentation>
   </xs:complexType>
   <xs:element name="ElektroniskSignaturSikkerhetsnivaa" type="n5mdk:ElektroniskSignaturSikkerhetsnivaaType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_754991ED_33D7_4aba_B769_E418C333FDC1" />
   <xs:complexType name="ElektroniskSignaturSikkerhetsnivaaType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og 
-mottak av elektroniske dokumenter
-
-Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur
-
-Kommentar: (ingen)
-
-M507 elektroniskSignaturSikkerhetsnivåå</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -106,13 +52,6 @@ M507 elektroniskSignaturSikkerhetsnivåå</xs:documentation>
   </xs:complexType>
   <xs:element name="ElektroniskSignaturVerifisert" type="n5mdk:ElektroniskSignaturVerifisertType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_53E0B9B4_1025_4e17_ACE7_68477BA09FFA" />
   <xs:complexType name="ElektroniskSignaturVerifisertType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert.
-
-M508</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -120,9 +59,6 @@ M508</xs:documentation>
   </xs:complexType>
   <xs:element name="FlytStatus" type="n5mdk:FlytStatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_86C36217_A26E_44cd_A394_CF4C31C484E3" />
   <xs:complexType name="FlytStatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -130,9 +66,6 @@ M508</xs:documentation>
   </xs:complexType>
   <xs:element name="Format" type="n5mdk:FormatType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A17DA4C4_5952_4511_B44F_C8CA6A790558" />
   <xs:complexType name="FormatType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -140,9 +73,6 @@ M508</xs:documentation>
   </xs:complexType>
   <xs:element name="Graderingskode" type="n5mdk:GraderingskodeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_1815678D_403D_4dc9_9FCA_111C881473D6" />
   <xs:complexType name="GraderingskodeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -157,13 +87,6 @@ M508</xs:documentation>
   </xs:complexType>
   <xs:element name="Journalposttype" type="n5mdk:JournalposttypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5262141D_8614_47aa_8117_D2627AC0835F" />
   <xs:complexType name="JournalposttypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Navn på type journalpost
-
-M082</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -171,11 +94,6 @@ M082</xs:documentation>
   </xs:complexType>
   <xs:element name="Journalstatus" type="n5mdk:JournalstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_E84C7D8A_3C7B_4f65_ACC9_87228767C9D4" />
   <xs:complexType name="JournalstatusType">
-    <xs:annotation>
-      <xs:documentation>Definisjon: Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.
-
-M053</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -183,13 +101,6 @@ M053</xs:documentation>
   </xs:complexType>
   <xs:element name="Kassasjonsvedtak" type="n5mdk:KassasjonsvedtakType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_D7266A47_1940_4f94_ADDC_03FF2C7E010D" />
   <xs:complexType name="KassasjonsvedtakType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon:Handling som skal utføres ved bevaringstidens slutt.
-
-M450</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -197,13 +108,6 @@ M450</xs:documentation>
   </xs:complexType>
   <xs:element name="Klassifikasjonstype" type="n5mdk:KlassifikasjonstypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_4A72F6C0_2487_4999_A136_1594327817DD" />
   <xs:complexType name="KlassifikasjonstypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Type klassifikasjonssystem
-
-M086</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -211,13 +115,6 @@ M086</xs:documentation>
   </xs:complexType>
   <xs:element name="Korrespondanseparttype" type="n5mdk:KorrespondanseparttypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_BA772762_903E_4bc9_8E6D_CB9A3F020F30" />
   <xs:complexType name="KorrespondanseparttypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Type korrespondansepart
-
-M087</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -225,9 +122,6 @@ M087</xs:documentation>
   </xs:complexType>
   <xs:element name="Land" type="n5mdk:LandType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_EAF0AF4E_C44F_4d1e_AA23_7DD672281970" />
   <xs:complexType name="LandType">
-    <xs:annotation>
-      <xs:documentation>Landkoder ihht ISO 3166 https://no.wikipedia.org/wiki/ISO_3166-1_alfa-2#Offisielle_koder </xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -235,9 +129,6 @@ M087</xs:documentation>
   </xs:complexType>
   <xs:element name="Mappetype" type="n5mdk:MappetypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_17D382A1_C83F_4dfe_A495_CCF1AE9CF6A0" />
   <xs:complexType name="MappetypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -245,13 +136,6 @@ M087</xs:documentation>
   </xs:complexType>
   <xs:element name="Merknadstype" type="n5mdk:MerknadstypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_D81ED2D9_E3F0_48c1_BFC5_D324EAA99D22" />
   <xs:complexType name="MerknadstypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Navn på type merknad
-
-M084</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -259,13 +143,6 @@ M084</xs:documentation>
   </xs:complexType>
   <xs:element name="MoetedeltakerFunksjon" type="n5mdk:MoetedeltakerFunksjonType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C6FFA11E_2E6B_42de_9398_7DA7D364E8D8" />
   <xs:complexType name="MoetedeltakerFunksjonType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Funksjon eller rolle til personen som deltok på møtet
-
-M373 moetedeltakerFunksjon</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -273,20 +150,6 @@ M373 moetedeltakerFunksjon</xs:documentation>
   </xs:complexType>
   <xs:element name="Moeteregistreringsstatus" type="n5mdk:MoeteregistreringsstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_596748EC_8C28_4cae_BFE1_C2BAC5363494" />
   <xs:complexType name="MoeteregistreringsstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Status til møteregistreringen
-
-Kilde: (ingen)
-
-Kommentar: Valgfrie verdier, eksempler: 
-- "Ferdig behandlet av utvalget" 
-- "Utsatt til nytt møte i samme utvalg" 
-- "Sendt tilbake til foregående utvalg"
-
-M055 moeteregistreringsstatus</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -294,19 +157,6 @@ M055 moeteregistreringsstatus</xs:documentation>
   </xs:complexType>
   <xs:element name="Moeteregistreringstype" type="n5mdk:MoeteregistreringstypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_FF07EC07_C8C2_460c_B9DB_D7AAAF176C78" />
   <xs:complexType name="MoeteregistreringstypeType">
-    <xs:annotation>
-      <xs:documentation>Definisjon: Navn på type møteregistrering
-
-Kommentar: utvidet i forhold til forslagene i NOARK 5 Vedlegg 1
-
-Vedlegg 1 Metadatakatalog v 3.1, M085 lister følgende "aktuelle verdier":
-- Møteinnkallelse
-- Saksliste
-- Saksframlegg
-- Vedlegg til møtesak
-
-M085 moeteregistreringstype</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -314,17 +164,6 @@ M085 moeteregistreringstype</xs:documentation>
   </xs:complexType>
   <xs:element name="Moetesakstype" type="n5mdk:MoetesakstypeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_FEFE45D2_F6A7_4fc2_9F09_20901D426A35" />
   <xs:complexType name="MoetesakstypeType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Navn på type møtesak
-
-Kilde: (ingen)
-
-Kommentar: (ingen) 
-
-M088 moetesakstype</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -332,11 +171,6 @@ M088 moetesakstype</xs:documentation>
   </xs:complexType>
   <xs:element name="Postnummer" type="n5mdk:PostnummerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A634530E_7783_4862_8D5A_037DEAC191CF" />
   <xs:complexType name="PostnummerType">
-    <xs:annotation>
-      <xs:documentation>Postens postnummer liste http://adressesok.posten.no/nb/postal_codes/search
-
-</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -344,13 +178,6 @@ M088 moetesakstype</xs:documentation>
   </xs:complexType>
   <xs:element name="Presedensstatus" type="n5mdk:PresedensstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5EA8C745_0F1C_484d_A0A0_E2B11538F5A8" />
   <xs:complexType name="PresedensstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Informasjon om presedensen er gjeldende eller foreldet
-
-M056</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -358,9 +185,6 @@ M056</xs:documentation>
   </xs:complexType>
   <xs:element name="ProsessStatus" type="n5mdk:ProsessStatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_604425F7_A6A3_48ce_888B_18F761947B15" />
   <xs:complexType name="ProsessStatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -368,9 +192,6 @@ M056</xs:documentation>
   </xs:complexType>
   <xs:element name="SakspartRolle" type="n5mdk:SakspartRolleType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_416E5782_57FA_4d24_94AE_B4EEA1C01F60" />
   <xs:complexType name="SakspartRolleType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -378,13 +199,6 @@ M056</xs:documentation>
   </xs:complexType>
   <xs:element name="Saksstatus" type="n5mdk:SaksstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5A2D09FE_5CB2_49d3_915A_A7C5A2FD15A0" />
   <xs:complexType name="SaksstatusType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.
-
-M052</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -392,13 +206,6 @@ M052</xs:documentation>
   </xs:complexType>
   <xs:element name="SkjermingDokument" type="n5mdk:SkjermingDokumentType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_4BBEE9CF_7F1C_4a15_973C_C1A04F0C0A6F" />
   <xs:complexType name="SkjermingDokumentType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av at hele dokumentet eller deler av det må skjermes.
-
-M503</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -406,16 +213,14 @@ M503</xs:documentation>
   </xs:complexType>
   <xs:element name="SkjermingMetadata" type="n5mdk:SkjermingMetadataType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_3B6F3E25_6303_419a_890F_2E2E7593F1C6" />
   <xs:complexType name="SkjermingMetadataType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av hvilke metadataelementer som skal skjermes.
-
-M502</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkjermingMetadataListe">
+	<xs:sequence>
+	  <xs:element name="skjermingmetadata" type="n5mdk:SkjermingMetadataType" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="SystemIDType">
@@ -423,11 +228,6 @@ M502</xs:documentation>
   </xs:simpleType>
   <xs:element name="Tilgangskategori" type="n5mdk:TilgangskategoriType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5BACC7CD_BCDC_46f0_BDB6_2D78DDDFBA08" />
   <xs:complexType name="TilgangskategoriType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-ny kodeliste jfr NOARK 5 v3.1 krav 6.6.32</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -435,9 +235,6 @@ ny kodeliste jfr NOARK 5 v3.1 krav 6.6.32</xs:documentation>
   </xs:complexType>
   <xs:element name="Tilgangsrestriksjon" type="n5mdk:TilgangsrestriksjonType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_EF854376_779E_4d06_B327_6F682A27ABC3" />
   <xs:complexType name="TilgangsrestriksjonType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -445,9 +242,6 @@ ny kodeliste jfr NOARK 5 v3.1 krav 6.6.32</xs:documentation>
   </xs:complexType>
   <xs:element name="TilknyttetRegistreringSom" type="n5mdk:TilknyttetRegistreringSomType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_565FA76E_F596_488e_BAD1_A9D4FC4F52E1" />
   <xs:complexType name="TilknyttetRegistreringSomType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -455,13 +249,6 @@ ny kodeliste jfr NOARK 5 v3.1 krav 6.6.32</xs:documentation>
   </xs:complexType>
   <xs:element name="Variantformat" type="n5mdk:VariantformatType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_49D6FFBC_A342_447d_8F77_72850A716CAA" />
   <xs:complexType name="VariantformatType">
-    <xs:annotation>
-      <xs:documentation>Åpen kodeliste
-
-Definisjon: Angivelse av hvilken variant et dokument forekommer i
-
-M700</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:rest="http://www.kxml.no/rest/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 13.05.2019 09:42:19-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:rest="http://www.kxml.no/rest/1.0">
+  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 13:36:53-->
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " schemaLocation="arkivstruktur103.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
@@ -11,15 +12,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AvskrivningType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_606345AE_2C2F_4533_925A_73D939A623E5">
-    <xs:annotation>
-      <xs:documentation>En Journalpost av typene ”inngående dokument” eller ”organinternt dokument for oppfølging” 
-står i restanse inntil de er markert som ferdigbehandlet, eller avskrives. Dette kapitlet angir 
-krav til avskrivning.
-
-Metadata for avskrivning skal kunne grupperes inn i metadata for journalpost. Avskrivning er 
-obligatorisk for inngående dokumenter og organinterne dokumenter som skal følges opp, og 
-kan forekomme en eller flere ganger i en journalpost. </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
@@ -30,7 +22,6 @@ kan forekomme en eller flere ganger i en journalpost. </xs:documentation>
           <xs:element name="avskrivningsmaate" minOccurs="1" maxOccurs="1" type="n5mdk:AvskrivningsmaateType" />
           <xs:element name="referanseAvskrivesAvJournalpost" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="referanseAvskrivesAvKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -42,14 +33,6 @@ kan forekomme en eller flere ganger i en journalpost. </xs:documentation>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DokumentflytType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A9253724_60C1_4922_B026_C4075DE1CFFD">
-    <xs:annotation>
-      <xs:documentation>Et dokument som er under produksjon, skal kunne sendes fram og tilbake i linjen det 
-nødvendige antall ganger. Saksbehandler og lederne i linjen skal kunne se hvor dokumentet 
-befinner seg til enhver tid. Det skal være mulig å definere funksjoner for at dokumentet låses 
-for endringer når det (videre)sendes, eller at det automatisk opprettes en ny versjon ved hver 
-(videre)forsendelse. All funksjonalitet for korrektur og merknader i tilknyttet 
-tekstbehandlingssystem skal kunne brukes på et dokument som er under produksjon. </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
@@ -63,7 +46,6 @@ tekstbehandlingssystem skal kunne brukes på et dokument som er under produksjon
           <xs:element name="flytStatus" minOccurs="1" maxOccurs="1" type="n5mdk:FlytStatusType" />
           <xs:element name="flytMerknad" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="prosessStatus" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:ProsessStatusType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -84,7 +66,6 @@ tekstbehandlingssystem skal kunne brukes på et dokument som er under produksjon
           <xs:element name="postnr" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:PostnummerType" />
           <xs:element name="poststed" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="landkode" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:LandType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -96,27 +77,6 @@ tekstbehandlingssystem skal kunne brukes på et dokument som er under produksjon
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="JournalpostType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_EA66ABBF_7124_485c_AB57_BC5159EB8F56">
-    <xs:annotation>
-      <xs:documentation>En journalpost fra Noark-4 utgjør en egen registreringstype i Noark 5. En journalpost 
-representer en "innføring i journalen". Journalen er en kronologisk fortegnelse over inn- og 
-utgående dokumenter (dvs. korrespondansedokumenter), og eventuelt også interne dokumenter 
-som inngår i saksbehandlingen. Til sammenligning representerer en basisregistrering en 
-generell "innføring" i alle typer arkivsystemer, også de som ikke inneholder 
-korrespondansebaserte dokumenter. Journalposten inneholder bl.a. metadata om 
-korrespondanseparter (avsender og mottaker), og om saksbehandlere. Det finnes flere typer 
-journalposter. De viktigste er inngående dokument, utgående dokument, organinternt 
-dokument for oppfølging og organinternt dokument uten oppfølging. Ved organinterne 
-dokumenter kan en og samme journalpost inneholde metadata om både avsender og mottaker, 
-og om saksbehandler både på avsender- og mottakersiden. 
- 
-Registreringstypen journalpost er obligatorisk for sakarkiver. Alle journalføringspliktige 
-dokumenter i offentlig forvaltning skal registreres som journalposter og inngå i et sakarkiv. 
-Dersom et system basert på Noark 5 bare skal brukes for sakarkiver, er det ikke noe i veien for 
-å fortsette å anvende begrepet "journalpost" i alle grensesnitt mot brukerne, på samme måte 
-som en er vant til fra Noark-4. I denne standarden brukes registrering som en generell 
-betegnelse på arkivenheter som dokumenter transaksjoner. (Registrering er dessuten en 
-dekkende norsk oversettelse av det tilsvarende begrepet i MoReq2 som heter Record.) </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="as:RegistreringType">
         <xs:sequence>
@@ -141,7 +101,6 @@ dekkende norsk oversettelse av det tilsvarende begrepet i MoReq2 som heter Recor
           <xs:element name="dokumentflyt" minOccurs="0" maxOccurs="1" nillable="true" type="sa:DokumentflytListe" />
           <xs:element name="avskrivning" minOccurs="0" maxOccurs="1" nillable="true" type="sa:AvskrivningListe" />
           <xs:element name="presedens" minOccurs="0" maxOccurs="1" nillable="true" type="sa:PresedensListe" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -159,7 +118,6 @@ dekkende norsk oversettelse av det tilsvarende begrepet i MoReq2 som heter Recor
           <xs:element name="epostadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="mobiltelefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="telefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -171,20 +129,13 @@ dekkende norsk oversettelse av det tilsvarende begrepet i MoReq2 som heter Recor
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AbstraktKorrespondansepartType" abstract="true" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_E0D4781E_6866_4721_8A51_F573B6C33263">
-    <xs:annotation>
-      <xs:documentation>Korrespondansepart er obligatorisk, og skal forekomme en eller flere ganger i en journalpost. 
-Ved inngående dokumenter er det obligatorisk å registrere avsender(e), ved utgående 
-dokumenter mottaker(e). Ved organinterne dokumenter som skal følges opp, må både 
-avsender(e) og mottaker(e) registreres. </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
           <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="korrespondanseparttype" minOccurs="1" maxOccurs="1" type="n5mdk:KorrespondanseparttypeType" />
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="as:VirksomhetsspesifikkeMetadataType" />
           <xs:element name="skjermetKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="vsm:MetadataListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -205,7 +156,6 @@ avsender(e) og mottaker(e) registreres. </xs:documentation>
           <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="sa:KontaktinformasjonType" />
           <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -224,7 +174,6 @@ avsender(e) og mottaker(e) registreres. </xs:documentation>
           <xs:element name="referanseAdministrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="saksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="referanseSaksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -245,7 +194,6 @@ avsender(e) og mottaker(e) registreres. </xs:documentation>
           <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="sa:KontaktinformasjonType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -257,20 +205,6 @@ avsender(e) og mottaker(e) registreres. </xs:documentation>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PresedensType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5F5293CC_0BBC_4bc4_80B0_197D669CEE41">
-    <xs:annotation>
-      <xs:documentation>Med presedens menes en (retts)avgjørelse som siden kan tjene som rettesnor i lignende tilfeller 
-eller saker. En presedens kan også være en sak som er regeldannende for behandling av 
-tilsvarende saker. Det er som oftest snakk om et forvaltningsmessig vedtak, dvs. et 
-enkeltvedtak fattet i henhold til det aktuelle organets forvaltningsområde, som inneholder en 
-rettsoppfatning som senere blir lagt til grunn i andre lignende tilfeller. Prinsippavgjørelser 
-knyttet til ulike saksområder skal derfor kunne etableres på en hensiktsmessig måte og være 
-tilgjengelig for saksbehandlere. 
-
-Man snakker vanligvis om presedenssaker, men det er vanligvis ett eller noen få av 
-dokumentene i saken som danner presedens. Foruten å registrere hele saken, må derfor det eller 
-de dokumentene som inneholder presedensavgjørelser kunne identifiseres. Hvis opplysninger 
-om presedens er registrert, er presedens obligatorisk for avlevering. </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
@@ -292,7 +226,6 @@ om presedens er registrert, er presedens obligatorisk for avlevering. </xs:docum
           <xs:element name="presedensStatus" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:PresedensstatusType" />
           <xs:element name="journalpost" minOccurs="0" maxOccurs="1" nillable="true" type="sa:JournalpostListe" />
           <xs:element name="sak" minOccurs="0" maxOccurs="1" nillable="true" type="sa:SaksmappeListe" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -304,12 +237,6 @@ om presedens er registrert, er presedens obligatorisk for avlevering. </xs:docum
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="SaksmappeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_4E164406_1372_47bf_AD28_ACB355CB6A06">
-    <xs:annotation>
-      <xs:documentation>I denne versjonen av Noark 5 er det i tillegg til Mappe definert en spesialisering kalt 
-Saksmappe, som tilsvarer en ”sak” i Noark-4. Saksmappen skal inneholde metadata fra Mappe 
-i tillegg til egne metadata. En saksmappe er bakoverkompatibel med en sak i Noark-4, men har 
-en del nye metadata. . For sakarkiver er det obligatorisk å bruke en saksmappe.</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="as:MappeType">
         <xs:sequence>
@@ -328,7 +255,6 @@ en del nye metadata. . For sakarkiver er det obligatorisk å bruke en saksmappe.
           <xs:element name="presedens" minOccurs="0" maxOccurs="1" nillable="true" type="sa:PresedensListe" />
           <xs:element name="sekundaerklassifikasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseListe" />
           <xs:element name="sakspart" minOccurs="0" maxOccurs="1" nillable="true" type="sa:AbstraktSakspartListe" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -340,20 +266,13 @@ en del nye metadata. . For sakarkiver er det obligatorisk å bruke en saksmappe.
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AbstraktSakspartType" abstract="true" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_1001D090_9191_4ca9_A1B4_42C91F71B810">
-    <xs:annotation>
-      <xs:documentation>En eller flere virksomheter eller personer kan være knyttet til en saksmappe som saksparter. 
-Metadata for sakspart skal kunne grupperes inn i metadata for saksmappe. Sakspart er valgfritt, 
-og kan forekomme en eller flere ganger i tilknytning til en saksmappe. Dersom det er mer enn 
-én sakspart, må metadataene grupperes sammen ved eksport og utveksling. </xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
           <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="sakspartRolle" minOccurs="1" maxOccurs="1" type="n5mdk:SakspartRolleType" />
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="as:VirksomhetsspesifikkeMetadataType" />
           <xs:element name="skjermetSakspart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="vsm:MetadataListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -374,7 +293,6 @@ og kan forekomme en eller flere ganger i tilknytning til en saksmappe. Dersom de
           <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="sa:KontaktinformasjonType" />
           <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -395,7 +313,6 @@ og kan forekomme en eller flere ganger i tilknytning til en saksmappe. Dersom de
           <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="sa:EnkelAdresseType" />
           <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="sa:KontaktinformasjonType" />
-          <xs:element name="_links" minOccurs="0" maxOccurs="1" nillable="true" type="rest:LinkListeType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

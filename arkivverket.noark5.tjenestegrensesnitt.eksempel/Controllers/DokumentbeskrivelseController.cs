@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Query;
@@ -21,17 +22,9 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [HttpGet]
         [ListWithLinksResult]
         [EnableQuery()]
-        public IQueryable<ActionResult> DokumentbeskrivelseIndex()
+        public IQueryable<DokumentbeskrivelseType> DokumentbeskrivelseIndex()
         {
-            List<ActionResult> testdata = new List<ActionResult>();
-
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-
-            return testdata.AsQueryable();
+            return MockNoarkDatalayer.Dokumentbeskrivelser.AsQueryable();
         }
 
         [Route("api/arkivstruktur/Dokumentbeskrivelse/{id}")]
@@ -39,15 +32,13 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [ProducesResponseType(typeof(ArkivType), 200)]
         public ActionResult GetDokumentbeskrivelse(string id)
         {
-          
-            DokumentbeskrivelseType dokumentbeskrivelse = new DokumentbeskrivelseType();
-            dokumentbeskrivelse.systemID = id;
-            dokumentbeskrivelse.tittel = "angitt tittel " + id;
-            dokumentbeskrivelse.beskrivelse = "beskrivelse";
-            dokumentbeskrivelse.opprettetDato = DateTime.Now;
-            dokumentbeskrivelse.RepopulateHyperMedia();
-         
-            return Ok(dokumentbeskrivelse);
+            DokumentbeskrivelseType dokumentbeskrivelseType = MockNoarkDatalayer.GetDokumentbeskrivelseById(id);
+
+            if (dokumentbeskrivelseType == null)
+            {
+                return NotFound();
+            }
+            return Ok(dokumentbeskrivelseType);
         }
 
         [Route("api/arkivstruktur/Dokumentbeskrivelse/{id}")]
@@ -76,17 +67,9 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [HttpGet]
         [ListWithLinksResult]
         [EnableQuery()]
-        public IQueryable<ActionResult> GetDokumentbeskrivelserFraRegistrering(string Id)
+        public IQueryable<DokumentbeskrivelseType> GetDokumentbeskrivelserFraRegistrering()
         {
-            List<ActionResult> testdata = new List<ActionResult>();
-
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentbeskrivelse(Guid.NewGuid().ToString()));
-
-            return testdata.AsQueryable();
+            return MockNoarkDatalayer.Dokumentbeskrivelser.AsQueryable();
         }
 
         

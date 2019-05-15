@@ -15,6 +15,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         internal static List<MappeType> Mapper = new List<MappeType>();
         internal static List<SaksmappeType> Saksmapper = new List<SaksmappeType>();
         internal static List<RegistreringType> Registreringer = new List<RegistreringType>();
+        internal static List<DokumentbeskrivelseType> Dokumentbeskrivelser = new List<DokumentbeskrivelseType>();
 
         /// <summary>
         /// Number of examples to be generated of each type. The number of items in the example arrays should be the same size
@@ -38,12 +39,15 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             Mapper.Clear();
             Saksmapper.Clear();
             Registreringer.Clear();
+            Dokumentbeskrivelser.Clear();
 
             OpprettArkiver();
             OpprettMapper();
             OpprettSaksmapper();
             OpprettRegistreringer();
+            OpprettDokumentbeskrivelser();
         }
+
 
         private static KlasseType OpprettKlasse(int i)
         {
@@ -61,6 +65,26 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             klasseType.opprettetAv = GetName(i);
             klasseType.referanseOpprettetAv = GetName(i);
             return klasseType;
+        }
+
+        private static void OpprettDokumentbeskrivelser()
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                Dokumentbeskrivelser.Add(OpprettDokumentbeskrivelse(Guid.NewGuid().ToString()));
+            }
+        }
+
+        private static DokumentbeskrivelseType OpprettDokumentbeskrivelse(string systemId)
+        {
+            DokumentbeskrivelseType dokumentbeskrivelse = new DokumentbeskrivelseType();
+            dokumentbeskrivelse.systemID = systemId;
+            dokumentbeskrivelse.tittel = "angitt tittel " + systemId;
+            dokumentbeskrivelse.beskrivelse = "beskrivelse";
+            dokumentbeskrivelse.opprettetDato = DateTime.Now;
+            dokumentbeskrivelse.RepopulateHyperMedia();
+
+            return dokumentbeskrivelse;
         }
 
 
@@ -428,6 +452,10 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             return Saksmapper.Find(s => s.systemID == id);
         }
 
+        public static DokumentbeskrivelseType GetDokumentbeskrivelseById(string id)
+        {
+            return Dokumentbeskrivelser.Find(d => d.systemID == id);
+        }
 
         public static void AddSekundaerklassifikasjonToSaksmappe(string saksmappeSystemId, KlasseType klasseType)
         {
@@ -496,5 +524,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             var saksmappe = GetSaksmappeById(id) ?? throw new ArgumentNullException("Saksmappen finnes ikke");
             return saksmappe.sekundaerklassifikasjon;
         }
+
+
     }
 }

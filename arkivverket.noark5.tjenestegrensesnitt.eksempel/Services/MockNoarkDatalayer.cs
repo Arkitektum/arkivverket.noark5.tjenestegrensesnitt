@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using arkivverket.noark5tj.models;
+using arkivverket.noark5tj.webapi.Services;
 
 namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
 {
@@ -16,6 +17,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         internal static List<SaksmappeType> Saksmapper = new List<SaksmappeType>();
         internal static List<RegistreringType> Registreringer = new List<RegistreringType>();
         internal static List<DokumentbeskrivelseType> Dokumentbeskrivelser = new List<DokumentbeskrivelseType>();
+        internal static List<DokumentobjektType> Dokumentobjekter = new List<DokumentobjektType>();
 
         /// <summary>
         /// Number of examples to be generated of each type. The number of items in the example arrays should be the same size
@@ -40,12 +42,14 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             Saksmapper.Clear();
             Registreringer.Clear();
             Dokumentbeskrivelser.Clear();
+            Dokumentobjekter.Clear();
 
             OpprettArkiver();
             OpprettMapper();
             OpprettSaksmapper();
             OpprettRegistreringer();
             OpprettDokumentbeskrivelser();
+            OpprettDokumentobjekter();
         }
 
 
@@ -85,6 +89,29 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             dokumentbeskrivelse.RepopulateHyperMedia();
 
             return dokumentbeskrivelse;
+        }
+
+        private static void OpprettDokumentobjekter()
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString()));
+            }
+        }
+
+        private static DokumentobjektType OpprettDokumentobjekt(string id)
+        {
+            DokumentobjektType dokumentObjekt = new DokumentobjektType();
+            dokumentObjekt.systemID = id;
+            dokumentObjekt.versjonsnummer = "1";
+            dokumentObjekt.variantformat = new VariantformatType() { kode = "A", beskrivelse = "Arkivformat" };
+            dokumentObjekt.format = new FormatType() { kode = "RA-PDF", beskrivelse = "PDF/A - ISO 19005-1:2005" };
+            dokumentObjekt.opprettetDato = DateTime.Now;
+
+            dokumentObjekt.referanseDokumentfil = BaseUrlResolver.GetBaseUrl() + "api/arkivstruktur/Dokumentobjekt/" + dokumentObjekt.systemID + "/referanseFil";
+            dokumentObjekt.RepopulateHyperMedia();
+
+            return dokumentObjekt;
         }
 
 
@@ -456,6 +483,11 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         {
             return Dokumentbeskrivelser.Find(d => d.systemID == id);
         }
+        
+        public static DokumentobjektType GetDokumentobjektById(string id)
+        {
+            return Dokumentobjekter.Find(d => d.systemID == id);
+        }
 
         public static void AddSekundaerklassifikasjonToSaksmappe(string saksmappeSystemId, KlasseType klasseType)
         {
@@ -524,7 +556,6 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             var saksmappe = GetSaksmappeById(id) ?? throw new ArgumentNullException("Saksmappen finnes ikke");
             return saksmappe.sekundaerklassifikasjon;
         }
-
 
     }
 }

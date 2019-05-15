@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
@@ -22,35 +21,23 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [HttpGet]
         [ListWithLinksResult]
         [EnableQuery()]
-        public IQueryable<ActionResult<DokumentobjektType>> DokumentobjekterIndex()
+        public IQueryable<DokumentobjektType> DokumentobjekterIndex()
         {
-            List<ActionResult<DokumentobjektType>> testdata = new List<ActionResult<DokumentobjektType>>();
-
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-
-            return testdata.AsQueryable();
+            return MockNoarkDatalayer.Dokumentobjekter.AsQueryable();
         }
 
         [Route("api/arkivstruktur/Dokumentobjekt/{id}")]
         [HttpGet]
-        [ProducesResponseType(typeof(ArkivType), 200)]
+        [ProducesResponseType(typeof(DokumentobjektType), 200)]
         public ActionResult<DokumentobjektType> GetDokumentobjekt(string id)
         {
-            DokumentobjektType dokumentObjekt = new DokumentobjektType();
-            dokumentObjekt.systemID = id;
-            dokumentObjekt.versjonsnummer = "1";
-            dokumentObjekt.variantformat = new VariantformatType() { kode = "A", beskrivelse = "Arkivformat" };
-            dokumentObjekt.format = new FormatType() { kode = "RA-PDF", beskrivelse = "PDF/A - ISO 19005-1:2005" };
-            dokumentObjekt.opprettetDato = DateTime.Now;
+            DokumentobjektType dokumentobjekt = MockNoarkDatalayer.GetDokumentobjektById(id);
 
-            dokumentObjekt.referanseDokumentfil = BaseUrlResolver.GetBaseUrl() + "api/arkivstruktur/Dokumentobjekt/" + dokumentObjekt.systemID + "/referanseFil";
-            dokumentObjekt.RepopulateHyperMedia();
-
-            return Ok(dokumentObjekt);
+            if (dokumentobjekt == null)
+            {
+                return NotFound();
+            }
+            return Ok(dokumentobjekt);
         }
 
         //NY
@@ -82,17 +69,9 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [HttpGet]
         [ListWithLinksResult]
         [EnableQuery()]
-        public IEnumerable<ActionResult<DokumentobjektType>> GetDokumentobjekterFraRegistrering(string Id)
+        public IEnumerable<DokumentobjektType> GetDokumentobjekterFraRegistrering(string Id)
         {
-            List<ActionResult<DokumentobjektType>> testdata = new List<ActionResult<DokumentobjektType>>();
-
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-            testdata.Add(GetDokumentobjekt(Guid.NewGuid().ToString()));
-
-            return testdata.AsEnumerable();
+            return MockNoarkDatalayer.Dokumentobjekter.AsQueryable();
         }
 
         [Route("api/arkivstruktur/Registrering/{Id}/dokumentobjekt/{dokumentobjektId}")]

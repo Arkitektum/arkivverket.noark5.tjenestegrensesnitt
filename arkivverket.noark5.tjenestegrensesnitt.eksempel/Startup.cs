@@ -4,10 +4,12 @@ using arkivverket.noark5tj.webapi;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 
@@ -57,6 +59,8 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddOData();
         }
 
@@ -81,8 +85,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
                 builder.Expand().Select().Filter().Count().MaxTop(100).OrderBy();
             });
 
-
-        }
+           }
 
     }
 }

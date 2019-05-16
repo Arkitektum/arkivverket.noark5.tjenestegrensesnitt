@@ -58,7 +58,7 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Registrering/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse",
                 baseUri + "api/arkivstruktur/Registrering/" + this.systemID + "/dokumentbeskrivelse"));
         }
 
@@ -73,7 +73,7 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Dokumentbeskrivelse/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt",
                 baseUri + "api/arkivstruktur/Dokumentbeskrivelse/" + this.systemID + "/dokumentobjekt"));
 
         }
@@ -89,9 +89,9 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Dokumentobjekt/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt",
                 baseUri + "api/arkivstruktur/Dokumentobjekt/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil",
                 baseUri + "api/arkivstruktur/Dokumentobjekt/" + this.systemID + "/referanseFil"));
         }
 
@@ -107,21 +107,21 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Arkiv/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv",
                 baseUri + "api/arkivstruktur/Arkiv/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel",
                 baseUri + "api/arkivstruktur/Arkiv/" + this.systemID +
                 "/arkivdel{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel",
                 baseUri + "api/arkivstruktur/Arkiv/" + this.systemID + "/ny-arkivdel"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper",
                 baseUri + "api/arkivstruktur/Arkiv/" + this.systemID +
                 "/arkivskaper{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper",
                 baseUri + "api/arkivstruktur/Arkiv/" + this.systemID + "/ny-arkivskaper"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium",
                 baseUri + "api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/administrasjon/arkivstatus",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/administrasjon/arkivstatus",
                 baseUri + "api/kodelister/Arkivstatus{?$filter&$orderby&$top&$skip}"));
         }
 
@@ -137,12 +137,12 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Arkivskaper/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper",
                 baseUri + "api/arkivstruktur/Arkivskaper/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv",
                 baseUri + "api/arkivstruktur/Arkivskaper/" + this.systemID +
                 "/arkiv{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv",
                 baseUri + "api/arkivstruktur/Arkivskaper/" + this.systemID + "/nytt-arkiv"));
         }
 
@@ -156,9 +156,9 @@ namespace arkivverket.noark5tj.models
             var baseUri = BaseUrlResolver.GetBaseUrl();
 
             LinkList.Clear();
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium",
                 baseUri + "api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/administrasjon/arkivstatus",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/administrasjon/arkivstatus",
                 baseUri + "api/kodelister/Arkivstatus{?$filter&$orderby&$top&$skip}"));
         }
 
@@ -179,9 +179,9 @@ namespace arkivverket.noark5tj.models
             RemoveOldSelf();
 
             InsertNewSelf(baseUri);
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjoner",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjoner",
                 baseUri + "api/sakarkiv/Saksmappe/" + this.systemID + "/sekundaerklassifikasjoner"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjoner",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjoner",
                 baseUri + "api/sakarkiv/Saksmappe/" + this.systemID + "/ny-sekundaerklassifikasjon"));
 
             RemoveUtvidTilSaksmappe();
@@ -201,7 +201,7 @@ namespace arkivverket.noark5tj.models
         private void RemoveUtvidTilSaksmappe()
         {
             var utvidTilSaksmappe =
-                LinkList.First(x => x.rel == "http://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe");
+                LinkList.First(x => x.rel == "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe");
             LinkList.Remove(utvidTilSaksmappe);
         }
 
@@ -273,35 +273,35 @@ namespace arkivverket.noark5tj.models
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/arkivstruktur/Mappe/" + this.systemID));
 
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/avslutt"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe",
                 baseUri + "api/sakarkiv/Saksmappe/" + this.systemID + "/utvid-til-saksmappe"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID +
                 "/registrering{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/ny-registrering"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID +
                 "/merknad{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/ny-merknad"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID +
                 "/undermappe{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-undermappe",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-undermappe",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/ny-undermappe"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID +
                 "/kryssreferanse{?$filter&$orderby&$top&$skip&$search}"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/ny-kryssreferanse"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/klasse"));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel",
                 baseUri + "api/arkivstruktur/Mappe/" + this.systemID + "/arkivdel"));
         }
 
@@ -317,7 +317,7 @@ namespace arkivverket.noark5tj.models
 
             LinkList.Clear();
             LinkList.Add(new LinkType("self", baseUri + "api/sakarkiv/sakspart/" + this.systemID));
-            LinkList.Add(new LinkType("http://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspart",
+            LinkList.Add(new LinkType("https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspart",
                 baseUri + "api/sakarkiv/sakspart/" + this.systemID));
         }
 

@@ -29,7 +29,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
 
         [Route("api/arkivstruktur/Dokumentbeskrivelse/{id}")]
         [HttpGet]
-        [ProducesResponseType(typeof(ArkivType), 200)]
+        [ProducesResponseType(typeof(DokumentbeskrivelseType), 200)]
         public ActionResult GetDokumentbeskrivelse(string id)
         {
             DokumentbeskrivelseType dokumentbeskrivelseType = MockNoarkDatalayer.GetDokumentbeskrivelseById(id);

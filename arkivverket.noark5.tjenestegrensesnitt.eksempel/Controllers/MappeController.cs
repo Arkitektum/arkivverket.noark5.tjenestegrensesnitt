@@ -29,7 +29,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
         /// <returns></returns>
         [Route("api/arkivstruktur/Mappe/{id}")]
         [HttpGet]
-        [ProducesResponseType(typeof(ArkivType), 200)]
+        [ProducesResponseType(typeof(MappeType), 200)]
         public ActionResult<MappeType> GetMappe(string id)
         {
             var mappe = MockNoarkDatalayer.GetMappeById(id);

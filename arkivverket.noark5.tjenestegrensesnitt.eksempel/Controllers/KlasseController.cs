@@ -28,7 +28,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
 
         [Route("api/arkivstruktur/Klasse/{id}")]
         [HttpGet]
-        [ProducesResponseType(typeof(ArkivType), 200)]
+        [ProducesResponseType(typeof(KlasseType), 200)]
         public ActionResult<KlasseType> GetKlasse(string id)
         {
             KlasseType klasse = new KlasseType();

@@ -18,6 +18,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         internal static List<RegistreringType> Registreringer = new List<RegistreringType>();
         internal static List<DokumentbeskrivelseType> Dokumentbeskrivelser = new List<DokumentbeskrivelseType>();
         internal static List<DokumentobjektType> Dokumentobjekter = new List<DokumentobjektType>();
+        internal static List<JournalpostType> Journalposter = new List<JournalpostType>();
 
         /// <summary>
         /// Number of examples to be generated of each type. The number of items in the example arrays should be the same size
@@ -43,6 +44,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             Registreringer.Clear();
             Dokumentbeskrivelser.Clear();
             Dokumentobjekter.Clear();
+            Journalposter.Clear();
 
             OpprettArkiver();
             OpprettMapper();
@@ -50,7 +52,9 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             OpprettRegistreringer();
             OpprettDokumentbeskrivelser();
             OpprettDokumentobjekter();
+            OpprettJournalposter();
         }
+
 
 
         private static KlasseType OpprettKlasse(int i)
@@ -90,12 +94,36 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
 
             return dokumentbeskrivelse;
         }
+        
+        private static void OpprettJournalposter()
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                Journalposter.Add(OpprettJournalpost(Guid.NewGuid().ToString()));
+            }
+        }
+
+        private static JournalpostType OpprettJournalpost(string id)
+        {
+            JournalpostType journalPost = new JournalpostType();
+            journalPost.systemID = id;
+            journalPost.opprettetDato = DateTime.Now;
+            journalPost.opprettetDatoSpecified = true;
+            journalPost.oppdatertDato = DateTime.Now;
+            journalPost.journaldato = DateTime.Now;
+            journalPost.tittel = "journalpost - " + journalPost.systemID;
+            journalPost.oppdatertAv = "bruker";
+            journalPost.LinkList.Clear();
+            journalPost.RepopulateHyperMedia();
+
+            return journalPost;
+        }
 
         private static void OpprettDokumentobjekter()
         {
             for (int i = 0; i <= 3; i++)
             {
-                Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString()));
+                Journalposter.Add(OpprettJournalpost(Guid.NewGuid().ToString()));
             }
         }
 
@@ -483,7 +511,12 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         {
             return Dokumentbeskrivelser.Find(d => d.systemID == id);
         }
-        
+
+        public static JournalpostType GetJournalpostById(string id)
+        {
+            return Journalposter.Find(j => j.systemID == id);
+        }
+
         public static DokumentobjektType GetDokumentobjektById(string id)
         {
             return Dokumentobjekter.Find(d => d.systemID == id);

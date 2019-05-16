@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
@@ -24,17 +25,9 @@ namespace arkitektum.kommit.noark5.api.Controllers
         [Route("api/sakarkiv/journalpost")]
         [EnableQuery()]
         [ListWithLinksResult]
-        public IQueryable JournalposterIndex()
+        public IQueryable<JournalpostType> JournalposterIndex()
         {
-            List<ActionResult<JournalpostType>> testdata = new List<ActionResult<JournalpostType>>();
-
-            testdata.Add(GetJournalpost(Guid.NewGuid().ToString()));
-            testdata.Add(GetJournalpost(Guid.NewGuid().ToString()));
-            testdata.Add(GetJournalpost(Guid.NewGuid().ToString()));
-            testdata.Add(GetJournalpost(Guid.NewGuid().ToString()));
-            testdata.Add(GetJournalpost(Guid.NewGuid().ToString()));
-
-            return testdata.AsQueryable();
+            return MockNoarkDatalayer.Journalposter.AsQueryable();
         }
 
 
@@ -50,21 +43,15 @@ namespace arkitektum.kommit.noark5.api.Controllers
         /// <response code="501">NotImplemented - ikke implementert</response>
         [Route("api/sakarkiv/journalpost/{id}")]
         [HttpGet]
-        [EnableQuery()]
         public ActionResult<JournalpostType> GetJournalpost(string id)
         {
-            JournalpostType journalPost = new JournalpostType();
-            journalPost.systemID = id;
-            journalPost.opprettetDato = DateTime.Now;
-            journalPost.opprettetDatoSpecified = true;
-            journalPost.oppdatertDato = DateTime.Now;
-            journalPost.journaldato = DateTime.Now;
-            journalPost.tittel = "journalpost - " + journalPost.systemID;
-            journalPost.oppdatertAv = "bruker";
-            journalPost.LinkList.Clear();
-            journalPost.RepopulateHyperMedia();
+            JournalpostType journalpost = MockNoarkDatalayer.GetJournalpostById(id);
 
-            return Ok(journalPost);
+            if (journalpost == null)
+            {
+                return NotFound();
+            }
+            return Ok(journalpost);
         }
 
 

@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Web;
 using arkivverket.noark5tj.models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 

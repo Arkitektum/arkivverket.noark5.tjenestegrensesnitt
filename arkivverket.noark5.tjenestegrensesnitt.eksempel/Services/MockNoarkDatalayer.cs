@@ -441,7 +441,15 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 graderingskode = new GraderingskodeType { kode = "B" },
                 graderingsdato = DateTime.Now
             };
-            m.klasse = new KlasseType() { klasseID = "12345678901", tittel = "12345678901", klassifikasjonssystem = new KlassifikasjonssystemType { klassifikasjonstype = new KlassifikasjonstypeType { kode = "PNR", beskrivelse = "Personnr" } } }; //klassifikasjonssystem? rekkefølge?
+            m.klasse = new KlasseType()
+            {
+                klasseID = "12345678901", 
+                tittel = "12345678901", 
+                klassifikasjonssystem = new KlassifikasjonssystemType
+                {
+                    klassifikasjonstype = new KlassifikasjonstypeType { kode = "PNR", beskrivelse = "Personnr" }
+                }
+            }; 
             List<MerknadType> merknader = new List<MerknadType>
             {
                 new MerknadType

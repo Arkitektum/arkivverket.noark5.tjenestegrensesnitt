@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Linq;
 using System.Net.Http;
 using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
 using Microsoft.AspNet.OData;
-using Microsoft.AspNet.OData.Query;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace arkitektum.kommit.noark5.api.Controllers

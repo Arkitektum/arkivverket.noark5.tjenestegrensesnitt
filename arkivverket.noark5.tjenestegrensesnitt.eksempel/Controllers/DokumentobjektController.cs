@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
-using arkivverket.noark5tj.webapi.Services;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Query;
 using Microsoft.AspNetCore.Mvc;

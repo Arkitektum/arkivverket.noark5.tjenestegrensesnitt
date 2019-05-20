@@ -47,6 +47,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             Journalposter.Clear();
 
             OpprettArkiver();
+            OpprettArkivdeler();
             OpprettMapper();
             OpprettSaksmapper();
             OpprettRegistreringer();
@@ -94,7 +95,36 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
 
             return dokumentbeskrivelse;
         }
-        
+
+        private static void OpprettArkivdeler()
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                Arkivdeler.Add(OpprettArkivdel(Guid.NewGuid().ToString()));
+            }
+        }
+
+        private static ArkivdelType OpprettArkivdel(string id)
+        {
+            ArkivdelType arkivdel = new ArkivdelType
+            {
+                systemID = id,
+                tittel = "arkivdel - " + id,
+                beskrivelse = "beskrivelse av arkivdel",
+                avsluttetDatoSpecified = false,
+                arkivperiodeStartDatoSpecified = false,
+                arkivperiodeSluttDatoSpecified = false,
+                oppdatertDatoSpecified = false,
+                opprettetDatoSpecified = false,
+                arkivdelstatus = new ArkivdelstatusType
+                {
+                    beskrivelse = "Avsluttet periode"
+                }
+            };
+            arkivdel.RepopulateHyperMedia();
+            return arkivdel;
+        }
+
         private static void OpprettJournalposter()
         {
             for (int i = 0; i <= 3; i++)

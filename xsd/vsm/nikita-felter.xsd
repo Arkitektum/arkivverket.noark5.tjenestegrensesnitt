@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nikita.oslomet.no/felter" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://nikita.oslomet.no/felter" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eksempelfelt" type="xs:string" />
+</xs:schema>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- import your custom metadata schemas here -->  
+<!-- then extend the virksomhetsspesifikkeMetadata element with your types -->
+<!-- remember to include the xmlns attribute in the schema header -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" 
+xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" 
+xmlns:vnd-nikita="http://nikita.oslomet.no/felter" 
+xmlns:ppt-v1="http://ppt-system.no/v1">
+
+  <!-- import your schemas -->
+  <xs:import schemaLocation="vsm\pptsystem.xsd" namespace="http://ppt-system.no/v1" />
+  <xs:import schemaLocation="vsm\nikita-felter.xsd" namespace="http://nikita.oslomet.no/felter" />
+
+  <!-- extend virksomhetsspesifikkeMetadata -->
+  <xs:element name="virksomhetsspesifikkeMetadata">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="ppt-v1:henvisningdato" />
+          <xs:element ref="ppt-v1:skoleaar" />
+          <xs:element ref="vnd-nikita:eksempelfelt" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+
+</xs:schema>

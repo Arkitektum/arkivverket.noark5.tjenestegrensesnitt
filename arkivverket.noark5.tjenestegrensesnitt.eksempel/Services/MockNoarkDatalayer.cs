@@ -451,6 +451,12 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 }
             };
             m.merknad = merknader.ToArray();
+            m.virksomhetsspesifikkeMetadata = new virksomhetsspesifikkeMetadata()
+            {
+                eksempelfelt = "Nikita eksempelfelt " + id,
+                henvisningdato = DateTime.Now.Subtract(TimeSpan.FromDays(RandomNumber(1, 500))),
+                skoleaar = "2018/2019"
+            };
             m.LinkList.Clear();
             m.RepopulateHyperMedia();
             return m;

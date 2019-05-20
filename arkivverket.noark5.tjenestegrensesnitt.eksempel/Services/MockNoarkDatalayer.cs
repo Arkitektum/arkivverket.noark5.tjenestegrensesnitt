@@ -121,13 +121,16 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
 
         private static void OpprettDokumentobjekter()
         {
+            bool isDokumentobjektMedDokumentFil = false;
+
             for (int i = 0; i <= 3; i++)
             {
-                Journalposter.Add(OpprettJournalpost(Guid.NewGuid().ToString()));
+                Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString(), isDokumentobjektMedDokumentFil));
             }
+            Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString(), !isDokumentobjektMedDokumentFil));
         }
 
-        private static DokumentobjektType OpprettDokumentobjekt(string id)
+        private static DokumentobjektType OpprettDokumentobjekt(string id, bool isDokumentobjektMedReferanseFil)
         {
             DokumentobjektType dokumentObjekt = new DokumentobjektType();
             dokumentObjekt.systemID = id;
@@ -138,6 +141,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
 
             dokumentObjekt.referanseDokumentfil = BaseUrlResolver.GetBaseUrl() + "api/arkivstruktur/Dokumentobjekt/" + dokumentObjekt.systemID + "/referanseFil";
             dokumentObjekt.RepopulateHyperMedia();
+            dokumentObjekt.referanseDokumentfil = isDokumentobjektMedReferanseFil ? "referanseDokumentFil" : null;
 
             return dokumentObjekt;
         }

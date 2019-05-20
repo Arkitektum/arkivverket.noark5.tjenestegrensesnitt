@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using arkivverket.noark5.tjenestegrensesnitt.eksempel.Services;
 using arkivverket.noark5tj.models;
+using arkivverket.noark5tj.webapi.Services;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Query;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -12,6 +16,13 @@ namespace arkitektum.kommit.noark5.api.Controllers
 {
     public class DokumentobjektController : ControllerBase
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
+
+        public DokumentobjektController(IHostingEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+
         [Route("api/arkivstruktur/Dokumentobjekt")]
         [HttpGet]
         [ListWithLinksResult]
@@ -103,46 +114,32 @@ namespace arkitektum.kommit.noark5.api.Controllers
 
         }
 
-        ////Nedlasting av fil til et Dokumentobjekt
-        //[Route("api/arkivstruktur/Dokumentobjekt/{Id}/referanseFil")]
-        //[HttpGet]
-        //public ActionResult GetFile(string Id)
-        //{
-        //    string root = HttpContext.Server.MapPath("~/App_Data");
-        //    var path = root + @"\eksempel.pdf";
-        //    HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-        //    var stream = new FileStream(path, FileMode.Open);
-        //    result.Content = new StreamContent(stream);
-        //    result.Content.Headers.ContentType =
-        //        new MediaTypeHeaderValue("application/pdf");
-        //    return result;
-        //}
+        //Nedlasting av fil til et Dokumentobjekt
+        [Route("api/arkivstruktur/Dokumentobjekt/{Id}/referanseFil")]
+        [HttpGet]
+        public ActionResult GetFile(string Id)
+        {
+            string contentRootPath = _hostingEnvironment.ContentRootPath;
+            var path = Path.Combine(contentRootPath, "App_Data", "eksempel.pdf");
 
-        ////Opplasting av fil til et Dokumentobjekt
-        //[Route("api/arkivstruktur/Dokumentobjekt/{Id}/referanseFil")]
-        //[HttpPost]
-        //[EnableQuery()]
-        //public async Task<HttpResponseMessage> UploadFile(string Id)
-        //{
-        //    if (!Request.Content.IsMimeMultipartContent())
-        //    {
-        //        throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-        //    }
+            var stream = new FileStream(path, FileMode.Open);
 
-        //    string root = HttpContext.Current.Server.MapPath("~/App_Data");
-        //    var provider = new MultipartFormDataStreamProvider(root);
+            return File(stream, "application/pdf");
 
-        //    try
-        //    {
-        //        await Request.Content.ReadAsMultipartAsync(provider);
+        }
 
-        //        return Request.CreateResponse(HttpStatusCode.OK);
-        //    }
-        //    catch (System.Exception e)
-        //    {
-        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
-        //    }
-        //}
+        //Opplasting av fil til et Dokumentobjekt
+        [Route("api/arkivstruktur/Dokumentobjekt/{Id}/referanseFil")]
+        [HttpPost]
+        public async Task<ActionResult> UploadFile(string Id)
+        {
+            string url = BaseUrlResolver.GetBaseUrl();
+            string uri = url.Insert(url.Length - 1, $"api/arkivstruktur/Dokumentobjekt/{Id}");
+
+            var dataobjekt = MockNoarkDatalayer.GetDokumentobjektById(Id);
+            return dataobjekt.referanseDokumentfil == null ? (ActionResult) Created(uri, dataobjekt) : new UnprocessableEntityResult();
+
+        }
 
 
         [Route("api/arkivstruktur/Dokumentobjekt/{Id}/ny-referansefil")]

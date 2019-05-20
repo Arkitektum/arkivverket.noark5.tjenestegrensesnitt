@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Formatters.Xml;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -45,12 +46,12 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
             services.AddMvc(options =>
                 {
                     options.FormatterMappings.SetMediaTypeMappingForFormat
-                        ("xml", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+xml"));
-                    options.FormatterMappings.SetMediaTypeMappingForFormat
-                        ("js", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+json"));
-                    options.RespectBrowserAcceptHeader = true;
+                        ("json", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+json"));
+//                    options.FormatterMappings.SetMediaTypeMappingForFormat
+//                        ("xml", MediaTypeHeaderValue.Parse("application/vnd.noark5-v4+xml"));
+//                    options.RespectBrowserAcceptHeader = true;
                 })
-                .AddXmlSerializerFormatters()
+                //.AddXmlSerializerFormatters()
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.Formatting = Formatting.Indented;

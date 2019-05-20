@@ -55,8 +55,6 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
             services.AddOData();
         }
 

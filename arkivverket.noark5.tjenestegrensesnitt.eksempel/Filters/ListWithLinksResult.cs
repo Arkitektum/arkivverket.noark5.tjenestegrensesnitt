@@ -21,7 +21,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
         public IEnumerable<LinkType> Links { get; set; }
 
         [DataMember(Name = "count")]
-        public long Count => Results.Count();
+        public long Count => Results?.Count() ?? 0L;
 
         public ListWithLinksResult (IEnumerable<T> results, IEnumerable<LinkType> links)
         {

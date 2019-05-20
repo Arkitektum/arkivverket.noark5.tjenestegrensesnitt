@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:rest="http://www.kxml.no/rest/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 14:35:06-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 20.05.2019 10:08:29-->
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
   <xs:element name="AdministrativEnhet" type="adm:AdministrativEnhetType" />
@@ -43,6 +43,7 @@
           <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
           <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
           <xs:element name="enhet" minOccurs="0" maxOccurs="1" nillable="true" type="adm:AdministrativEnhetListe" />
         </xs:sequence>
       </xs:extension>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:rest="http://www.kxml.no/rest/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 13:36:53-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 20.05.2019 10:08:13-->
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " schemaLocation="arkivstruktur103.xsd" />
@@ -135,7 +135,7 @@
           <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="korrespondanseparttype" minOccurs="1" maxOccurs="1" type="n5mdk:KorrespondanseparttypeType" />
           <xs:element name="skjermetKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="vsm:MetadataListe" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -272,7 +272,7 @@
           <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="sakspartRolle" minOccurs="1" maxOccurs="1" type="n5mdk:SakspartRolleType" />
           <xs:element name="skjermetSakspart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="vsm:MetadataListe" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

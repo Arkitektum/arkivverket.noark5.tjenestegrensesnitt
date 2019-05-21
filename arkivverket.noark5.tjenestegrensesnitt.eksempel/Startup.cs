@@ -72,7 +72,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseMvc(builder =>
             {
                 builder.EnableDependencyInjection();

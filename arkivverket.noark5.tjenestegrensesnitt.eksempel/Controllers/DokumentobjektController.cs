@@ -131,7 +131,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
         //Opplasting av fil til et Dokumentobjekt
         [Route("api/arkivstruktur/Dokumentobjekt/{Id}/referanseFil")]
         [HttpPost]
-        public async Task<ActionResult> UploadFile(string Id)
+        public ActionResult UploadFile(string Id)
         {
             string url = BaseUrlResolver.GetBaseUrl();
             string uri = url.Insert(url.Length - 1, $"api/arkivstruktur/Dokumentobjekt/{Id}");

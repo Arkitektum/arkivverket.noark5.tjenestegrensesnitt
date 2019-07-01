@@ -11,10 +11,14 @@ namespace arkivverket.noark5tj.models
     {
         [System.Xml.Serialization.XmlIgnore()]
         [IgnoreDataMember]
-        public IList<LinkType> LinkList { get; set; } = new List<LinkType>();
+        public IList<LinkType> LinkList = new List<LinkType>();
 
         public void RepopulateHyperMedia()
         {
+            // create list if it does not exist
+            if (LinkList == null)
+                LinkList = new List<LinkType>();
+
             // create links
             CreateHypermedia();
 
@@ -194,15 +198,20 @@ namespace arkivverket.noark5tj.models
 
         private void RemoveOldSelf()
         {
-            var self = LinkList.First(x => x.rel == "self");
-            LinkList.Remove(self);
+            if (LinkList.Any())
+            {
+                var self = LinkList.FirstOrDefault(x => x.rel == "self");
+                if (self != null)
+                    LinkList.Remove(self);
+            }
         }
 
         private void RemoveUtvidTilSaksmappe()
         {
             var utvidTilSaksmappe =
-                LinkList.First(x => x.rel == "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe");
-            LinkList.Remove(utvidTilSaksmappe);
+                LinkList.FirstOrDefault(x => x.rel == "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe");
+            if (utvidTilSaksmappe != null)
+                LinkList.Remove(utvidTilSaksmappe);
         }
 
         public void RemoveSekundaerklasseById(string id)

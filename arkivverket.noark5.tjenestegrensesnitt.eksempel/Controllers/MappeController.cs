@@ -127,7 +127,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
         // NY
         [Route("api/arkivstruktur/Mappe/{Id}/ny-undermappe")]
         [HttpPost]
-        public HttpResponseMessage PostUndermapper(MappeType undermappe)
+        public HttpResponseMessage PostUndermapper(MappeType incomingUndermappe)
         {
             return null;
         }
@@ -143,7 +143,7 @@ namespace arkitektum.kommit.noark5.api.Controllers
         // NY
         [Route("api/arkivstruktur/Mappe/{Id}/undermappe/{undermappeId}")]
         [HttpPost]
-        public HttpResponseMessage OppdaterUndermappe(MappeType undermappe)
+        public HttpResponseMessage OppdaterUndermappe(MappeType incomingUndermappe)
         {
             return null;
         }

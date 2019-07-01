@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:ls="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:fellesgeometrins="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" xmlns:bvk="http://www.arkivverket.no/standarder/noark5/tj/bevaringogkassasjon" xmlns:matrikkelfellesns="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31">
-  <!-- Generert av MetaTrans(1.1.0.0) - 20.05.2019 10:06:55-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:ls="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:fellesgeometrins="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" xmlns:bvk="http://www.arkivverket.no/standarder/noark5/tj/bevaringogkassasjon" xmlns:matrikkelfellesns="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31" version="1.0">
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" schemaLocation="loggingogsporing103.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/admin" schemaLocation="admin103.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" schemaLocation="loggingogsporing.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/admin" schemaLocation="admin.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd" />
   <xs:import namespace="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31/giFellesGeometri20120131.xsd" />
   <xs:import namespace="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31/giPlanFelles20120131.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/bevaringogkassasjon" schemaLocation="bevaringogkassasjon.xsd" />
@@ -30,6 +29,7 @@
           <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="arkivskaper" minOccurs="1" maxOccurs="1" type="as:ArkivskaperListe" />
           <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelListe" />
+          <xs:element name="underarkiv" type="as:ArkivListe" nillable="true" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -303,6 +303,7 @@
           <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringListe" />
           <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeListe" />
           <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe" />
+          <xs:element name="underklasse" type="as:KlasseListe" nillable="true" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -404,6 +405,7 @@
           <xs:element name="nasjonalidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktNasjonalidentifikatorListe" />
           <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe" />
           <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelType" />
+          <xs:element name="undermappe" type="as:MappeListe" nillable="true" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

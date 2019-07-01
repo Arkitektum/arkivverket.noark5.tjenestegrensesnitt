@@ -4,7 +4,8 @@
 <!-- remember to include the xmlns attribute in the schema header: xmlns:ppt-v1="http://ppt-system.no/v1" -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
 targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" 
-xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm">
+xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm"
+version="1.0">
 
   <!-- import your schemas -->
   <!-- <xs:import schemaLocation="vsm\pptsystem.xsd" namespace="http://ppt-system.no/v1" /> -->

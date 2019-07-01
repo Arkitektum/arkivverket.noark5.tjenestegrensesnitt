@@ -6,7 +6,8 @@
 targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" 
 xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" 
 xmlns:vnd-nikita="http://nikita.oslomet.no/felter" 
-xmlns:ppt-v1="http://ppt-system.no/v1">
+xmlns:ppt-v1="http://ppt-system.no/v1"
+version="1.0">
 
   <!-- import your schemas -->
   <xs:import schemaLocation="vsm\pptsystem.xsd" namespace="http://ppt-system.no/v1" />

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 14.05.2019 13:48:18-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified"  version="1.0">
   <xs:element name="Arkivdelstatus" type="n5mdk:ArkivdelstatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_FA3D475A_370A_4669_902E_08DDEA0CBFDD" />
   <xs:complexType name="ArkivdelstatusType">
     <xs:sequence>

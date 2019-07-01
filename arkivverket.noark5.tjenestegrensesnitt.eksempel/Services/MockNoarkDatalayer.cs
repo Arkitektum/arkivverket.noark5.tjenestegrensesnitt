@@ -19,6 +19,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
         internal static List<DokumentbeskrivelseType> Dokumentbeskrivelser = new List<DokumentbeskrivelseType>();
         internal static List<DokumentobjektType> Dokumentobjekter = new List<DokumentobjektType>();
         internal static List<JournalpostType> Journalposter = new List<JournalpostType>();
+        internal static List<DokumentlinkType> Dokumentlinker = new List<DokumentlinkType>();
 
         /// <summary>
         /// Number of examples to be generated of each type. The number of items in the example arrays should be the same size
@@ -47,13 +48,6 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             Journalposter.Clear();
 
             OpprettArkiver();
-            OpprettArkivdeler();
-            OpprettMapper();
-            OpprettSaksmapper();
-            OpprettRegistreringer();
-            OpprettDokumentbeskrivelser();
-            OpprettDokumentobjekter();
-            OpprettJournalposter();
         }
 
 
@@ -75,92 +69,103 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             klasseType.referanseOpprettetAv = GetName(i);
             return klasseType;
         }
-
-        private static void OpprettDokumentbeskrivelser()
-        {
-            for (int i = 0; i <= 3; i++)
-            {
-                Dokumentbeskrivelser.Add(OpprettDokumentbeskrivelse(Guid.NewGuid().ToString()));
-            }
-        }
-
+        
         private static DokumentbeskrivelseType OpprettDokumentbeskrivelse(string systemId)
         {
-            DokumentbeskrivelseType dokumentbeskrivelse = new DokumentbeskrivelseType();
-            dokumentbeskrivelse.systemID = systemId;
-            dokumentbeskrivelse.tittel = "angitt tittel " + systemId;
-            dokumentbeskrivelse.beskrivelse = "beskrivelse";
-            dokumentbeskrivelse.opprettetDato = DateTime.Now;
+            DokumentbeskrivelseType dokumentbeskrivelse = new DokumentbeskrivelseType
+            {
+                systemID = systemId,
+                tittel = GetRandomAdjective() + " dokument",
+                beskrivelse = "beskrivelse av dokumentet",
+                opprettetDato = DateTime.Now
+            };
+
+            dokumentbeskrivelse.dokumentobjekt = new DokumentobjektType[]
+                {OpprettDokumentobjekt(GenerateUuuid(), true, dokumentbeskrivelse)};
+            
             dokumentbeskrivelse.RepopulateHyperMedia();
+
+            Dokumentbeskrivelser.Add(dokumentbeskrivelse);
 
             return dokumentbeskrivelse;
         }
 
-        private static void OpprettArkivdeler()
+        private static List<ArkivdelType> OpprettArkivdeler(ArkivType tilknyttetArkiv)
         {
+            var arkivdelerTilknyttetArkiv = new List<ArkivdelType>();
             for (int i = 0; i <= 3; i++)
             {
-                Arkivdeler.Add(OpprettArkivdel(Guid.NewGuid().ToString()));
+                var arkivdel = OpprettArkivdel(Guid.NewGuid().ToString(), tilknyttetArkiv);
+                arkivdelerTilknyttetArkiv.Add(arkivdel);
+                Arkivdeler.Add(arkivdel);
             }
+
+            return arkivdelerTilknyttetArkiv;
         }
 
-        private static ArkivdelType OpprettArkivdel(string id)
+        private static ArkivdelType OpprettArkivdel(string id, ArkivType tilknyttetArkiv)
         {
             ArkivdelType arkivdel = new ArkivdelType
             {
                 systemID = id,
                 tittel = "arkivdel - " + id,
                 beskrivelse = "beskrivelse av arkivdel",
-                avsluttetDatoSpecified = false,
-                arkivperiodeStartDatoSpecified = false,
-                arkivperiodeSluttDatoSpecified = false,
-                oppdatertDatoSpecified = false,
-                opprettetDatoSpecified = false,
+                arkivperiodeStartDatoSpecified = true,
+                arkivperiodeStartDato = DateTime.Parse("2019-01-01"),
+                opprettetDatoSpecified = true,
+                opprettetDato = DateTime.Parse("2019-01-01"),
                 arkivdelstatus = new ArkivdelstatusType
                 {
-                    beskrivelse = "Avsluttet periode"
-                }
+                    kode = "A",
+                    beskrivelse = "Aktiv periode"
+                },
+                arkiv = tilknyttetArkiv,
             };
+            arkivdel.registrering = OpprettRegistreringer(arkivdel).ToArray();
+            
+            var mapper = OpprettMapper(arkivdel);
+            mapper.AddRange(OpprettSaksmapper(arkivdel));
+            arkivdel.mappe = mapper.ToArray();
+            
             arkivdel.RepopulateHyperMedia();
             return arkivdel;
         }
 
-        private static void OpprettJournalposter()
+        private static List<JournalpostType> OpprettJournalposter(ArkivdelType tilknyttetArkivdel, MappeType tilknyttetMappe)
         {
+            var journalposterTilknyttetElement = new List<JournalpostType>();
             for (int i = 0; i <= 3; i++)
             {
-                Journalposter.Add(OpprettJournalpost(Guid.NewGuid().ToString()));
+                var journalpost = OpprettJournalpost(Guid.NewGuid().ToString(), tilknyttetArkivdel, tilknyttetMappe);
+                journalposterTilknyttetElement.Add(journalpost);
+                Journalposter.Add(journalpost);
             }
+
+            return journalposterTilknyttetElement;
         }
 
-        private static JournalpostType OpprettJournalpost(string id)
+        private static JournalpostType OpprettJournalpost(string id, ArkivdelType tilknyttetArkivdel, MappeType tilknyttetMappe)
         {
-            JournalpostType journalPost = new JournalpostType();
-            journalPost.systemID = id;
-            journalPost.opprettetDato = DateTime.Now;
-            journalPost.opprettetDatoSpecified = true;
-            journalPost.oppdatertDato = DateTime.Now;
-            journalPost.journaldato = DateTime.Now;
-            journalPost.tittel = "journalpost - " + journalPost.systemID;
-            journalPost.oppdatertAv = "bruker";
+            JournalpostType journalPost = new JournalpostType
+            {
+                systemID = id,
+                opprettetDato = DateTime.Now,
+                opprettetDatoSpecified = true,
+                oppdatertDato = DateTime.Now,
+                journaldato = DateTime.Now,
+                tittel = "journalpost - " + id,
+                oppdatertAv = "bruker",
+                arkivdel = tilknyttetArkivdel,
+                mappe = tilknyttetMappe,
+            };
+
             journalPost.LinkList.Clear();
             journalPost.RepopulateHyperMedia();
 
             return journalPost;
         }
 
-        private static void OpprettDokumentobjekter()
-        {
-            bool isDokumentobjektMedDokumentFil = false;
-
-            for (int i = 0; i <= 3; i++)
-            {
-                Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString(), isDokumentobjektMedDokumentFil));
-            }
-            Dokumentobjekter.Add(OpprettDokumentobjekt(Guid.NewGuid().ToString(), !isDokumentobjektMedDokumentFil));
-        }
-
-        private static DokumentobjektType OpprettDokumentobjekt(string id, bool isDokumentobjektMedReferanseFil)
+        private static DokumentobjektType OpprettDokumentobjekt(string id, bool isDokumentobjektMedReferanseFil, DokumentbeskrivelseType tilknyttetDokumentbeskrivelse)
         {
             DokumentobjektType dokumentObjekt = new DokumentobjektType();
             dokumentObjekt.systemID = id;
@@ -169,40 +174,54 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             dokumentObjekt.format = new FormatType() { kode = "RA-PDF", beskrivelse = "PDF/A - ISO 19005-1:2005" };
             dokumentObjekt.opprettetDato = DateTime.Now;
 
-            dokumentObjekt.referanseDokumentfil = BaseUrlResolver.GetBaseUrl() + "api/arkivstruktur/Dokumentobjekt/" + dokumentObjekt.systemID + "/referanseFil";
+            dokumentObjekt.dokumentbeskrivelse = tilknyttetDokumentbeskrivelse;
+
+            if (isDokumentobjektMedReferanseFil)
+                dokumentObjekt.referanseDokumentfil = BaseUrlResolver.GetBaseUrl() + "api/arkivstruktur/Dokumentobjekt/" + dokumentObjekt.systemID + "/referanseFil";
+
             dokumentObjekt.RepopulateHyperMedia();
-            dokumentObjekt.referanseDokumentfil = isDokumentobjektMedReferanseFil ? "referanseDokumentFil" : null;
+
+            Dokumentobjekter.Add(dokumentObjekt);
 
             return dokumentObjekt;
         }
 
 
-        private static void OpprettSaksmapper()
+        private static IEnumerable<MappeType> OpprettSaksmapper(ArkivdelType tilknyttetArkivdel)
         {
+            var saksmapperTilknyttetArkivdel = new List<SaksmappeType>();
             for (int i = 1; i <= NumberOfExamples; i++)
             {
-                Saksmapper.Add(OpprettSaksmappe(i));
+                var saksmappe = OpprettSaksmappe(GenerateUuuid(), tilknyttetArkivdel);
+                saksmapperTilknyttetArkivdel.Add(saksmappe);
+                Saksmapper.Add(saksmappe);
             }
+
+            return saksmapperTilknyttetArkivdel;
         }
 
-        private static SaksmappeType OpprettSaksmappe(int index)
+        private static SaksmappeType OpprettSaksmappe(string id, ArkivdelType tilknyttetArkivdel)
         {
+            var randomNumber = RandomNumber(0,100);
             var saksmappe = new SaksmappeType
             {
-                systemID = index.ToString(),
-                mappeID = $"100{index}/2017",
-                tittel = Tittel("saksmappe", index),
-                opprettetDato = GetDato(index),
+                systemID = id,
+                mappeID = $"100{randomNumber}/2017",
+                tittel = GetRandomAdjective() + " saksmappe",
+                opprettetDato = GetDato(RandomNumber(0,200)),
                 opprettetDatoSpecified = true,
-                oppdatertAv = GetName(index),
+                oppdatertAv = GetName(),
                 saksaar = "2017",
-                sakssekvensnummer = index.ToString(),
-                sakspart = OpprettSakspart(index),
-                saksdato = GetDato(index),
-                nasjonalidentifikator = OpprettNasjonalidentifikator(index),
+                sakssekvensnummer = randomNumber.ToString(),
+                sakspart = OpprettSakspart(randomNumber),
+                saksdato = GetDato(randomNumber),
+                nasjonalidentifikator = OpprettNasjonalidentifikator(randomNumber),
                 sekundaerklassifikasjon = OpprettSekundaerklassifikasjoner()
             };
+            saksmappe.arkivdel = tilknyttetArkivdel;
+
             saksmappe.sakspart[0].RepopulateHyperMedia();
+            saksmappe.RepopulateHyperMedia();
             return saksmappe;
         }
 
@@ -217,15 +236,19 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             return klasseTyper.ToArray();
         }
 
-        private static void OpprettRegistreringer()
+        private static List<RegistreringType> OpprettRegistreringer(ArkivdelType tilknyttetArkivdel)
         {
+            List<RegistreringType> registreringerForArkivdel = new List<RegistreringType>();
             for (int i = 1; i <= NumberOfExamples; i++)
             {
-                Registreringer.Add(OpprettRegistrering(i));
+                var registrering = OpprettRegistrering(i, tilknyttetArkivdel);
+                registreringerForArkivdel.Add(registrering);
+                Registreringer.Add(registrering);
             }
+            return registreringerForArkivdel;
         }
 
-        private static RegistreringType OpprettRegistrering(int index)
+        private static RegistreringType OpprettRegistrering(int index, ArkivdelType tilknyttetArkivdel)
         {
             var registrering = new RegistreringType()
             {
@@ -246,17 +269,48 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 arkivertDatoSpecified = true,
                 arkivertAv = GetName(index),
                 referanseArkivertAv = GetName(index),
-                kassasjon = new KassasjonType(),
+                kassasjon = null,
                 skjerming = new SkjermingType(),
                 gradering = new GraderingType(),
                 referanseArkivdel = null,
                 klasse = null,
                 mappe = null,
-                arkivdel = null,
-                nasjonalidentifikator = OpprettNasjonalidentifikator(index)
+                arkivdel = tilknyttetArkivdel,
+                nasjonalidentifikator = OpprettNasjonalidentifikator(index),
+                
             };
+            registrering.dokumentlink = OpprettDokumentlinker(registrering).ToArray();
+
+            registrering.RepopulateHyperMedia();
+
             return registrering;
         }
+
+        private static List<DokumentlinkType> OpprettDokumentlinker(RegistreringType tilknyttetRegistrering)
+        {
+            var dokumentlinkerTilknyttetRegistrering = new List<DokumentlinkType>();
+            for (int i = 1; i <= NumberOfExamples; i++)
+            {
+                var registrering = OpprettDokumentlink(GenerateUuuid(), tilknyttetRegistrering);
+                dokumentlinkerTilknyttetRegistrering.Add(registrering);
+                Dokumentlinker.Add(registrering);
+            }
+            return dokumentlinkerTilknyttetRegistrering;
+        }
+
+        private static DokumentlinkType OpprettDokumentlink(string id, RegistreringType tilknyttetRegistrering)
+        {
+            var dokumentlink = new DokumentlinkType()
+            {
+                systemID = id,
+                dokumentbeskrivelse = OpprettDokumentbeskrivelse(GenerateUuuid())
+            };
+            dokumentlink.registrering = tilknyttetRegistrering;
+
+            dokumentlink.RepopulateHyperMedia();
+            return dokumentlink;
+        }
+
 
         private static AbstraktNasjonalidentifikatorType[] OpprettNasjonalidentifikator(int index)
         {
@@ -349,6 +403,11 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             return FirstNames[index - 1];
         }
 
+        private static string GetName()
+        {
+            return FirstNames[RandomNumber(0, FirstNames.Length-1)];
+        }
+
         public static DokumentmediumType ElektroniskDokumentmedium = new DokumentmediumType
         {
             kode = "E",
@@ -436,6 +495,8 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 arkiv.avsluttetAv = "brukernavn";
                 arkiv.referanseAvsluttetAv = GenerateUuuid();
             }
+            
+            OpprettArkivdeler(arkiv).ToArray();
 
             arkiv.RepopulateHyperMedia();
             
@@ -452,15 +513,20 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             return Mapper.Find(m => m.systemID == id);
         }
 
-        private static void OpprettMapper()
+        private static List<MappeType> OpprettMapper(ArkivdelType tilknyttetArkivdel)
         {
+            var mapperTilknyttetArkivdel = new List<MappeType>();
             for (int i = 0; i < 10; i++)
             {
-                Mapper.Add(OpprettMappe((i + 1).ToString()));
+                var mappe = OpprettMappe((i + 1).ToString(), tilknyttetArkivdel);
+                mapperTilknyttetArkivdel.Add(mappe);
+                Mapper.Add(mappe);
             }
+
+            return mapperTilknyttetArkivdel;
         }
 
-        private static MappeType OpprettMappe(string id)
+        private static MappeType OpprettMappe(string id, ArkivdelType tilknyttetArkivdel)
         {
             MappeType m = new MappeType();
             m.tittel = GetRandomAdjective() + " testmappe " + id;
@@ -499,6 +565,8 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 henvisningdato = DateTime.Now.Subtract(TimeSpan.FromDays(RandomNumber(1, 500))),
                 skoleaar = "2018/2019"
             };
+            m.arkivdel = tilknyttetArkivdel;
+            m.registrering = OpprettJournalposter(tilknyttetArkivdel, m).ToArray();
             m.LinkList.Clear();
             m.RepopulateHyperMedia();
             return m;

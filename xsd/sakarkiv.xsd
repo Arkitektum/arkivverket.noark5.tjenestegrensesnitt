@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " xmlns:rest="http://www.kxml.no/rest/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 20.05.2019 10:08:13-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:rest="http://www.kxml.no/rest/1.0" version="1.0">
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata103.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur " schemaLocation="arkivstruktur103.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" schemaLocation="arkivstruktur.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
   <xs:element name="Avskrivning" type="sa:AvskrivningType" />
   <xs:complexType name="AvskrivningListe">

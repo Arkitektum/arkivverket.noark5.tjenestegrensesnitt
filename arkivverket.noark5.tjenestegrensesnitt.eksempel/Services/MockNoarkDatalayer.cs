@@ -213,14 +213,14 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                 oppdatertAv = GetName(),
                 saksaar = "2017",
                 sakssekvensnummer = randomNumber.ToString(),
-                sakspart = OpprettSakspart(randomNumber),
+                part = OpprettSakspart(randomNumber),
                 saksdato = GetDato(randomNumber),
                 nasjonalidentifikator = OpprettNasjonalidentifikator(randomNumber),
                 sekundaerklassifikasjon = OpprettSekundaerklassifikasjoner()
             };
             saksmappe.arkivdel = tilknyttetArkivdel;
 
-            saksmappe.sakspart[0].RepopulateHyperMedia();
+            saksmappe.part[0].RepopulateHyperMedia();
             saksmappe.RepopulateHyperMedia();
             return saksmappe;
         }
@@ -320,10 +320,7 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             {
                 return new AbstraktNasjonalidentifikatorType[]
                 {
-                    new PersonidentifikatorType()
-                    {
-                        foedselsnummer = "12334566778"
-                    }
+                    new FoedselsnummerType() { foedselsnummer = "12334566778" }
                 };
             }
             return new AbstraktNasjonalidentifikatorType[]
@@ -335,20 +332,23 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
             };
         }
 
-        private static AbstraktSakspartType[] OpprettSakspart(int index)
+        private static AbstraktPartType[] OpprettSakspart(int index)
         {
             bool opprettPersonSakspart = index % 2 == 1;
 
             if (opprettPersonSakspart)
             {
-                return new AbstraktSakspartType[]
+                return new AbstraktPartType[]
                 {
-                    new SakspartPersonType()
+                    new PartPersonType()
                     {
                         systemID = index.ToString(),
-                        foedselsnummer = "12334566778",
+                        personidentifikator = new AbstraktPersonidentifikatorType[]
+                        {
+                            new FoedselsnummerType() { foedselsnummer = "12334566778" }
+                        },
                         navn = "Jan Johansen",
-                        sakspartRolle = new SakspartRolleType()
+                        partRolle = new PartRolleType()
                         {
                             kode = "KLI",
                             beskrivelse = "Klient"
@@ -356,14 +356,14 @@ namespace arkivverket.noark5.tjenestegrensesnitt.eksempel.Services
                     }
                 };
             }
-            return new AbstraktSakspartType[]
+            return new AbstraktPartType[]
             {
-                new SakspartEnhetType()
+                new PartEnhetType()
                 {
                     systemID = index.ToString(),
-                    organisasjonsnummer = "998877665",
+                    enhetsidentifikator = "998877665",
                     navn = "Advokatselskap AS",
-                    sakspartRolle = new SakspartRolleType()
+                    partRolle = new PartRolleType()
                     {
                         kode = "ADV",
                         beskrivelse = "Advokat"

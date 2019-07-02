@@ -168,6 +168,13 @@
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="PartRolle" type="n5mdk:PartRolleType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_416E5782_57FA_4d24_94AE_B4EEA1C01F60" />
+  <xs:complexType name="PartRolleType">
+    <xs:sequence>
+      <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="Postnummer" type="n5mdk:PostnummerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A634530E_7783_4862_8D5A_037DEAC191CF" />
   <xs:complexType name="PostnummerType">
     <xs:sequence>
@@ -184,13 +191,6 @@
   </xs:complexType>
   <xs:element name="ProsessStatus" type="n5mdk:ProsessStatusType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_604425F7_A6A3_48ce_888B_18F761947B15" />
   <xs:complexType name="ProsessStatusType">
-    <xs:sequence>
-      <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
-      <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SakspartRolle" type="n5mdk:SakspartRolleType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_416E5782_57FA_4d24_94AE_B4EEA1C01F60" />
-  <xs:complexType name="SakspartRolleType">
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />

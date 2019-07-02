@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:ls="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:fellesgeometrins="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" xmlns:bvk="http://www.arkivverket.no/standarder/noark5/tj/bevaringogkassasjon" xmlns:matrikkelfellesns="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31" version="1.0">
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" elementFormDefault="qualified" xmlns:ls="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:fellesgeometrins="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" xmlns:matrikkelfellesns="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31" version="1.0">
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" schemaLocation="loggingogsporing.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/admin" schemaLocation="admin.xsd" />
   <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd" />
   <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd" />
   <xs:import namespace="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31/giFellesGeometri20120131.xsd" />
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd" />
   <xs:import namespace="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31/giPlanFelles20120131.xsd" />
-  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/bevaringogkassasjon" schemaLocation="bevaringogkassasjon.xsd" />
   <xs:import namespace="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31/giMatrikkelFelles20120131.xsd" />
   <xs:element name="Arkiv" type="as:ArkivType" />
   <xs:complexType name="ArkivListe">
@@ -167,9 +166,8 @@
   </xs:complexType>
   <xs:complexType name="DokumentobjektType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A7642A0D_41DB_4b21_9CC7_EFF2C5AE741B">
     <xs:complexContent>
-      <xs:extension base="rest:AbstraktResourceType">
+      <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="versjonsnummer" minOccurs="1" maxOccurs="1" type="xs:integer" />
           <xs:element name="variantformat" minOccurs="1" maxOccurs="1" type="n5mdk:VariantformatType" />
           <xs:element name="format" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:FormatType" />
@@ -219,6 +217,26 @@
           <xs:element name="verifisertDato" minOccurs="1" maxOccurs="1" type="xs:date" />
           <xs:element name="verifisertAv" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="referanseVerifisertAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnkelAdresse" type="as:EnkelAdresseType" />
+  <xs:complexType name="EnkelAdresseListe">
+    <xs:sequence>
+      <xs:element name="enkeladresse" type="as:EnkelAdresseType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnkelAdresseType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_43EC6DC4_718A_4a2f_880F_93D7EAE69A93">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="adresselinje1" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="adresselinje2" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="adresselinje3" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="postnr" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:PostnummerType" />
+          <xs:element name="poststed" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="landkode" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:LandType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -330,6 +348,23 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="Kontaktinformasjon" type="as:KontaktinformasjonType" />
+  <xs:complexType name="KontaktinformasjonListe">
+    <xs:sequence>
+      <xs:element name="kontaktinformasjon" type="as:KontaktinformasjonType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontaktinformasjonType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_E73FD263_4208_4571_A428_96CAD3DC97A3">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="epostadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="mobiltelefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="telefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="Konvertering" type="as:KonverteringType" />
   <xs:complexType name="KonverteringListe">
     <xs:sequence>
@@ -348,6 +383,81 @@
           <xs:element name="konverteringsverktoey" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="konverteringskommentar" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="referanseKonvertertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbstraktKorrespondansepart" type="as:AbstraktKorrespondansepartType" />
+  <xs:complexType name="AbstraktKorrespondansepartListe">
+    <xs:sequence>
+      <xs:element name="abstraktkorrespondansepart" type="as:AbstraktKorrespondansepartType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstraktKorrespondansepartType" abstract="true" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_E0D4781E_6866_4721_8A51_F573B6C33263">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
+          <xs:element name="korrespondanseparttype" minOccurs="1" maxOccurs="1" type="n5mdk:KorrespondanseparttypeType" />
+          <xs:element name="skjermetKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KorrespondansepartEnhet" type="as:KorrespondansepartEnhetType" />
+  <xs:complexType name="KorrespondansepartEnhetListe">
+    <xs:sequence>
+      <xs:element name="korrespondansepartenhet" type="as:KorrespondansepartEnhetType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrespondansepartEnhetType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_F721A99F_39AC_4131_98B7_B28D6CEB00B6">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktKorrespondansepartType">
+        <xs:sequence>
+          <xs:element name="enhetsidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnhetsidentifikatorType" />
+          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType" />
+          <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KorrespondansepartIntern" type="as:KorrespondansepartInternType" />
+  <xs:complexType name="KorrespondansepartInternListe">
+    <xs:sequence>
+      <xs:element name="korrespondansepartintern" type="as:KorrespondansepartInternType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrespondansepartInternType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_CEF1B768_768F_4639_B3E5_89153A29377D">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktKorrespondansepartType">
+        <xs:sequence>
+          <xs:element name="administrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="referanseAdministrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
+          <xs:element name="saksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="referanseSaksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KorrespondansepartPerson" type="as:KorrespondansepartPersonType" />
+  <xs:complexType name="KorrespondansepartPersonListe">
+    <xs:sequence>
+      <xs:element name="korrespondansepartperson" type="as:KorrespondansepartPersonType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrespondansepartPersonType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A5C55C1C_18B6_4d0a_B0E0_181DC42133DC">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktKorrespondansepartType">
+        <xs:sequence>
+          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType" />
+          <xs:element name="personidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPersonidentifikatorListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -405,6 +515,7 @@
           <xs:element name="nasjonalidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktNasjonalidentifikatorListe" />
           <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe" />
           <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelType" />
+          <xs:element name="part" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPartListe" />
           <xs:element name="undermappe" type="as:MappeListe" nillable="true" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
       </xs:extension>
@@ -427,6 +538,63 @@
           <xs:element name="merknadRegistrertAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="referanseMerknadRegistrertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
           <xs:element name="skjermetMerknad" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbstraktPart" type="as:AbstraktPartType" />
+  <xs:complexType name="AbstraktPartListe">
+    <xs:sequence>
+      <xs:element name="abstraktpart" type="as:AbstraktPartType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstraktPartType" abstract="true" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_1001D090_9191_4ca9_A1B4_42C91F71B810">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType" />
+          <xs:element name="partRolle" minOccurs="1" maxOccurs="1" type="n5mdk:PartRolleType" />
+          <xs:element name="skjermetPart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartEnhet" type="as:PartEnhetType" />
+  <xs:complexType name="PartEnhetListe">
+    <xs:sequence>
+      <xs:element name="partenhet" type="as:PartEnhetType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartEnhetType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_D844B4D2_BE0C_4d27_88A4_93907FC220E2">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktPartType">
+        <xs:sequence>
+          <xs:element name="enhetsidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType" />
+          <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartPerson" type="as:PartPersonType" />
+  <xs:complexType name="PartPersonListe">
+    <xs:sequence>
+      <xs:element name="partperson" type="as:PartPersonType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartPersonType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5DAB4672_32BD_43dc_99E9_96581F883070">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktPartType">
+        <xs:sequence>
+          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType" />
+          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType" />
+          <xs:element name="personidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPersonidentifikatorListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -459,6 +627,7 @@
           <xs:element name="skjermetTittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" />
           <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType" />
           <xs:element name="klasse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseType" />
+          <xs:element name="korrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktKorrespondansepartListe" />
           <xs:element name="nasjonalidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktNasjonalidentifikatorListe" />
           <xs:element name="merknad" minOccurs="0" maxOccurs="1" nillable="true" type="as:MerknadListe" />
           <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeType" />
@@ -520,6 +689,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="DNummer" type="as:DNummerType" />
+  <xs:complexType name="DNummerListe">
+    <xs:sequence>
+      <xs:element name="dnummer" type="as:DNummerType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DNummerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_DE6F6F62_DBF2_4c71_B276_E27E5E8B311D">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktPersonidentifikatorType">
+        <xs:sequence>
+          <xs:element name="dNummer" minOccurs="1" maxOccurs="1" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="Enhetsidentifikator" type="as:EnhetsidentifikatorType" />
   <xs:complexType name="EnhetsidentifikatorListe">
     <xs:sequence>
@@ -531,6 +715,21 @@
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
           <xs:element name="organisasjonsnummer" minOccurs="1" maxOccurs="1" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Foedselsnummer" type="as:FoedselsnummerType" />
+  <xs:complexType name="FoedselsnummerListe">
+    <xs:sequence>
+      <xs:element name="foedselsnummer" type="as:FoedselsnummerType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FoedselsnummerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_BD24F91A_9DA8_4074_A020_53E6501E3F1A">
+    <xs:complexContent>
+      <xs:extension base="as:AbstraktPersonidentifikatorType">
+        <xs:sequence>
+          <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -566,19 +765,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Personidentifikator" type="as:PersonidentifikatorType" />
-  <xs:complexType name="PersonidentifikatorListe">
+  <xs:element name="AbstraktPersonidentifikator" type="as:AbstraktPersonidentifikatorType" />
+  <xs:complexType name="AbstraktPersonidentifikatorListe">
     <xs:sequence>
-      <xs:element name="personidentifikator" type="as:PersonidentifikatorType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="abstraktpersonidentifikator" type="as:AbstraktPersonidentifikatorType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="PersonidentifikatorType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C630DD72_8542_42c0_AB2C_9E439249961A">
+  <xs:complexType name="AbstraktPersonidentifikatorType" abstract="true" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C630DD72_8542_42c0_AB2C_9E439249961A">
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
-        <xs:sequence>
-          <xs:element name="foedselsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="dNummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-        </xs:sequence>
+        <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

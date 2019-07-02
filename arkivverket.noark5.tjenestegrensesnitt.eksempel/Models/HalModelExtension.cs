@@ -316,7 +316,7 @@ namespace arkivverket.noark5tj.models
 
     }
 
-    public partial class AbstraktSakspartType
+    public partial class AbstraktPartType
     {
 
 

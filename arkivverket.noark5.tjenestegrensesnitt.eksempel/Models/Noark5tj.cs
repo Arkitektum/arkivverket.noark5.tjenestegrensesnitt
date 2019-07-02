@@ -177,46 +177,49 @@ namespace arkivverket.noark5tj.models {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktSakspartType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SakspartPersonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SakspartEnhetType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktPartType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PartPersonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PartEnhetType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PresedensType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AvskrivningType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentflytType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KonverteringType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElektroniskSignaturType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UtfoertKassasjonType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KontaktinformasjonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnkelAdresseType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktNasjonalidentifikatorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PosisjonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlanType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktPersonidentifikatorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FoedselsnummerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DNummerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MatrikkelType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnhetsidentifikatorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BygningType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktKorrespondansepartType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartPersonType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartInternType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartEnhetType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KonverteringType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentobjektType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElektroniskSignaturType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UtfoertKassasjonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktNasjonalidentifikatorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PosisjonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlanType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PersonidentifikatorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MatrikkelType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnhetsidentifikatorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BygningType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KryssreferanseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MerknadType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GraderingType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SkjermingType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KassasjonType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktArkivenhetType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentobjektType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentbeskrivelseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentlinkType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KlassifikasjonssystemType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KlasseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegistreringType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalpostType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivnotatType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MappeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SaksmappeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivdelType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivskaperType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnkelAdresseType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentflytType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AvskrivningType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EndringsloggType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HendelsesloggType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TilgangType))]
@@ -233,7 +236,7 @@ namespace arkivverket.noark5tj.models {
         private LinkType[] _linksField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("link", IsNullable=false)]
         public LinkType[] _links {
             get {
@@ -246,28 +249,28 @@ namespace arkivverket.noark5tj.models {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SakspartPersonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SakspartEnhetType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PartPersonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PartEnhetType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("AbstraktSakspart", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public abstract partial class AbstraktSakspartType : AbstraktResourceType {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("AbstraktPart", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public abstract partial class AbstraktPartType : AbstraktResourceType {
         
         private string systemIDField;
         
-        private SakspartRolleType sakspartRolleField;
+        private PartRolleType partRolleField;
         
-        private System.Nullable<bool> skjermetSakspartField;
+        private System.Nullable<bool> skjermetPartField;
         
-        private bool skjermetSakspartFieldSpecified;
+        private bool skjermetPartFieldSpecified;
         
         private object virksomhetsspesifikkeMetadataField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -278,39 +281,40 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        public SakspartRolleType sakspartRolle {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PartRolleType partRolle {
             get {
-                return this.sakspartRolleField;
+                return this.partRolleField;
             }
             set {
-                this.sakspartRolleField = value;
+                this.partRolleField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> skjermetSakspart {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<bool> skjermetPart {
             get {
-                return this.skjermetSakspartField;
+                return this.skjermetPartField;
             }
             set {
-                this.skjermetSakspartField = value;
+                this.skjermetPartField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermetSakspartSpecified {
+        public bool skjermetPartSpecified {
             get {
-                return this.skjermetSakspartFieldSpecified;
+                return this.skjermetPartFieldSpecified;
             }
             set {
-                this.skjermetSakspartFieldSpecified = value;
+                this.skjermetPartFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public object virksomhetsspesifikkeMetadata {
             get {
                 return this.virksomhetsspesifikkeMetadataField;
@@ -327,8 +331,8 @@ namespace arkivverket.noark5tj.models {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("SakspartRolle", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class SakspartRolleType {
+    [System.Xml.Serialization.XmlRootAttribute("PartRolle", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class PartRolleType {
         
         private string kodeField;
         
@@ -360,13 +364,9 @@ namespace arkivverket.noark5tj.models {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("SakspartPerson", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class SakspartPersonType : AbstraktSakspartType {
-        
-        private string foedselsnummerField;
-        
-        private string dNummerField;
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("PartPerson", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class PartPersonType : AbstraktPartType {
         
         private string navnField;
         
@@ -376,29 +376,10 @@ namespace arkivverket.noark5tj.models {
         
         private KontaktinformasjonType kontaktinformasjonField;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string foedselsnummer {
-            get {
-                return this.foedselsnummerField;
-            }
-            set {
-                this.foedselsnummerField = value;
-            }
-        }
+        private AbstraktPersonidentifikatorType[] personidentifikatorField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string DNummer {
-            get {
-                return this.dNummerField;
-            }
-            set {
-                this.dNummerField = value;
-            }
-        }
-        
-        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string navn {
             get {
                 return this.navnField;
@@ -409,7 +390,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public EnkelAdresseType postadresse {
             get {
                 return this.postadresseField;
@@ -420,7 +401,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public EnkelAdresseType bostedsadresse {
             get {
                 return this.bostedsadresseField;
@@ -431,13 +412,25 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public KontaktinformasjonType kontaktinformasjon {
             get {
                 return this.kontaktinformasjonField;
             }
             set {
                 this.kontaktinformasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktpersonidentifikator", IsNullable=false)]
+        public AbstraktPersonidentifikatorType[] personidentifikator {
+            get {
+                return this.personidentifikatorField;
+            }
+            set {
+                this.personidentifikatorField = value;
             }
         }
     }
@@ -447,8 +440,8 @@ namespace arkivverket.noark5tj.models {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("EnkelAdresse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("EnkelAdresse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
     public partial class EnkelAdresseType : AbstraktResourceType {
         
         private string adresselinje1Field;
@@ -464,7 +457,7 @@ namespace arkivverket.noark5tj.models {
         private LandType landkodeField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string adresselinje1 {
             get {
                 return this.adresselinje1Field;
@@ -475,7 +468,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string adresselinje2 {
             get {
                 return this.adresselinje2Field;
@@ -486,7 +479,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string adresselinje3 {
             get {
                 return this.adresselinje3Field;
@@ -497,7 +490,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public PostnummerType postnr {
             get {
                 return this.postnrField;
@@ -508,6 +501,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string poststed {
             get {
                 return this.poststedField;
@@ -518,7 +512,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public LandType landkode {
             get {
                 return this.landkodeField;
@@ -602,8 +596,8 @@ namespace arkivverket.noark5tj.models {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("Kontaktinformasjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Kontaktinformasjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
     public partial class KontaktinformasjonType : AbstraktResourceType {
         
         private string epostadresseField;
@@ -613,7 +607,7 @@ namespace arkivverket.noark5tj.models {
         private string telefonField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string epostadresse {
             get {
                 return this.epostadresseField;
@@ -624,7 +618,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string mobiltelefon {
             get {
                 return this.mobiltelefonField;
@@ -635,7 +629,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string telefon {
             get {
                 return this.telefonField;
@@ -647,3753 +641,23 @@ namespace arkivverket.noark5tj.models {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("SakspartEnhet", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class SakspartEnhetType : AbstraktSakspartType {
-        
-        private string organisasjonsnummerField;
-        
-        private string navnField;
-        
-        private EnkelAdresseType forretningsadresseField;
-        
-        private EnkelAdresseType postadresseField;
-        
-        private KontaktinformasjonType kontaktinformasjonField;
-        
-        private string kontaktpersonField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string organisasjonsnummer {
-            get {
-                return this.organisasjonsnummerField;
-            }
-            set {
-                this.organisasjonsnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string navn {
-            get {
-                return this.navnField;
-            }
-            set {
-                this.navnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType forretningsadresse {
-            get {
-                return this.forretningsadresseField;
-            }
-            set {
-                this.forretningsadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType postadresse {
-            get {
-                return this.postadresseField;
-            }
-            set {
-                this.postadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KontaktinformasjonType kontaktinformasjon {
-            get {
-                return this.kontaktinformasjonField;
-            }
-            set {
-                this.kontaktinformasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string kontaktperson {
-            get {
-                return this.kontaktpersonField;
-            }
-            set {
-                this.kontaktpersonField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("Presedens", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class PresedensType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private System.Nullable<System.DateTime> presedensDatoField;
-        
-        private bool presedensDatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> opprettetDatoField;
-        
-        private bool opprettetDatoFieldSpecified;
-        
-        private string opprettetAvField;
-        
-        private string referanseOpprettetAvField;
-        
-        private string tittelField;
-        
-        private string beskrivelseField;
-        
-        private string presedensHjemmelField;
-        
-        private string rettskildefaktorField;
-        
-        private System.Nullable<System.DateTime> presedensGodkjentDatoField;
-        
-        private bool presedensGodkjentDatoFieldSpecified;
-        
-        private string presedensGodkjentAvField;
-        
-        private string referansePresedensGodkjentAvField;
-        
-        private System.Nullable<System.DateTime> avsluttetDatoField;
-        
-        private bool avsluttetDatoFieldSpecified;
-        
-        private string avsluttetAvField;
-        
-        private string referanseAvsluttetAvField;
-        
-        private PresedensstatusType presedensStatusField;
-        
-        private JournalpostType[] journalpostField;
-        
-        private SaksmappeType[] sakField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> presedensDato {
-            get {
-                return this.presedensDatoField;
-            }
-            set {
-                this.presedensDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool presedensDatoSpecified {
-            get {
-                return this.presedensDatoFieldSpecified;
-            }
-            set {
-                this.presedensDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> opprettetDato {
-            get {
-                return this.opprettetDatoField;
-            }
-            set {
-                this.opprettetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool opprettetDatoSpecified {
-            get {
-                return this.opprettetDatoFieldSpecified;
-            }
-            set {
-                this.opprettetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string opprettetAv {
-            get {
-                return this.opprettetAvField;
-            }
-            set {
-                this.opprettetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseOpprettetAv {
-            get {
-                return this.referanseOpprettetAvField;
-            }
-            set {
-                this.referanseOpprettetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string presedensHjemmel {
-            get {
-                return this.presedensHjemmelField;
-            }
-            set {
-                this.presedensHjemmelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string rettskildefaktor {
-            get {
-                return this.rettskildefaktorField;
-            }
-            set {
-                this.rettskildefaktorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> presedensGodkjentDato {
-            get {
-                return this.presedensGodkjentDatoField;
-            }
-            set {
-                this.presedensGodkjentDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool presedensGodkjentDatoSpecified {
-            get {
-                return this.presedensGodkjentDatoFieldSpecified;
-            }
-            set {
-                this.presedensGodkjentDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string presedensGodkjentAv {
-            get {
-                return this.presedensGodkjentAvField;
-            }
-            set {
-                this.presedensGodkjentAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referansePresedensGodkjentAv {
-            get {
-                return this.referansePresedensGodkjentAvField;
-            }
-            set {
-                this.referansePresedensGodkjentAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> avsluttetDato {
-            get {
-                return this.avsluttetDatoField;
-            }
-            set {
-                this.avsluttetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avsluttetDatoSpecified {
-            get {
-                return this.avsluttetDatoFieldSpecified;
-            }
-            set {
-                this.avsluttetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string avsluttetAv {
-            get {
-                return this.avsluttetAvField;
-            }
-            set {
-                this.avsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvsluttetAv {
-            get {
-                return this.referanseAvsluttetAvField;
-            }
-            set {
-                this.referanseAvsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public PresedensstatusType presedensStatus {
-            get {
-                return this.presedensStatusField;
-            }
-            set {
-                this.presedensStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("journalpost", IsNullable=false)]
-        public JournalpostType[] journalpost {
-            get {
-                return this.journalpostField;
-            }
-            set {
-                this.journalpostField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("saksmappe", IsNullable=false)]
-        public SaksmappeType[] sak {
-            get {
-                return this.sakField;
-            }
-            set {
-                this.sakField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Presedensstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class PresedensstatusType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("Journalpost", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class JournalpostType : RegistreringType {
-        
-        private string journalaarField;
-        
-        private string journalsekvensnummerField;
-        
-        private string journalpostnummerField;
-        
-        private JournalposttypeType journalposttypeField;
-        
-        private JournalstatusType journalstatusField;
-        
-        private System.Nullable<System.DateTime> journaldatoField;
-        
-        private bool journaldatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> dokumentetsDatoField;
-        
-        private bool dokumentetsDatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> mottattDatoField;
-        
-        private bool mottattDatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> sendtDatoField;
-        
-        private bool sendtDatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> forfallsdatoField;
-        
-        private bool forfallsdatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> offentlighetsvurdertDatoField;
-        
-        private bool offentlighetsvurdertDatoFieldSpecified;
-        
-        private string antallVedleggField;
-        
-        private System.Nullable<System.DateTime> utlaantDatoField;
-        
-        private bool utlaantDatoFieldSpecified;
-        
-        private string utlaantTilField;
-        
-        private string referanseUtlaantTilField;
-        
-        private string journalenhetField;
-        
-        private ElektroniskSignaturType elektroniskSignaturField;
-        
-        private AbstraktKorrespondansepartType[] korrespondansepartField;
-        
-        private DokumentflytType[] dokumentflytField;
-        
-        private AvskrivningType[] avskrivningField;
-        
-        private PresedensType[] presedensField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
-        public string journalaar {
-            get {
-                return this.journalaarField;
-            }
-            set {
-                this.journalaarField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
-        public string journalsekvensnummer {
-            get {
-                return this.journalsekvensnummerField;
-            }
-            set {
-                this.journalsekvensnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
-        public string journalpostnummer {
-            get {
-                return this.journalpostnummerField;
-            }
-            set {
-                this.journalpostnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public JournalposttypeType journalposttype {
-            get {
-                return this.journalposttypeField;
-            }
-            set {
-                this.journalposttypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public JournalstatusType journalstatus {
-            get {
-                return this.journalstatusField;
-            }
-            set {
-                this.journalstatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> journaldato {
-            get {
-                return this.journaldatoField;
-            }
-            set {
-                this.journaldatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool journaldatoSpecified {
-            get {
-                return this.journaldatoFieldSpecified;
-            }
-            set {
-                this.journaldatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> dokumentetsDato {
-            get {
-                return this.dokumentetsDatoField;
-            }
-            set {
-                this.dokumentetsDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dokumentetsDatoSpecified {
-            get {
-                return this.dokumentetsDatoFieldSpecified;
-            }
-            set {
-                this.dokumentetsDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> mottattDato {
-            get {
-                return this.mottattDatoField;
-            }
-            set {
-                this.mottattDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool mottattDatoSpecified {
-            get {
-                return this.mottattDatoFieldSpecified;
-            }
-            set {
-                this.mottattDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> sendtDato {
-            get {
-                return this.sendtDatoField;
-            }
-            set {
-                this.sendtDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sendtDatoSpecified {
-            get {
-                return this.sendtDatoFieldSpecified;
-            }
-            set {
-                this.sendtDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> forfallsdato {
-            get {
-                return this.forfallsdatoField;
-            }
-            set {
-                this.forfallsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool forfallsdatoSpecified {
-            get {
-                return this.forfallsdatoFieldSpecified;
-            }
-            set {
-                this.forfallsdatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> offentlighetsvurdertDato {
-            get {
-                return this.offentlighetsvurdertDatoField;
-            }
-            set {
-                this.offentlighetsvurdertDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool offentlighetsvurdertDatoSpecified {
-            get {
-                return this.offentlighetsvurdertDatoFieldSpecified;
-            }
-            set {
-                this.offentlighetsvurdertDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
-        public string antallVedlegg {
-            get {
-                return this.antallVedleggField;
-            }
-            set {
-                this.antallVedleggField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> utlaantDato {
-            get {
-                return this.utlaantDatoField;
-            }
-            set {
-                this.utlaantDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool utlaantDatoSpecified {
-            get {
-                return this.utlaantDatoFieldSpecified;
-            }
-            set {
-                this.utlaantDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string utlaantTil {
-            get {
-                return this.utlaantTilField;
-            }
-            set {
-                this.utlaantTilField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseUtlaantTil {
-            get {
-                return this.referanseUtlaantTilField;
-            }
-            set {
-                this.referanseUtlaantTilField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string journalenhet {
-            get {
-                return this.journalenhetField;
-            }
-            set {
-                this.journalenhetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public ElektroniskSignaturType elektroniskSignatur {
-            get {
-                return this.elektroniskSignaturField;
-            }
-            set {
-                this.elektroniskSignaturField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktkorrespondansepart", IsNullable=false)]
-        public AbstraktKorrespondansepartType[] korrespondansepart {
-            get {
-                return this.korrespondansepartField;
-            }
-            set {
-                this.korrespondansepartField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("dokumentflyt", IsNullable=false)]
-        public DokumentflytType[] dokumentflyt {
-            get {
-                return this.dokumentflytField;
-            }
-            set {
-                this.dokumentflytField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("avskrivning", IsNullable=false)]
-        public AvskrivningType[] avskrivning {
-            get {
-                return this.avskrivningField;
-            }
-            set {
-                this.avskrivningField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("presedens", IsNullable=false)]
-        public PresedensType[] presedens {
-            get {
-                return this.presedensField;
-            }
-            set {
-                this.presedensField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Journalposttype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class JournalposttypeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Journalstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class JournalstatusType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FoedselsnummerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DNummerType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignatur", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class ElektroniskSignaturType : AbstraktResourceType {
-        
-        private ElektroniskSignaturSikkerhetsnivaaType elektroniskSignaturSikkerhetsnivaaField;
-        
-        private ElektroniskSignaturVerifisertType elektroniskSignaturVerifisertField;
-        
-        private System.DateTime verifisertDatoField;
-        
-        private string verifisertAvField;
-        
-        private string referanseVerifisertAvField;
-        
-        /// <remarks/>
-        public ElektroniskSignaturSikkerhetsnivaaType elektroniskSignaturSikkerhetsnivaa {
-            get {
-                return this.elektroniskSignaturSikkerhetsnivaaField;
-            }
-            set {
-                this.elektroniskSignaturSikkerhetsnivaaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ElektroniskSignaturVerifisertType elektroniskSignaturVerifisert {
-            get {
-                return this.elektroniskSignaturVerifisertField;
-            }
-            set {
-                this.elektroniskSignaturVerifisertField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime verifisertDato {
-            get {
-                return this.verifisertDatoField;
-            }
-            set {
-                this.verifisertDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string verifisertAv {
-            get {
-                return this.verifisertAvField;
-            }
-            set {
-                this.verifisertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string referanseVerifisertAv {
-            get {
-                return this.referanseVerifisertAvField;
-            }
-            set {
-                this.referanseVerifisertAvField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignaturSikkerhetsnivaa", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class ElektroniskSignaturSikkerhetsnivaaType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignaturVerifisert", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class ElektroniskSignaturVerifisertType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartPersonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartInternType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartEnhetType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("AbstraktKorrespondansepart", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public abstract partial class AbstraktKorrespondansepartType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private KorrespondanseparttypeType korrespondanseparttypeField;
-        
-        private System.Nullable<bool> skjermetKorrespondansepartField;
-        
-        private bool skjermetKorrespondansepartFieldSpecified;
-        
-        private object virksomhetsspesifikkeMetadataField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public KorrespondanseparttypeType korrespondanseparttype {
-            get {
-                return this.korrespondanseparttypeField;
-            }
-            set {
-                this.korrespondanseparttypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> skjermetKorrespondansepart {
-            get {
-                return this.skjermetKorrespondansepartField;
-            }
-            set {
-                this.skjermetKorrespondansepartField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermetKorrespondansepartSpecified {
-            get {
-                return this.skjermetKorrespondansepartFieldSpecified;
-            }
-            set {
-                this.skjermetKorrespondansepartFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public object virksomhetsspesifikkeMetadata {
-            get {
-                return this.virksomhetsspesifikkeMetadataField;
-            }
-            set {
-                this.virksomhetsspesifikkeMetadataField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Korrespondanseparttype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class KorrespondanseparttypeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartPerson", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class KorrespondansepartPersonType : AbstraktKorrespondansepartType {
-        
-        private string foedselsnummerField;
-        
-        private string dNummerField;
-        
-        private string navnField;
-        
-        private EnkelAdresseType postadresseField;
-        
-        private EnkelAdresseType bostedsadresseField;
-        
-        private KontaktinformasjonType kontaktinformasjonField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string foedselsnummer {
-            get {
-                return this.foedselsnummerField;
-            }
-            set {
-                this.foedselsnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string DNummer {
-            get {
-                return this.dNummerField;
-            }
-            set {
-                this.dNummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string navn {
-            get {
-                return this.navnField;
-            }
-            set {
-                this.navnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType postadresse {
-            get {
-                return this.postadresseField;
-            }
-            set {
-                this.postadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType bostedsadresse {
-            get {
-                return this.bostedsadresseField;
-            }
-            set {
-                this.bostedsadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KontaktinformasjonType kontaktinformasjon {
-            get {
-                return this.kontaktinformasjonField;
-            }
-            set {
-                this.kontaktinformasjonField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartIntern", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class KorrespondansepartInternType : AbstraktKorrespondansepartType {
-        
-        private string administrativEnhetField;
-        
-        private string referanseAdministrativEnhetField;
-        
-        private string saksbehandlerField;
-        
-        private string referanseSaksbehandlerField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string administrativEnhet {
-            get {
-                return this.administrativEnhetField;
-            }
-            set {
-                this.administrativEnhetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAdministrativEnhet {
-            get {
-                return this.referanseAdministrativEnhetField;
-            }
-            set {
-                this.referanseAdministrativEnhetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string saksbehandler {
-            get {
-                return this.saksbehandlerField;
-            }
-            set {
-                this.saksbehandlerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseSaksbehandler {
-            get {
-                return this.referanseSaksbehandlerField;
-            }
-            set {
-                this.referanseSaksbehandlerField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartEnhet", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class KorrespondansepartEnhetType : AbstraktKorrespondansepartType {
-        
-        private string organisasjonsnummerField;
-        
-        private string navnField;
-        
-        private EnkelAdresseType forretningsadresseField;
-        
-        private EnkelAdresseType postadresseField;
-        
-        private KontaktinformasjonType kontaktinformasjonField;
-        
-        private string kontaktpersonField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string organisasjonsnummer {
-            get {
-                return this.organisasjonsnummerField;
-            }
-            set {
-                this.organisasjonsnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string navn {
-            get {
-                return this.navnField;
-            }
-            set {
-                this.navnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType forretningsadresse {
-            get {
-                return this.forretningsadresseField;
-            }
-            set {
-                this.forretningsadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public EnkelAdresseType postadresse {
-            get {
-                return this.postadresseField;
-            }
-            set {
-                this.postadresseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KontaktinformasjonType kontaktinformasjon {
-            get {
-                return this.kontaktinformasjonField;
-            }
-            set {
-                this.kontaktinformasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string kontaktperson {
-            get {
-                return this.kontaktpersonField;
-            }
-            set {
-                this.kontaktpersonField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("Dokumentflyt", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class DokumentflytType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private string flytTilField;
-        
-        private string referanseFlytTilField;
-        
-        private string flytFraField;
-        
-        private string referanseFlytFraField;
-        
-        private System.DateTime flytMottattDatoField;
-        
-        private System.DateTime flytSendtDatoField;
-        
-        private FlytStatusType flytStatusField;
-        
-        private string flytMerknadField;
-        
-        private ProsessStatusType prosessStatusField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string flytTil {
-            get {
-                return this.flytTilField;
-            }
-            set {
-                this.flytTilField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseFlytTil {
-            get {
-                return this.referanseFlytTilField;
-            }
-            set {
-                this.referanseFlytTilField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string flytFra {
-            get {
-                return this.flytFraField;
-            }
-            set {
-                this.flytFraField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseFlytFra {
-            get {
-                return this.referanseFlytFraField;
-            }
-            set {
-                this.referanseFlytFraField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime flytMottattDato {
-            get {
-                return this.flytMottattDatoField;
-            }
-            set {
-                this.flytMottattDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime flytSendtDato {
-            get {
-                return this.flytSendtDatoField;
-            }
-            set {
-                this.flytSendtDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FlytStatusType flytStatus {
-            get {
-                return this.flytStatusField;
-            }
-            set {
-                this.flytStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string flytMerknad {
-            get {
-                return this.flytMerknadField;
-            }
-            set {
-                this.flytMerknadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public ProsessStatusType prosessStatus {
-            get {
-                return this.prosessStatusField;
-            }
-            set {
-                this.prosessStatusField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("FlytStatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class FlytStatusType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("ProsessStatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class ProsessStatusType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
-    [System.Xml.Serialization.XmlRootAttribute("Avskrivning", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
-    public partial class AvskrivningType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private System.Nullable<System.DateTime> avskrivningsdatoField;
-        
-        private bool avskrivningsdatoFieldSpecified;
-        
-        private string avskrevetAvField;
-        
-        private string referanseAvskrevetAvField;
-        
-        private AvskrivningsmaateType avskrivningsmaateField;
-        
-        private string referanseAvskrivesAvJournalpostField;
-        
-        private string referanseAvskrivesAvKorrespondansepartField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> avskrivningsdato {
-            get {
-                return this.avskrivningsdatoField;
-            }
-            set {
-                this.avskrivningsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avskrivningsdatoSpecified {
-            get {
-                return this.avskrivningsdatoFieldSpecified;
-            }
-            set {
-                this.avskrivningsdatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string avskrevetAv {
-            get {
-                return this.avskrevetAvField;
-            }
-            set {
-                this.avskrevetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string referanseAvskrevetAv {
-            get {
-                return this.referanseAvskrevetAvField;
-            }
-            set {
-                this.referanseAvskrevetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public AvskrivningsmaateType avskrivningsmaate {
-            get {
-                return this.avskrivningsmaateField;
-            }
-            set {
-                this.avskrivningsmaateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvskrivesAvJournalpost {
-            get {
-                return this.referanseAvskrivesAvJournalpostField;
-            }
-            set {
-                this.referanseAvskrivesAvJournalpostField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvskrivesAvKorrespondansepart {
-            get {
-                return this.referanseAvskrivesAvKorrespondansepartField;
-            }
-            set {
-                this.referanseAvskrivesAvKorrespondansepartField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Avskrivningsmaate", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class AvskrivningsmaateType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalpostType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Registrering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class RegistreringType : AbstraktArkivenhetType {
-        
-        private System.Nullable<System.DateTime> arkivertDatoField;
-        
-        private bool arkivertDatoFieldSpecified;
-        
-        private string registreringsIDField;
-        
-        private string arkivertAvField;
-        
-        private string tittelField;
-        
-        private string offentligTittelField;
-        
-        private string referanseArkivertAvField;
-        
-        private string beskrivelseField;
-        
-        private KassasjonType kassasjonField;
-        
-        private string[] noekkelordField;
-        
-        private SkjermingType skjermingField;
-        
-        private string[] forfatterField;
-        
-        private GraderingType graderingField;
-        
-        private DokumentmediumType dokumentmediumField;
-        
-        private string referanseArkivdelField;
-        
-        private string[] oppbevaringsstedField;
-        
-        private System.Nullable<bool> skjermetTittelField;
-        
-        private bool skjermetTittelFieldSpecified;
-        
-        private object virksomhetsspesifikkeMetadataField;
-        
-        private KlasseType klasseField;
-        
-        private AbstraktNasjonalidentifikatorType[] nasjonalidentifikatorField;
-        
-        private MerknadType[] merknadField;
-        
-        private MappeType mappeField;
-        
-        private DokumentlinkType[] dokumentlinkField;
-        
-        private KryssreferanseType[] kryssreferanseField;
-        
-        private ArkivdelType arkivdelField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> arkivertDato {
-            get {
-                return this.arkivertDatoField;
-            }
-            set {
-                this.arkivertDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool arkivertDatoSpecified {
-            get {
-                return this.arkivertDatoFieldSpecified;
-            }
-            set {
-                this.arkivertDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string registreringsID {
-            get {
-                return this.registreringsIDField;
-            }
-            set {
-                this.registreringsIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string arkivertAv {
-            get {
-                return this.arkivertAvField;
-            }
-            set {
-                this.arkivertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string offentligTittel {
-            get {
-                return this.offentligTittelField;
-            }
-            set {
-                this.offentligTittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseArkivertAv {
-            get {
-                return this.referanseArkivertAvField;
-            }
-            set {
-                this.referanseArkivertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KassasjonType kassasjon {
-            get {
-                return this.kassasjonField;
-            }
-            set {
-                this.kassasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true)]
-        public string[] noekkelord {
-            get {
-                return this.noekkelordField;
-            }
-            set {
-                this.noekkelordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public SkjermingType skjerming {
-            get {
-                return this.skjermingField;
-            }
-            set {
-                this.skjermingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("forfatter", IsNullable=true)]
-        public string[] forfatter {
-            get {
-                return this.forfatterField;
-            }
-            set {
-                this.forfatterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public GraderingType gradering {
-            get {
-                return this.graderingField;
-            }
-            set {
-                this.graderingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public DokumentmediumType dokumentmedium {
-            get {
-                return this.dokumentmediumField;
-            }
-            set {
-                this.dokumentmediumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseArkivdel {
-            get {
-                return this.referanseArkivdelField;
-            }
-            set {
-                this.referanseArkivdelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true)]
-        public string[] oppbevaringssted {
-            get {
-                return this.oppbevaringsstedField;
-            }
-            set {
-                this.oppbevaringsstedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> skjermetTittel {
-            get {
-                return this.skjermetTittelField;
-            }
-            set {
-                this.skjermetTittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermetTittelSpecified {
-            get {
-                return this.skjermetTittelFieldSpecified;
-            }
-            set {
-                this.skjermetTittelFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public object virksomhetsspesifikkeMetadata {
-            get {
-                return this.virksomhetsspesifikkeMetadataField;
-            }
-            set {
-                this.virksomhetsspesifikkeMetadataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KlasseType klasse {
-            get {
-                return this.klasseField;
-            }
-            set {
-                this.klasseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktnasjonalidentifikator", IsNullable=false)]
-        public AbstraktNasjonalidentifikatorType[] nasjonalidentifikator {
-            get {
-                return this.nasjonalidentifikatorField;
-            }
-            set {
-                this.nasjonalidentifikatorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("merknad", IsNullable=false)]
-        public MerknadType[] merknad {
-            get {
-                return this.merknadField;
-            }
-            set {
-                this.merknadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MappeType mappe {
-            get {
-                return this.mappeField;
-            }
-            set {
-                this.mappeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("dokumentlink", IsNullable=false)]
-        public DokumentlinkType[] dokumentlink {
-            get {
-                return this.dokumentlinkField;
-            }
-            set {
-                this.dokumentlinkField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
-        public KryssreferanseType[] kryssreferanse {
-            get {
-                return this.kryssreferanseField;
-            }
-            set {
-                this.kryssreferanseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public ArkivdelType arkivdel {
-            get {
-                return this.arkivdelField;
-            }
-            set {
-                this.arkivdelField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Kassasjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class KassasjonType : AbstraktResourceType {
-        
-        private KassasjonsvedtakType kassasjonsvedtakField;
-        
-        private string kassasjonshjemmelField;
-        
-        private string bevaringstidField;
-        
-        private System.Nullable<System.DateTime> kassasjonsdatoField;
-        
-        private bool kassasjonsdatoFieldSpecified;
-        
-        /// <remarks/>
-        public KassasjonsvedtakType kassasjonsvedtak {
-            get {
-                return this.kassasjonsvedtakField;
-            }
-            set {
-                this.kassasjonsvedtakField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string kassasjonshjemmel {
-            get {
-                return this.kassasjonshjemmelField;
-            }
-            set {
-                this.kassasjonshjemmelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
-        public string bevaringstid {
-            get {
-                return this.bevaringstidField;
-            }
-            set {
-                this.bevaringstidField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> kassasjonsdato {
-            get {
-                return this.kassasjonsdatoField;
-            }
-            set {
-                this.kassasjonsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool kassasjonsdatoSpecified {
-            get {
-                return this.kassasjonsdatoFieldSpecified;
-            }
-            set {
-                this.kassasjonsdatoFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Kassasjonsvedtak", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class KassasjonsvedtakType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Skjerming", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class SkjermingType : AbstraktResourceType {
-        
-        private TilgangsrestriksjonType tilgangsrestriksjonField;
-        
-        private string skjermingshjemmelField;
-        
-        private SkjermingMetadataType[] skjermingMetadataField;
-        
-        private string skjermingsvarighetField;
-        
-        private System.Nullable<System.DateTime> skjermingOpphoererDatoField;
-        
-        private bool skjermingOpphoererDatoFieldSpecified;
-        
-        /// <remarks/>
-        public TilgangsrestriksjonType tilgangsrestriksjon {
-            get {
-                return this.tilgangsrestriksjonField;
-            }
-            set {
-                this.tilgangsrestriksjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string skjermingshjemmel {
-            get {
-                return this.skjermingshjemmelField;
-            }
-            set {
-                this.skjermingshjemmelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("skjermingmetadata", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-        public SkjermingMetadataType[] skjermingMetadata {
-            get {
-                return this.skjermingMetadataField;
-            }
-            set {
-                this.skjermingMetadataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
-        public string skjermingsvarighet {
-            get {
-                return this.skjermingsvarighetField;
-            }
-            set {
-                this.skjermingsvarighetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> skjermingOpphoererDato {
-            get {
-                return this.skjermingOpphoererDatoField;
-            }
-            set {
-                this.skjermingOpphoererDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermingOpphoererDatoSpecified {
-            get {
-                return this.skjermingOpphoererDatoFieldSpecified;
-            }
-            set {
-                this.skjermingOpphoererDatoFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Tilgangsrestriksjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class TilgangsrestriksjonType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("SkjermingMetadata", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class SkjermingMetadataType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Gradering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class GraderingType : AbstraktResourceType {
-        
-        private GraderingskodeType graderingskodeField;
-        
-        private System.DateTime graderingsdatoField;
-        
-        private string gradertAvField;
-        
-        private string referanseGradertAvField;
-        
-        private System.Nullable<System.DateTime> nedgraderingsdatoField;
-        
-        private bool nedgraderingsdatoFieldSpecified;
-        
-        private string nedgradertAvField;
-        
-        private string referanseNedgradertAvField;
-        
-        /// <remarks/>
-        public GraderingskodeType graderingskode {
-            get {
-                return this.graderingskodeField;
-            }
-            set {
-                this.graderingskodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime graderingsdato {
-            get {
-                return this.graderingsdatoField;
-            }
-            set {
-                this.graderingsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string gradertAv {
-            get {
-                return this.gradertAvField;
-            }
-            set {
-                this.gradertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string referanseGradertAv {
-            get {
-                return this.referanseGradertAvField;
-            }
-            set {
-                this.referanseGradertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> nedgraderingsdato {
-            get {
-                return this.nedgraderingsdatoField;
-            }
-            set {
-                this.nedgraderingsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nedgraderingsdatoSpecified {
-            get {
-                return this.nedgraderingsdatoFieldSpecified;
-            }
-            set {
-                this.nedgraderingsdatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string nedgradertAv {
-            get {
-                return this.nedgradertAvField;
-            }
-            set {
-                this.nedgradertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseNedgradertAv {
-            get {
-                return this.referanseNedgradertAvField;
-            }
-            set {
-                this.referanseNedgradertAvField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Graderingskode", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class GraderingskodeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Dokumentmedium", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class DokumentmediumType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Klasse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class KlasseType : AbstraktArkivenhetType {
-        
-        private string klasseIDField;
-        
-        private string tittelField;
-        
-        private string beskrivelseField;
-        
-        private string[] noekkelordField;
-        
-        private System.Nullable<System.DateTime> avsluttetDatoField;
-        
-        private bool avsluttetDatoFieldSpecified;
-        
-        private string avsluttetAvField;
-        
-        private string referanseAvsluttetAvField;
-        
-        private SkjermingType skjermingField;
-        
-        private KassasjonType kassasjonField;
-        
-        private System.Nullable<bool> skjermetKlasseField;
-        
-        private bool skjermetKlasseFieldSpecified;
-        
-        private KlassifikasjonssystemType klassifikasjonssystemField;
-        
-        private RegistreringType[] registreringField;
-        
-        private MappeType[] mappeField;
-        
-        private KryssreferanseType[] kryssreferanseField;
-        
-        private KlasseType[] underklasseField;
-        
-        /// <remarks/>
-        public string klasseID {
-            get {
-                return this.klasseIDField;
-            }
-            set {
-                this.klasseIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true)]
-        public string[] noekkelord {
-            get {
-                return this.noekkelordField;
-            }
-            set {
-                this.noekkelordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> avsluttetDato {
-            get {
-                return this.avsluttetDatoField;
-            }
-            set {
-                this.avsluttetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avsluttetDatoSpecified {
-            get {
-                return this.avsluttetDatoFieldSpecified;
-            }
-            set {
-                this.avsluttetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string avsluttetAv {
-            get {
-                return this.avsluttetAvField;
-            }
-            set {
-                this.avsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvsluttetAv {
-            get {
-                return this.referanseAvsluttetAvField;
-            }
-            set {
-                this.referanseAvsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public SkjermingType skjerming {
-            get {
-                return this.skjermingField;
-            }
-            set {
-                this.skjermingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KassasjonType kassasjon {
-            get {
-                return this.kassasjonField;
-            }
-            set {
-                this.kassasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> skjermetKlasse {
-            get {
-                return this.skjermetKlasseField;
-            }
-            set {
-                this.skjermetKlasseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermetKlasseSpecified {
-            get {
-                return this.skjermetKlasseFieldSpecified;
-            }
-            set {
-                this.skjermetKlasseFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KlassifikasjonssystemType klassifikasjonssystem {
-            get {
-                return this.klassifikasjonssystemField;
-            }
-            set {
-                this.klassifikasjonssystemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
-        public RegistreringType[] registrering {
-            get {
-                return this.registreringField;
-            }
-            set {
-                this.registreringField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
-        public MappeType[] mappe {
-            get {
-                return this.mappeField;
-            }
-            set {
-                this.mappeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
-        public KryssreferanseType[] kryssreferanse {
-            get {
-                return this.kryssreferanseField;
-            }
-            set {
-                this.kryssreferanseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("klasse", IsNullable=false)]
-        public KlasseType[] underklasse {
-            get {
-                return this.underklasseField;
-            }
-            set {
-                this.underklasseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Klassifikasjonssystem", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class KlassifikasjonssystemType : AbstraktArkivenhetType {
-        
-        private KlassifikasjonstypeType klassifikasjonstypeField;
-        
-        private string tittelField;
-        
-        private string beskrivelseField;
-        
-        private System.Nullable<System.DateTime> avsluttetDatoField;
-        
-        private bool avsluttetDatoFieldSpecified;
-        
-        private string avsluttetAvField;
-        
-        private string referanseAvsluttetAvField;
-        
-        private KlasseType[] klasseField;
-        
-        private ArkivdelType[] arkivdelField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KlassifikasjonstypeType klassifikasjonstype {
-            get {
-                return this.klassifikasjonstypeField;
-            }
-            set {
-                this.klassifikasjonstypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> avsluttetDato {
-            get {
-                return this.avsluttetDatoField;
-            }
-            set {
-                this.avsluttetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avsluttetDatoSpecified {
-            get {
-                return this.avsluttetDatoFieldSpecified;
-            }
-            set {
-                this.avsluttetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string avsluttetAv {
-            get {
-                return this.avsluttetAvField;
-            }
-            set {
-                this.avsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvsluttetAv {
-            get {
-                return this.referanseAvsluttetAvField;
-            }
-            set {
-                this.referanseAvsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("klasse", IsNullable=false)]
-        public KlasseType[] klasse {
-            get {
-                return this.klasseField;
-            }
-            set {
-                this.klasseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("arkivdel", IsNullable=false)]
-        public ArkivdelType[] arkivdel {
-            get {
-                return this.arkivdelField;
-            }
-            set {
-                this.arkivdelField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Klassifikasjonstype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class KlassifikasjonstypeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Arkivdel", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class ArkivdelType : AbstraktArkivenhetType {
-        
-        private string tittelField;
-        
-        private string beskrivelseField;
-        
-        private ArkivdelstatusType arkivdelstatusField;
-        
-        private DokumentmediumType dokumentmediumField;
-        
-        private string[] oppbevaringsstedField;
-        
-        private System.Nullable<System.DateTime> avsluttetDatoField;
-        
-        private bool avsluttetDatoFieldSpecified;
-        
-        private string avsluttetAvField;
-        
-        private string referanseAvsluttetAvField;
-        
-        private System.Nullable<System.DateTime> arkivperiodeStartDatoField;
-        
-        private bool arkivperiodeStartDatoFieldSpecified;
-        
-        private System.Nullable<System.DateTime> arkivperiodeSluttDatoField;
-        
-        private bool arkivperiodeSluttDatoFieldSpecified;
-        
-        private string referanseForloeperField;
-        
-        private string referanseArvtakerField;
-        
-        private KassasjonType kassasjonField;
-        
-        private SkjermingType skjermingField;
-        
-        private GraderingType graderingField;
-        
-        private MappeType[] mappeField;
-        
-        private ArkivType arkivField;
-        
-        private KlassifikasjonssystemType klassifikasjonssystemField;
-        
-        private KlassifikasjonssystemType[] sekundaerklassifikasjonssystemField;
-        
-        private RegistreringType[] registreringField;
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ArkivdelstatusType arkivdelstatus {
-            get {
-                return this.arkivdelstatusField;
-            }
-            set {
-                this.arkivdelstatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public DokumentmediumType dokumentmedium {
-            get {
-                return this.dokumentmediumField;
-            }
-            set {
-                this.dokumentmediumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true)]
-        public string[] oppbevaringssted {
-            get {
-                return this.oppbevaringsstedField;
-            }
-            set {
-                this.oppbevaringsstedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> avsluttetDato {
-            get {
-                return this.avsluttetDatoField;
-            }
-            set {
-                this.avsluttetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avsluttetDatoSpecified {
-            get {
-                return this.avsluttetDatoFieldSpecified;
-            }
-            set {
-                this.avsluttetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string avsluttetAv {
-            get {
-                return this.avsluttetAvField;
-            }
-            set {
-                this.avsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvsluttetAv {
-            get {
-                return this.referanseAvsluttetAvField;
-            }
-            set {
-                this.referanseAvsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> arkivperiodeStartDato {
-            get {
-                return this.arkivperiodeStartDatoField;
-            }
-            set {
-                this.arkivperiodeStartDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool arkivperiodeStartDatoSpecified {
-            get {
-                return this.arkivperiodeStartDatoFieldSpecified;
-            }
-            set {
-                this.arkivperiodeStartDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
-        public System.Nullable<System.DateTime> arkivperiodeSluttDato {
-            get {
-                return this.arkivperiodeSluttDatoField;
-            }
-            set {
-                this.arkivperiodeSluttDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool arkivperiodeSluttDatoSpecified {
-            get {
-                return this.arkivperiodeSluttDatoFieldSpecified;
-            }
-            set {
-                this.arkivperiodeSluttDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseForloeper {
-            get {
-                return this.referanseForloeperField;
-            }
-            set {
-                this.referanseForloeperField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseArvtaker {
-            get {
-                return this.referanseArvtakerField;
-            }
-            set {
-                this.referanseArvtakerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KassasjonType kassasjon {
-            get {
-                return this.kassasjonField;
-            }
-            set {
-                this.kassasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public SkjermingType skjerming {
-            get {
-                return this.skjermingField;
-            }
-            set {
-                this.skjermingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public GraderingType gradering {
-            get {
-                return this.graderingField;
-            }
-            set {
-                this.graderingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
-        public MappeType[] mappe {
-            get {
-                return this.mappeField;
-            }
-            set {
-                this.mappeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ArkivType arkiv {
-            get {
-                return this.arkivField;
-            }
-            set {
-                this.arkivField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KlassifikasjonssystemType klassifikasjonssystem {
-            get {
-                return this.klassifikasjonssystemField;
-            }
-            set {
-                this.klassifikasjonssystemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("klassifikasjonssystem", IsNullable=false)]
-        public KlassifikasjonssystemType[] sekundaerklassifikasjonssystem {
-            get {
-                return this.sekundaerklassifikasjonssystemField;
-            }
-            set {
-                this.sekundaerklassifikasjonssystemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
-        public RegistreringType[] registrering {
-            get {
-                return this.registreringField;
-            }
-            set {
-                this.registreringField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Arkivdelstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class ArkivdelstatusType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SaksmappeType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Mappe", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class MappeType : AbstraktArkivenhetType {
-        
-        private string mappeIDField;
-        
-        private MappetypeType mappetypeField;
-        
-        private string tittelField;
-        
-        private string offentligTittelField;
-        
-        private string beskrivelseField;
-        
-        private string[] noekkelordField;
-        
-        private DokumentmediumType dokumentmediumField;
-        
-        private string[] oppbevaringsstedField;
-        
-        private System.Nullable<System.DateTime> avsluttetDatoField;
-        
-        private bool avsluttetDatoFieldSpecified;
-        
-        private string avsluttetAvField;
-        
-        private string referanseAvsluttetAvField;
-        
-        private KassasjonType kassasjonField;
-        
-        private SkjermingType skjermingField;
-        
-        private GraderingType graderingField;
-        
-        private string referanseForelderMappeField;
-        
-        private System.Nullable<bool> skjermetTittelField;
-        
-        private bool skjermetTittelFieldSpecified;
-        
-        private object virksomhetsspesifikkeMetadataField;
-        
-        private MerknadType[] merknadField;
-        
-        private RegistreringType[] registreringField;
-        
-        private KlasseType klasseField;
-        
-        private AbstraktNasjonalidentifikatorType[] nasjonalidentifikatorField;
-        
-        private KryssreferanseType[] kryssreferanseField;
-        
-        private ArkivdelType arkivdelField;
-        
-        private MappeType[] undermappeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string mappeID {
-            get {
-                return this.mappeIDField;
-            }
-            set {
-                this.mappeIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MappetypeType mappetype {
-            get {
-                return this.mappetypeField;
-            }
-            set {
-                this.mappetypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tittel {
-            get {
-                return this.tittelField;
-            }
-            set {
-                this.tittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string offentligTittel {
-            get {
-                return this.offentligTittelField;
-            }
-            set {
-                this.offentligTittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true)]
-        public string[] noekkelord {
-            get {
-                return this.noekkelordField;
-            }
-            set {
-                this.noekkelordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public DokumentmediumType dokumentmedium {
-            get {
-                return this.dokumentmediumField;
-            }
-            set {
-                this.dokumentmediumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true)]
-        public string[] oppbevaringssted {
-            get {
-                return this.oppbevaringsstedField;
-            }
-            set {
-                this.oppbevaringsstedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> avsluttetDato {
-            get {
-                return this.avsluttetDatoField;
-            }
-            set {
-                this.avsluttetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool avsluttetDatoSpecified {
-            get {
-                return this.avsluttetDatoFieldSpecified;
-            }
-            set {
-                this.avsluttetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string avsluttetAv {
-            get {
-                return this.avsluttetAvField;
-            }
-            set {
-                this.avsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseAvsluttetAv {
-            get {
-                return this.referanseAvsluttetAvField;
-            }
-            set {
-                this.referanseAvsluttetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KassasjonType kassasjon {
-            get {
-                return this.kassasjonField;
-            }
-            set {
-                this.kassasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public SkjermingType skjerming {
-            get {
-                return this.skjermingField;
-            }
-            set {
-                this.skjermingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public GraderingType gradering {
-            get {
-                return this.graderingField;
-            }
-            set {
-                this.graderingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseForelderMappe {
-            get {
-                return this.referanseForelderMappeField;
-            }
-            set {
-                this.referanseForelderMappeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> skjermetTittel {
-            get {
-                return this.skjermetTittelField;
-            }
-            set {
-                this.skjermetTittelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool skjermetTittelSpecified {
-            get {
-                return this.skjermetTittelFieldSpecified;
-            }
-            set {
-                this.skjermetTittelFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public object virksomhetsspesifikkeMetadata {
-            get {
-                return this.virksomhetsspesifikkeMetadataField;
-            }
-            set {
-                this.virksomhetsspesifikkeMetadataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("merknad", IsNullable=false)]
-        public MerknadType[] merknad {
-            get {
-                return this.merknadField;
-            }
-            set {
-                this.merknadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
-        public RegistreringType[] registrering {
-            get {
-                return this.registreringField;
-            }
-            set {
-                this.registreringField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public KlasseType klasse {
-            get {
-                return this.klasseField;
-            }
-            set {
-                this.klasseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktnasjonalidentifikator", IsNullable=false)]
-        public AbstraktNasjonalidentifikatorType[] nasjonalidentifikator {
-            get {
-                return this.nasjonalidentifikatorField;
-            }
-            set {
-                this.nasjonalidentifikatorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
-        public KryssreferanseType[] kryssreferanse {
-            get {
-                return this.kryssreferanseField;
-            }
-            set {
-                this.kryssreferanseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public ArkivdelType arkivdel {
-            get {
-                return this.arkivdelField;
-            }
-            set {
-                this.arkivdelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
-        public MappeType[] undermappe {
-            get {
-                return this.undermappeField;
-            }
-            set {
-                this.undermappeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Mappetype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class MappetypeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Merknad", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class MerknadType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private string merknadstekstField;
-        
-        private MerknadstypeType merknadstypeField;
-        
-        private System.DateTime merknadsdatoField;
-        
-        private string merknadRegistrertAvField;
-        
-        private string referanseMerknadRegistrertAvField;
-        
-        private bool skjermetMerknadField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string merknadstekst {
-            get {
-                return this.merknadstekstField;
-            }
-            set {
-                this.merknadstekstField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MerknadstypeType merknadstype {
-            get {
-                return this.merknadstypeField;
-            }
-            set {
-                this.merknadstypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime merknadsdato {
-            get {
-                return this.merknadsdatoField;
-            }
-            set {
-                this.merknadsdatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string merknadRegistrertAv {
-            get {
-                return this.merknadRegistrertAvField;
-            }
-            set {
-                this.merknadRegistrertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseMerknadRegistrertAv {
-            get {
-                return this.referanseMerknadRegistrertAvField;
-            }
-            set {
-                this.referanseMerknadRegistrertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool skjermetMerknad {
-            get {
-                return this.skjermetMerknadField;
-            }
-            set {
-                this.skjermetMerknadField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Merknadstype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class MerknadstypeType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
+    [System.Xml.Serialization.XmlRootAttribute("AbstraktPersonidentifikator", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public abstract partial class AbstraktPersonidentifikatorType : AbstraktNasjonalidentifikatorType {
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PosisjonType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlanType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PersonidentifikatorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstraktPersonidentifikatorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FoedselsnummerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DNummerType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MatrikkelType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnhetsidentifikatorType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BygningType))]
@@ -4410,7 +674,7 @@ namespace arkivverket.noark5tj.models {
         private string beskrivelseField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -4421,7 +685,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string beskrivelse {
             get {
                 return this.beskrivelseField;
@@ -4444,6 +708,7 @@ namespace arkivverket.noark5tj.models {
         private Punkt plasseringField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Punkt plassering {
             get {
                 return this.plasseringField;
@@ -4758,6 +1023,7 @@ namespace arkivverket.noark5tj.models {
         private NasjonalArealplanId planidentifikatorField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NasjonalArealplanId planidentifikator {
             get {
                 return this.planidentifikatorField;
@@ -4887,48 +1153,13 @@ namespace arkivverket.noark5tj.models {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Personidentifikator", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class PersonidentifikatorType : AbstraktNasjonalidentifikatorType {
-        
-        private string foedselsnummerField;
-        
-        private string dNummerField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string foedselsnummer {
-            get {
-                return this.foedselsnummerField;
-            }
-            set {
-                this.foedselsnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string dNummer {
-            get {
-                return this.dNummerField;
-            }
-            set {
-                this.dNummerField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
     [System.Xml.Serialization.XmlRootAttribute("Matrikkel", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
     public partial class MatrikkelType : AbstraktNasjonalidentifikatorType {
         
         private Matrikkelnummer matrikkelnummerField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Matrikkelnummer matrikkelnummer {
             get {
                 return this.matrikkelnummerField;
@@ -5025,6 +1256,7 @@ namespace arkivverket.noark5tj.models {
         private string organisasjonsnummerField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string organisasjonsnummer {
             get {
                 return this.organisasjonsnummerField;
@@ -5047,6 +1279,7 @@ namespace arkivverket.noark5tj.models {
         private ByggIdent byggidentifikatorField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public ByggIdent byggidentifikator {
             get {
                 return this.byggidentifikatorField;
@@ -5099,6 +1332,3500 @@ namespace arkivverket.noark5tj.models {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Foedselsnummer", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class FoedselsnummerType : AbstraktPersonidentifikatorType {
+        
+        private string foedselsnummerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string foedselsnummer {
+            get {
+                return this.foedselsnummerField;
+            }
+            set {
+                this.foedselsnummerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("DNummer", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class DNummerType : AbstraktPersonidentifikatorType {
+        
+        private string dNummerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string dNummer {
+            get {
+                return this.dNummerField;
+            }
+            set {
+                this.dNummerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("PartEnhet", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class PartEnhetType : AbstraktPartType {
+        
+        private string enhetsidentifikatorField;
+        
+        private string navnField;
+        
+        private EnkelAdresseType forretningsadresseField;
+        
+        private EnkelAdresseType postadresseField;
+        
+        private KontaktinformasjonType kontaktinformasjonField;
+        
+        private string kontaktpersonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string enhetsidentifikator {
+            get {
+                return this.enhetsidentifikatorField;
+            }
+            set {
+                this.enhetsidentifikatorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string navn {
+            get {
+                return this.navnField;
+            }
+            set {
+                this.navnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public EnkelAdresseType forretningsadresse {
+            get {
+                return this.forretningsadresseField;
+            }
+            set {
+                this.forretningsadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public EnkelAdresseType postadresse {
+            get {
+                return this.postadresseField;
+            }
+            set {
+                this.postadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public KontaktinformasjonType kontaktinformasjon {
+            get {
+                return this.kontaktinformasjonField;
+            }
+            set {
+                this.kontaktinformasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string kontaktperson {
+            get {
+                return this.kontaktpersonField;
+            }
+            set {
+                this.kontaktpersonField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
+    [System.Xml.Serialization.XmlRootAttribute("Presedens", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    public partial class PresedensType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private System.Nullable<System.DateTime> presedensDatoField;
+        
+        private bool presedensDatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> opprettetDatoField;
+        
+        private bool opprettetDatoFieldSpecified;
+        
+        private string opprettetAvField;
+        
+        private string referanseOpprettetAvField;
+        
+        private string tittelField;
+        
+        private string beskrivelseField;
+        
+        private string presedensHjemmelField;
+        
+        private string rettskildefaktorField;
+        
+        private System.Nullable<System.DateTime> presedensGodkjentDatoField;
+        
+        private bool presedensGodkjentDatoFieldSpecified;
+        
+        private string presedensGodkjentAvField;
+        
+        private string referansePresedensGodkjentAvField;
+        
+        private System.Nullable<System.DateTime> avsluttetDatoField;
+        
+        private bool avsluttetDatoFieldSpecified;
+        
+        private string avsluttetAvField;
+        
+        private string referanseAvsluttetAvField;
+        
+        private PresedensstatusType presedensStatusField;
+        
+        private JournalpostType[] journalpostField;
+        
+        private SaksmappeType[] sakField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> presedensDato {
+            get {
+                return this.presedensDatoField;
+            }
+            set {
+                this.presedensDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool presedensDatoSpecified {
+            get {
+                return this.presedensDatoFieldSpecified;
+            }
+            set {
+                this.presedensDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> opprettetDato {
+            get {
+                return this.opprettetDatoField;
+            }
+            set {
+                this.opprettetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool opprettetDatoSpecified {
+            get {
+                return this.opprettetDatoFieldSpecified;
+            }
+            set {
+                this.opprettetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string opprettetAv {
+            get {
+                return this.opprettetAvField;
+            }
+            set {
+                this.opprettetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string referanseOpprettetAv {
+            get {
+                return this.referanseOpprettetAvField;
+            }
+            set {
+                this.referanseOpprettetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string presedensHjemmel {
+            get {
+                return this.presedensHjemmelField;
+            }
+            set {
+                this.presedensHjemmelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string rettskildefaktor {
+            get {
+                return this.rettskildefaktorField;
+            }
+            set {
+                this.rettskildefaktorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<System.DateTime> presedensGodkjentDato {
+            get {
+                return this.presedensGodkjentDatoField;
+            }
+            set {
+                this.presedensGodkjentDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool presedensGodkjentDatoSpecified {
+            get {
+                return this.presedensGodkjentDatoFieldSpecified;
+            }
+            set {
+                this.presedensGodkjentDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public string presedensGodkjentAv {
+            get {
+                return this.presedensGodkjentAvField;
+            }
+            set {
+                this.presedensGodkjentAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public string referansePresedensGodkjentAv {
+            get {
+                return this.referansePresedensGodkjentAvField;
+            }
+            set {
+                this.referansePresedensGodkjentAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<System.DateTime> avsluttetDato {
+            get {
+                return this.avsluttetDatoField;
+            }
+            set {
+                this.avsluttetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avsluttetDatoSpecified {
+            get {
+                return this.avsluttetDatoFieldSpecified;
+            }
+            set {
+                this.avsluttetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public string avsluttetAv {
+            get {
+                return this.avsluttetAvField;
+            }
+            set {
+                this.avsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public string referanseAvsluttetAv {
+            get {
+                return this.referanseAvsluttetAvField;
+            }
+            set {
+                this.referanseAvsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public PresedensstatusType presedensStatus {
+            get {
+                return this.presedensStatusField;
+            }
+            set {
+                this.presedensStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=16)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("journalpost", IsNullable=false)]
+        public JournalpostType[] journalpost {
+            get {
+                return this.journalpostField;
+            }
+            set {
+                this.journalpostField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=17)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("saksmappe", IsNullable=false)]
+        public SaksmappeType[] sak {
+            get {
+                return this.sakField;
+            }
+            set {
+                this.sakField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Presedensstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class PresedensstatusType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
+    [System.Xml.Serialization.XmlRootAttribute("Journalpost", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    public partial class JournalpostType : RegistreringType {
+        
+        private string journalaarField;
+        
+        private string journalsekvensnummerField;
+        
+        private string journalpostnummerField;
+        
+        private JournalposttypeType journalposttypeField;
+        
+        private JournalstatusType journalstatusField;
+        
+        private System.Nullable<System.DateTime> journaldatoField;
+        
+        private bool journaldatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> dokumentetsDatoField;
+        
+        private bool dokumentetsDatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> mottattDatoField;
+        
+        private bool mottattDatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> sendtDatoField;
+        
+        private bool sendtDatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> forfallsdatoField;
+        
+        private bool forfallsdatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> offentlighetsvurdertDatoField;
+        
+        private bool offentlighetsvurdertDatoFieldSpecified;
+        
+        private string antallVedleggField;
+        
+        private System.Nullable<System.DateTime> utlaantDatoField;
+        
+        private bool utlaantDatoFieldSpecified;
+        
+        private string utlaantTilField;
+        
+        private string referanseUtlaantTilField;
+        
+        private string journalenhetField;
+        
+        private ElektroniskSignaturType elektroniskSignaturField;
+        
+        private DokumentflytType[] dokumentflytField;
+        
+        private AvskrivningType[] avskrivningField;
+        
+        private PresedensType[] presedensField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string journalaar {
+            get {
+                return this.journalaarField;
+            }
+            set {
+                this.journalaarField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
+        public string journalsekvensnummer {
+            get {
+                return this.journalsekvensnummerField;
+            }
+            set {
+                this.journalsekvensnummerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=2)]
+        public string journalpostnummer {
+            get {
+                return this.journalpostnummerField;
+            }
+            set {
+                this.journalpostnummerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public JournalposttypeType journalposttype {
+            get {
+                return this.journalposttypeField;
+            }
+            set {
+                this.journalposttypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public JournalstatusType journalstatus {
+            get {
+                return this.journalstatusField;
+            }
+            set {
+                this.journalstatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> journaldato {
+            get {
+                return this.journaldatoField;
+            }
+            set {
+                this.journaldatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool journaldatoSpecified {
+            get {
+                return this.journaldatoFieldSpecified;
+            }
+            set {
+                this.journaldatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=6)]
+        public System.Nullable<System.DateTime> dokumentetsDato {
+            get {
+                return this.dokumentetsDatoField;
+            }
+            set {
+                this.dokumentetsDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool dokumentetsDatoSpecified {
+            get {
+                return this.dokumentetsDatoFieldSpecified;
+            }
+            set {
+                this.dokumentetsDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=7)]
+        public System.Nullable<System.DateTime> mottattDato {
+            get {
+                return this.mottattDatoField;
+            }
+            set {
+                this.mottattDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool mottattDatoSpecified {
+            get {
+                return this.mottattDatoFieldSpecified;
+            }
+            set {
+                this.mottattDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=8)]
+        public System.Nullable<System.DateTime> sendtDato {
+            get {
+                return this.sendtDatoField;
+            }
+            set {
+                this.sendtDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sendtDatoSpecified {
+            get {
+                return this.sendtDatoFieldSpecified;
+            }
+            set {
+                this.sendtDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=9)]
+        public System.Nullable<System.DateTime> forfallsdato {
+            get {
+                return this.forfallsdatoField;
+            }
+            set {
+                this.forfallsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool forfallsdatoSpecified {
+            get {
+                return this.forfallsdatoFieldSpecified;
+            }
+            set {
+                this.forfallsdatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=10)]
+        public System.Nullable<System.DateTime> offentlighetsvurdertDato {
+            get {
+                return this.offentlighetsvurdertDatoField;
+            }
+            set {
+                this.offentlighetsvurdertDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool offentlighetsvurdertDatoSpecified {
+            get {
+                return this.offentlighetsvurdertDatoFieldSpecified;
+            }
+            set {
+                this.offentlighetsvurdertDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true, Order=11)]
+        public string antallVedlegg {
+            get {
+                return this.antallVedleggField;
+            }
+            set {
+                this.antallVedleggField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=12)]
+        public System.Nullable<System.DateTime> utlaantDato {
+            get {
+                return this.utlaantDatoField;
+            }
+            set {
+                this.utlaantDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool utlaantDatoSpecified {
+            get {
+                return this.utlaantDatoFieldSpecified;
+            }
+            set {
+                this.utlaantDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public string utlaantTil {
+            get {
+                return this.utlaantTilField;
+            }
+            set {
+                this.utlaantTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public string referanseUtlaantTil {
+            get {
+                return this.referanseUtlaantTilField;
+            }
+            set {
+                this.referanseUtlaantTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public string journalenhet {
+            get {
+                return this.journalenhetField;
+            }
+            set {
+                this.journalenhetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=16)]
+        public ElektroniskSignaturType elektroniskSignatur {
+            get {
+                return this.elektroniskSignaturField;
+            }
+            set {
+                this.elektroniskSignaturField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=17)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dokumentflyt", IsNullable=false)]
+        public DokumentflytType[] dokumentflyt {
+            get {
+                return this.dokumentflytField;
+            }
+            set {
+                this.dokumentflytField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=18)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("avskrivning", IsNullable=false)]
+        public AvskrivningType[] avskrivning {
+            get {
+                return this.avskrivningField;
+            }
+            set {
+                this.avskrivningField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=19)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("presedens", IsNullable=false)]
+        public PresedensType[] presedens {
+            get {
+                return this.presedensField;
+            }
+            set {
+                this.presedensField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Journalposttype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class JournalposttypeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Journalstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class JournalstatusType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignatur", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class ElektroniskSignaturType : AbstraktResourceType {
+        
+        private ElektroniskSignaturSikkerhetsnivaaType elektroniskSignaturSikkerhetsnivaaField;
+        
+        private ElektroniskSignaturVerifisertType elektroniskSignaturVerifisertField;
+        
+        private System.DateTime verifisertDatoField;
+        
+        private string verifisertAvField;
+        
+        private string referanseVerifisertAvField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ElektroniskSignaturSikkerhetsnivaaType elektroniskSignaturSikkerhetsnivaa {
+            get {
+                return this.elektroniskSignaturSikkerhetsnivaaField;
+            }
+            set {
+                this.elektroniskSignaturSikkerhetsnivaaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ElektroniskSignaturVerifisertType elektroniskSignaturVerifisert {
+            get {
+                return this.elektroniskSignaturVerifisertField;
+            }
+            set {
+                this.elektroniskSignaturVerifisertField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime verifisertDato {
+            get {
+                return this.verifisertDatoField;
+            }
+            set {
+                this.verifisertDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string verifisertAv {
+            get {
+                return this.verifisertAvField;
+            }
+            set {
+                this.verifisertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string referanseVerifisertAv {
+            get {
+                return this.referanseVerifisertAvField;
+            }
+            set {
+                this.referanseVerifisertAvField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignaturSikkerhetsnivaa", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class ElektroniskSignaturSikkerhetsnivaaType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("ElektroniskSignaturVerifisert", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class ElektroniskSignaturVerifisertType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
+    [System.Xml.Serialization.XmlRootAttribute("Dokumentflyt", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    public partial class DokumentflytType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private string flytTilField;
+        
+        private string referanseFlytTilField;
+        
+        private string flytFraField;
+        
+        private string referanseFlytFraField;
+        
+        private System.DateTime flytMottattDatoField;
+        
+        private System.DateTime flytSendtDatoField;
+        
+        private FlytStatusType flytStatusField;
+        
+        private string flytMerknadField;
+        
+        private ProsessStatusType prosessStatusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string flytTil {
+            get {
+                return this.flytTilField;
+            }
+            set {
+                this.flytTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string referanseFlytTil {
+            get {
+                return this.referanseFlytTilField;
+            }
+            set {
+                this.referanseFlytTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string flytFra {
+            get {
+                return this.flytFraField;
+            }
+            set {
+                this.flytFraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string referanseFlytFra {
+            get {
+                return this.referanseFlytFraField;
+            }
+            set {
+                this.referanseFlytFraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public System.DateTime flytMottattDato {
+            get {
+                return this.flytMottattDatoField;
+            }
+            set {
+                this.flytMottattDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime flytSendtDato {
+            get {
+                return this.flytSendtDatoField;
+            }
+            set {
+                this.flytSendtDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public FlytStatusType flytStatus {
+            get {
+                return this.flytStatusField;
+            }
+            set {
+                this.flytStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public string flytMerknad {
+            get {
+                return this.flytMerknadField;
+            }
+            set {
+                this.flytMerknadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public ProsessStatusType prosessStatus {
+            get {
+                return this.prosessStatusField;
+            }
+            set {
+                this.prosessStatusField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("FlytStatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class FlytStatusType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("ProsessStatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class ProsessStatusType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
+    [System.Xml.Serialization.XmlRootAttribute("Avskrivning", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    public partial class AvskrivningType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private System.Nullable<System.DateTime> avskrivningsdatoField;
+        
+        private bool avskrivningsdatoFieldSpecified;
+        
+        private string avskrevetAvField;
+        
+        private string referanseAvskrevetAvField;
+        
+        private AvskrivningsmaateType avskrivningsmaateField;
+        
+        private string referanseAvskrivesAvJournalpostField;
+        
+        private string referanseAvskrivesAvKorrespondansepartField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> avskrivningsdato {
+            get {
+                return this.avskrivningsdatoField;
+            }
+            set {
+                this.avskrivningsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avskrivningsdatoSpecified {
+            get {
+                return this.avskrivningsdatoFieldSpecified;
+            }
+            set {
+                this.avskrivningsdatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string avskrevetAv {
+            get {
+                return this.avskrevetAvField;
+            }
+            set {
+                this.avskrevetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string referanseAvskrevetAv {
+            get {
+                return this.referanseAvskrevetAvField;
+            }
+            set {
+                this.referanseAvskrevetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public AvskrivningsmaateType avskrivningsmaate {
+            get {
+                return this.avskrivningsmaateField;
+            }
+            set {
+                this.avskrivningsmaateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string referanseAvskrivesAvJournalpost {
+            get {
+                return this.referanseAvskrivesAvJournalpostField;
+            }
+            set {
+                this.referanseAvskrivesAvJournalpostField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string referanseAvskrivesAvKorrespondansepart {
+            get {
+                return this.referanseAvskrivesAvKorrespondansepartField;
+            }
+            set {
+                this.referanseAvskrivesAvKorrespondansepartField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Avskrivningsmaate", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class AvskrivningsmaateType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalpostType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivnotatType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Registrering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class RegistreringType : AbstraktArkivenhetType {
+        
+        private System.Nullable<System.DateTime> arkivertDatoField;
+        
+        private bool arkivertDatoFieldSpecified;
+        
+        private string registreringsIDField;
+        
+        private string arkivertAvField;
+        
+        private string tittelField;
+        
+        private string offentligTittelField;
+        
+        private string referanseArkivertAvField;
+        
+        private string beskrivelseField;
+        
+        private KassasjonType kassasjonField;
+        
+        private string[] noekkelordField;
+        
+        private SkjermingType skjermingField;
+        
+        private string[] forfatterField;
+        
+        private GraderingType graderingField;
+        
+        private DokumentmediumType dokumentmediumField;
+        
+        private string referanseArkivdelField;
+        
+        private string[] oppbevaringsstedField;
+        
+        private System.Nullable<bool> skjermetTittelField;
+        
+        private bool skjermetTittelFieldSpecified;
+        
+        private object virksomhetsspesifikkeMetadataField;
+        
+        private KlasseType klasseField;
+        
+        private AbstraktKorrespondansepartType[] korrespondansepartField;
+        
+        private AbstraktNasjonalidentifikatorType[] nasjonalidentifikatorField;
+        
+        private MerknadType[] merknadField;
+        
+        private MappeType mappeField;
+        
+        private DokumentlinkType[] dokumentlinkField;
+        
+        private KryssreferanseType[] kryssreferanseField;
+        
+        private ArkivdelType arkivdelField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<System.DateTime> arkivertDato {
+            get {
+                return this.arkivertDatoField;
+            }
+            set {
+                this.arkivertDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool arkivertDatoSpecified {
+            get {
+                return this.arkivertDatoFieldSpecified;
+            }
+            set {
+                this.arkivertDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string registreringsID {
+            get {
+                return this.registreringsIDField;
+            }
+            set {
+                this.registreringsIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string arkivertAv {
+            get {
+                return this.arkivertAvField;
+            }
+            set {
+                this.arkivertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string offentligTittel {
+            get {
+                return this.offentligTittelField;
+            }
+            set {
+                this.offentligTittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string referanseArkivertAv {
+            get {
+                return this.referanseArkivertAvField;
+            }
+            set {
+                this.referanseArkivertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public KassasjonType kassasjon {
+            get {
+                return this.kassasjonField;
+            }
+            set {
+                this.kassasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true, Order=8)]
+        public string[] noekkelord {
+            get {
+                return this.noekkelordField;
+            }
+            set {
+                this.noekkelordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public SkjermingType skjerming {
+            get {
+                return this.skjermingField;
+            }
+            set {
+                this.skjermingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("forfatter", IsNullable=true, Order=10)]
+        public string[] forfatter {
+            get {
+                return this.forfatterField;
+            }
+            set {
+                this.forfatterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public GraderingType gradering {
+            get {
+                return this.graderingField;
+            }
+            set {
+                this.graderingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public DokumentmediumType dokumentmedium {
+            get {
+                return this.dokumentmediumField;
+            }
+            set {
+                this.dokumentmediumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public string referanseArkivdel {
+            get {
+                return this.referanseArkivdelField;
+            }
+            set {
+                this.referanseArkivdelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true, Order=14)]
+        public string[] oppbevaringssted {
+            get {
+                return this.oppbevaringsstedField;
+            }
+            set {
+                this.oppbevaringsstedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public System.Nullable<bool> skjermetTittel {
+            get {
+                return this.skjermetTittelField;
+            }
+            set {
+                this.skjermetTittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool skjermetTittelSpecified {
+            get {
+                return this.skjermetTittelFieldSpecified;
+            }
+            set {
+                this.skjermetTittelFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=16)]
+        public object virksomhetsspesifikkeMetadata {
+            get {
+                return this.virksomhetsspesifikkeMetadataField;
+            }
+            set {
+                this.virksomhetsspesifikkeMetadataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=17)]
+        public KlasseType klasse {
+            get {
+                return this.klasseField;
+            }
+            set {
+                this.klasseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=18)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktkorrespondansepart", IsNullable=false)]
+        public AbstraktKorrespondansepartType[] korrespondansepart {
+            get {
+                return this.korrespondansepartField;
+            }
+            set {
+                this.korrespondansepartField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=19)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktnasjonalidentifikator", IsNullable=false)]
+        public AbstraktNasjonalidentifikatorType[] nasjonalidentifikator {
+            get {
+                return this.nasjonalidentifikatorField;
+            }
+            set {
+                this.nasjonalidentifikatorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=20)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("merknad", IsNullable=false)]
+        public MerknadType[] merknad {
+            get {
+                return this.merknadField;
+            }
+            set {
+                this.merknadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=21)]
+        public MappeType mappe {
+            get {
+                return this.mappeField;
+            }
+            set {
+                this.mappeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=22)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dokumentlink", IsNullable=false)]
+        public DokumentlinkType[] dokumentlink {
+            get {
+                return this.dokumentlinkField;
+            }
+            set {
+                this.dokumentlinkField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=23)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
+        public KryssreferanseType[] kryssreferanse {
+            get {
+                return this.kryssreferanseField;
+            }
+            set {
+                this.kryssreferanseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        public ArkivdelType arkivdel {
+            get {
+                return this.arkivdelField;
+            }
+            set {
+                this.arkivdelField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Kassasjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KassasjonType : AbstraktResourceType {
+        
+        private KassasjonsvedtakType kassasjonsvedtakField;
+        
+        private string kassasjonshjemmelField;
+        
+        private string bevaringstidField;
+        
+        private System.Nullable<System.DateTime> kassasjonsdatoField;
+        
+        private bool kassasjonsdatoFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public KassasjonsvedtakType kassasjonsvedtak {
+            get {
+                return this.kassasjonsvedtakField;
+            }
+            set {
+                this.kassasjonsvedtakField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string kassasjonshjemmel {
+            get {
+                return this.kassasjonshjemmelField;
+            }
+            set {
+                this.kassasjonshjemmelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=2)]
+        public string bevaringstid {
+            get {
+                return this.bevaringstidField;
+            }
+            set {
+                this.bevaringstidField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> kassasjonsdato {
+            get {
+                return this.kassasjonsdatoField;
+            }
+            set {
+                this.kassasjonsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool kassasjonsdatoSpecified {
+            get {
+                return this.kassasjonsdatoFieldSpecified;
+            }
+            set {
+                this.kassasjonsdatoFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Kassasjonsvedtak", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class KassasjonsvedtakType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Skjerming", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class SkjermingType : AbstraktResourceType {
+        
+        private TilgangsrestriksjonType tilgangsrestriksjonField;
+        
+        private string skjermingshjemmelField;
+        
+        private SkjermingMetadataType[] skjermingMetadataField;
+        
+        private string skjermingsvarighetField;
+        
+        private System.Nullable<System.DateTime> skjermingOpphoererDatoField;
+        
+        private bool skjermingOpphoererDatoFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TilgangsrestriksjonType tilgangsrestriksjon {
+            get {
+                return this.tilgangsrestriksjonField;
+            }
+            set {
+                this.tilgangsrestriksjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string skjermingshjemmel {
+            get {
+                return this.skjermingshjemmelField;
+            }
+            set {
+                this.skjermingshjemmelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("skjermingmetadata", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+        public SkjermingMetadataType[] skjermingMetadata {
+            get {
+                return this.skjermingMetadataField;
+            }
+            set {
+                this.skjermingMetadataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true, Order=3)]
+        public string skjermingsvarighet {
+            get {
+                return this.skjermingsvarighetField;
+            }
+            set {
+                this.skjermingsvarighetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> skjermingOpphoererDato {
+            get {
+                return this.skjermingOpphoererDatoField;
+            }
+            set {
+                this.skjermingOpphoererDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool skjermingOpphoererDatoSpecified {
+            get {
+                return this.skjermingOpphoererDatoFieldSpecified;
+            }
+            set {
+                this.skjermingOpphoererDatoFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Tilgangsrestriksjon", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class TilgangsrestriksjonType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("SkjermingMetadata", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class SkjermingMetadataType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Gradering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class GraderingType : AbstraktResourceType {
+        
+        private GraderingskodeType graderingskodeField;
+        
+        private System.DateTime graderingsdatoField;
+        
+        private string gradertAvField;
+        
+        private string referanseGradertAvField;
+        
+        private System.Nullable<System.DateTime> nedgraderingsdatoField;
+        
+        private bool nedgraderingsdatoFieldSpecified;
+        
+        private string nedgradertAvField;
+        
+        private string referanseNedgradertAvField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public GraderingskodeType graderingskode {
+            get {
+                return this.graderingskodeField;
+            }
+            set {
+                this.graderingskodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime graderingsdato {
+            get {
+                return this.graderingsdatoField;
+            }
+            set {
+                this.graderingsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string gradertAv {
+            get {
+                return this.gradertAvField;
+            }
+            set {
+                this.gradertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string referanseGradertAv {
+            get {
+                return this.referanseGradertAvField;
+            }
+            set {
+                this.referanseGradertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> nedgraderingsdato {
+            get {
+                return this.nedgraderingsdatoField;
+            }
+            set {
+                this.nedgraderingsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool nedgraderingsdatoSpecified {
+            get {
+                return this.nedgraderingsdatoFieldSpecified;
+            }
+            set {
+                this.nedgraderingsdatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string nedgradertAv {
+            get {
+                return this.nedgradertAvField;
+            }
+            set {
+                this.nedgradertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string referanseNedgradertAv {
+            get {
+                return this.referanseNedgradertAvField;
+            }
+            set {
+                this.referanseNedgradertAvField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Graderingskode", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class GraderingskodeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Dokumentmedium", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class DokumentmediumType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Klasse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KlasseType : AbstraktArkivenhetType {
+        
+        private string klasseIDField;
+        
+        private string tittelField;
+        
+        private string beskrivelseField;
+        
+        private string[] noekkelordField;
+        
+        private System.Nullable<System.DateTime> avsluttetDatoField;
+        
+        private bool avsluttetDatoFieldSpecified;
+        
+        private string avsluttetAvField;
+        
+        private string referanseAvsluttetAvField;
+        
+        private SkjermingType skjermingField;
+        
+        private KassasjonType kassasjonField;
+        
+        private System.Nullable<bool> skjermetKlasseField;
+        
+        private bool skjermetKlasseFieldSpecified;
+        
+        private KlassifikasjonssystemType klassifikasjonssystemField;
+        
+        private RegistreringType[] registreringField;
+        
+        private MappeType[] mappeField;
+        
+        private KryssreferanseType[] kryssreferanseField;
+        
+        private KlasseType[] underklasseField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string klasseID {
+            get {
+                return this.klasseIDField;
+            }
+            set {
+                this.klasseIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true, Order=3)]
+        public string[] noekkelord {
+            get {
+                return this.noekkelordField;
+            }
+            set {
+                this.noekkelordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> avsluttetDato {
+            get {
+                return this.avsluttetDatoField;
+            }
+            set {
+                this.avsluttetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avsluttetDatoSpecified {
+            get {
+                return this.avsluttetDatoFieldSpecified;
+            }
+            set {
+                this.avsluttetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string avsluttetAv {
+            get {
+                return this.avsluttetAvField;
+            }
+            set {
+                this.avsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string referanseAvsluttetAv {
+            get {
+                return this.referanseAvsluttetAvField;
+            }
+            set {
+                this.referanseAvsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public SkjermingType skjerming {
+            get {
+                return this.skjermingField;
+            }
+            set {
+                this.skjermingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public KassasjonType kassasjon {
+            get {
+                return this.kassasjonField;
+            }
+            set {
+                this.kassasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<bool> skjermetKlasse {
+            get {
+                return this.skjermetKlasseField;
+            }
+            set {
+                this.skjermetKlasseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool skjermetKlasseSpecified {
+            get {
+                return this.skjermetKlasseFieldSpecified;
+            }
+            set {
+                this.skjermetKlasseFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public KlassifikasjonssystemType klassifikasjonssystem {
+            get {
+                return this.klassifikasjonssystemField;
+            }
+            set {
+                this.klassifikasjonssystemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=11)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
+        public RegistreringType[] registrering {
+            get {
+                return this.registreringField;
+            }
+            set {
+                this.registreringField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=12)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
+        public MappeType[] mappe {
+            get {
+                return this.mappeField;
+            }
+            set {
+                this.mappeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
+        public KryssreferanseType[] kryssreferanse {
+            get {
+                return this.kryssreferanseField;
+            }
+            set {
+                this.kryssreferanseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=14)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("klasse", IsNullable=false)]
+        public KlasseType[] underklasse {
+            get {
+                return this.underklasseField;
+            }
+            set {
+                this.underklasseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Klassifikasjonssystem", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KlassifikasjonssystemType : AbstraktArkivenhetType {
+        
+        private KlassifikasjonstypeType klassifikasjonstypeField;
+        
+        private string tittelField;
+        
+        private string beskrivelseField;
+        
+        private System.Nullable<System.DateTime> avsluttetDatoField;
+        
+        private bool avsluttetDatoFieldSpecified;
+        
+        private string avsluttetAvField;
+        
+        private string referanseAvsluttetAvField;
+        
+        private KlasseType[] klasseField;
+        
+        private ArkivdelType[] arkivdelField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public KlassifikasjonstypeType klassifikasjonstype {
+            get {
+                return this.klassifikasjonstypeField;
+            }
+            set {
+                this.klassifikasjonstypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> avsluttetDato {
+            get {
+                return this.avsluttetDatoField;
+            }
+            set {
+                this.avsluttetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avsluttetDatoSpecified {
+            get {
+                return this.avsluttetDatoFieldSpecified;
+            }
+            set {
+                this.avsluttetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string avsluttetAv {
+            get {
+                return this.avsluttetAvField;
+            }
+            set {
+                this.avsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string referanseAvsluttetAv {
+            get {
+                return this.referanseAvsluttetAvField;
+            }
+            set {
+                this.referanseAvsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("klasse", IsNullable=false)]
+        public KlasseType[] klasse {
+            get {
+                return this.klasseField;
+            }
+            set {
+                this.klasseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("arkivdel", IsNullable=false)]
+        public ArkivdelType[] arkivdel {
+            get {
+                return this.arkivdelField;
+            }
+            set {
+                this.arkivdelField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Klassifikasjonstype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class KlassifikasjonstypeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Arkivdel", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class ArkivdelType : AbstraktArkivenhetType {
+        
+        private string tittelField;
+        
+        private string beskrivelseField;
+        
+        private ArkivdelstatusType arkivdelstatusField;
+        
+        private DokumentmediumType dokumentmediumField;
+        
+        private string[] oppbevaringsstedField;
+        
+        private System.Nullable<System.DateTime> avsluttetDatoField;
+        
+        private bool avsluttetDatoFieldSpecified;
+        
+        private string avsluttetAvField;
+        
+        private string referanseAvsluttetAvField;
+        
+        private System.Nullable<System.DateTime> arkivperiodeStartDatoField;
+        
+        private bool arkivperiodeStartDatoFieldSpecified;
+        
+        private System.Nullable<System.DateTime> arkivperiodeSluttDatoField;
+        
+        private bool arkivperiodeSluttDatoFieldSpecified;
+        
+        private string referanseForloeperField;
+        
+        private string referanseArvtakerField;
+        
+        private KassasjonType kassasjonField;
+        
+        private SkjermingType skjermingField;
+        
+        private GraderingType graderingField;
+        
+        private MappeType[] mappeField;
+        
+        private ArkivType arkivField;
+        
+        private KlassifikasjonssystemType klassifikasjonssystemField;
+        
+        private KlassifikasjonssystemType[] sekundaerklassifikasjonssystemField;
+        
+        private RegistreringType[] registreringField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ArkivdelstatusType arkivdelstatus {
+            get {
+                return this.arkivdelstatusField;
+            }
+            set {
+                this.arkivdelstatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public DokumentmediumType dokumentmedium {
+            get {
+                return this.dokumentmediumField;
+            }
+            set {
+                this.dokumentmediumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true, Order=4)]
+        public string[] oppbevaringssted {
+            get {
+                return this.oppbevaringsstedField;
+            }
+            set {
+                this.oppbevaringsstedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> avsluttetDato {
+            get {
+                return this.avsluttetDatoField;
+            }
+            set {
+                this.avsluttetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avsluttetDatoSpecified {
+            get {
+                return this.avsluttetDatoFieldSpecified;
+            }
+            set {
+                this.avsluttetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string avsluttetAv {
+            get {
+                return this.avsluttetAvField;
+            }
+            set {
+                this.avsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string referanseAvsluttetAv {
+            get {
+                return this.referanseAvsluttetAvField;
+            }
+            set {
+                this.referanseAvsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=8)]
+        public System.Nullable<System.DateTime> arkivperiodeStartDato {
+            get {
+                return this.arkivperiodeStartDatoField;
+            }
+            set {
+                this.arkivperiodeStartDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool arkivperiodeStartDatoSpecified {
+            get {
+                return this.arkivperiodeStartDatoFieldSpecified;
+            }
+            set {
+                this.arkivperiodeStartDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=9)]
+        public System.Nullable<System.DateTime> arkivperiodeSluttDato {
+            get {
+                return this.arkivperiodeSluttDatoField;
+            }
+            set {
+                this.arkivperiodeSluttDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool arkivperiodeSluttDatoSpecified {
+            get {
+                return this.arkivperiodeSluttDatoFieldSpecified;
+            }
+            set {
+                this.arkivperiodeSluttDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public string referanseForloeper {
+            get {
+                return this.referanseForloeperField;
+            }
+            set {
+                this.referanseForloeperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public string referanseArvtaker {
+            get {
+                return this.referanseArvtakerField;
+            }
+            set {
+                this.referanseArvtakerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public KassasjonType kassasjon {
+            get {
+                return this.kassasjonField;
+            }
+            set {
+                this.kassasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public SkjermingType skjerming {
+            get {
+                return this.skjermingField;
+            }
+            set {
+                this.skjermingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public GraderingType gradering {
+            get {
+                return this.graderingField;
+            }
+            set {
+                this.graderingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=15)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
+        public MappeType[] mappe {
+            get {
+                return this.mappeField;
+            }
+            set {
+                this.mappeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public ArkivType arkiv {
+            get {
+                return this.arkivField;
+            }
+            set {
+                this.arkivField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=17)]
+        public KlassifikasjonssystemType klassifikasjonssystem {
+            get {
+                return this.klassifikasjonssystemField;
+            }
+            set {
+                this.klassifikasjonssystemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=18)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("klassifikasjonssystem", IsNullable=false)]
+        public KlassifikasjonssystemType[] sekundaerklassifikasjonssystem {
+            get {
+                return this.sekundaerklassifikasjonssystemField;
+            }
+            set {
+                this.sekundaerklassifikasjonssystemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=19)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
+        public RegistreringType[] registrering {
+            get {
+                return this.registreringField;
+            }
+            set {
+                this.registreringField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Arkivdelstatus", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class ArkivdelstatusType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SaksmappeType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Mappe", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class MappeType : AbstraktArkivenhetType {
+        
+        private string mappeIDField;
+        
+        private MappetypeType mappetypeField;
+        
+        private string tittelField;
+        
+        private string offentligTittelField;
+        
+        private string beskrivelseField;
+        
+        private string[] noekkelordField;
+        
+        private DokumentmediumType dokumentmediumField;
+        
+        private string[] oppbevaringsstedField;
+        
+        private System.Nullable<System.DateTime> avsluttetDatoField;
+        
+        private bool avsluttetDatoFieldSpecified;
+        
+        private string avsluttetAvField;
+        
+        private string referanseAvsluttetAvField;
+        
+        private KassasjonType kassasjonField;
+        
+        private SkjermingType skjermingField;
+        
+        private GraderingType graderingField;
+        
+        private string referanseForelderMappeField;
+        
+        private System.Nullable<bool> skjermetTittelField;
+        
+        private bool skjermetTittelFieldSpecified;
+        
+        private object virksomhetsspesifikkeMetadataField;
+        
+        private MerknadType[] merknadField;
+        
+        private RegistreringType[] registreringField;
+        
+        private KlasseType klasseField;
+        
+        private AbstraktNasjonalidentifikatorType[] nasjonalidentifikatorField;
+        
+        private KryssreferanseType[] kryssreferanseField;
+        
+        private ArkivdelType arkivdelField;
+        
+        private AbstraktPartType[] partField;
+        
+        private MappeType[] undermappeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string mappeID {
+            get {
+                return this.mappeIDField;
+            }
+            set {
+                this.mappeIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public MappetypeType mappetype {
+            get {
+                return this.mappetypeField;
+            }
+            set {
+                this.mappetypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string tittel {
+            get {
+                return this.tittelField;
+            }
+            set {
+                this.tittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string offentligTittel {
+            get {
+                return this.offentligTittelField;
+            }
+            set {
+                this.offentligTittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("noekkelord", IsNullable=true, Order=5)]
+        public string[] noekkelord {
+            get {
+                return this.noekkelordField;
+            }
+            set {
+                this.noekkelordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public DokumentmediumType dokumentmedium {
+            get {
+                return this.dokumentmediumField;
+            }
+            set {
+                this.dokumentmediumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true, Order=7)]
+        public string[] oppbevaringssted {
+            get {
+                return this.oppbevaringsstedField;
+            }
+            set {
+                this.oppbevaringsstedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<System.DateTime> avsluttetDato {
+            get {
+                return this.avsluttetDatoField;
+            }
+            set {
+                this.avsluttetDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool avsluttetDatoSpecified {
+            get {
+                return this.avsluttetDatoFieldSpecified;
+            }
+            set {
+                this.avsluttetDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string avsluttetAv {
+            get {
+                return this.avsluttetAvField;
+            }
+            set {
+                this.avsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public string referanseAvsluttetAv {
+            get {
+                return this.referanseAvsluttetAvField;
+            }
+            set {
+                this.referanseAvsluttetAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public KassasjonType kassasjon {
+            get {
+                return this.kassasjonField;
+            }
+            set {
+                this.kassasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public SkjermingType skjerming {
+            get {
+                return this.skjermingField;
+            }
+            set {
+                this.skjermingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public GraderingType gradering {
+            get {
+                return this.graderingField;
+            }
+            set {
+                this.graderingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public string referanseForelderMappe {
+            get {
+                return this.referanseForelderMappeField;
+            }
+            set {
+                this.referanseForelderMappeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public System.Nullable<bool> skjermetTittel {
+            get {
+                return this.skjermetTittelField;
+            }
+            set {
+                this.skjermetTittelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool skjermetTittelSpecified {
+            get {
+                return this.skjermetTittelFieldSpecified;
+            }
+            set {
+                this.skjermetTittelFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=16)]
+        public object virksomhetsspesifikkeMetadata {
+            get {
+                return this.virksomhetsspesifikkeMetadataField;
+            }
+            set {
+                this.virksomhetsspesifikkeMetadataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=17)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("merknad", IsNullable=false)]
+        public MerknadType[] merknad {
+            get {
+                return this.merknadField;
+            }
+            set {
+                this.merknadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=18)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("registrering", IsNullable=false)]
+        public RegistreringType[] registrering {
+            get {
+                return this.registreringField;
+            }
+            set {
+                this.registreringField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=19)]
+        public KlasseType klasse {
+            get {
+                return this.klasseField;
+            }
+            set {
+                this.klasseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=20)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktnasjonalidentifikator", IsNullable=false)]
+        public AbstraktNasjonalidentifikatorType[] nasjonalidentifikator {
+            get {
+                return this.nasjonalidentifikatorField;
+            }
+            set {
+                this.nasjonalidentifikatorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=21)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("kryssreferanse", IsNullable=false)]
+        public KryssreferanseType[] kryssreferanse {
+            get {
+                return this.kryssreferanseField;
+            }
+            set {
+                this.kryssreferanseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=22)]
+        public ArkivdelType arkivdel {
+            get {
+                return this.arkivdelField;
+            }
+            set {
+                this.arkivdelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=23)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktpart", IsNullable=false)]
+        public AbstraktPartType[] part {
+            get {
+                return this.partField;
+            }
+            set {
+                this.partField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=24)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("mappe", IsNullable=false)]
+        public MappeType[] undermappe {
+            get {
+                return this.undermappeField;
+            }
+            set {
+                this.undermappeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Mappetype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class MappetypeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Merknad", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class MerknadType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private string merknadstekstField;
+        
+        private MerknadstypeType merknadstypeField;
+        
+        private System.DateTime merknadsdatoField;
+        
+        private string merknadRegistrertAvField;
+        
+        private string referanseMerknadRegistrertAvField;
+        
+        private bool skjermetMerknadField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string merknadstekst {
+            get {
+                return this.merknadstekstField;
+            }
+            set {
+                this.merknadstekstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public MerknadstypeType merknadstype {
+            get {
+                return this.merknadstypeField;
+            }
+            set {
+                this.merknadstypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime merknadsdato {
+            get {
+                return this.merknadsdatoField;
+            }
+            set {
+                this.merknadsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string merknadRegistrertAv {
+            get {
+                return this.merknadRegistrertAvField;
+            }
+            set {
+                this.merknadRegistrertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string referanseMerknadRegistrertAv {
+            get {
+                return this.referanseMerknadRegistrertAvField;
+            }
+            set {
+                this.referanseMerknadRegistrertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool skjermetMerknad {
+            get {
+                return this.skjermetMerknadField;
+            }
+            set {
+                this.skjermetMerknadField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Merknadstype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class MerknadstypeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
     [System.Xml.Serialization.XmlRootAttribute("Kryssreferanse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
     public partial class KryssreferanseType : AbstraktResourceType {
         
@@ -5115,7 +4842,7 @@ namespace arkivverket.noark5tj.models {
         private KlasseType klasseField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string referanseTilMappe {
             get {
                 return this.referanseTilMappeField;
@@ -5126,7 +4853,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string referanseTilKlasse {
             get {
                 return this.referanseTilKlasseField;
@@ -5137,7 +4864,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string referanseTilRegistrering {
             get {
                 return this.referanseTilRegistreringField;
@@ -5148,7 +4875,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public MappeType mappe {
             get {
                 return this.mappeField;
@@ -5159,7 +4886,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public RegistreringType registrering {
             get {
                 return this.registreringField;
@@ -5170,7 +4897,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public KlasseType klasse {
             get {
                 return this.klasseField;
@@ -5182,12 +4909,14 @@ namespace arkivverket.noark5tj.models {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentobjektType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentbeskrivelseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DokumentlinkType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KlassifikasjonssystemType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KlasseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegistreringType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalpostType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivnotatType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MappeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SaksmappeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArkivdelType))]
@@ -5222,7 +4951,7 @@ namespace arkivverket.noark5tj.models {
         private HendelsesloggType[] loggField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -5233,7 +4962,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public System.Nullable<System.DateTime> oppdatertDato {
             get {
                 return this.oppdatertDatoField;
@@ -5255,7 +4984,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public System.Nullable<System.DateTime> opprettetDato {
             get {
                 return this.opprettetDatoField;
@@ -5277,7 +5006,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string opprettetAv {
             get {
                 return this.opprettetAvField;
@@ -5288,7 +5017,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string oppdatertAv {
             get {
                 return this.oppdatertAvField;
@@ -5299,7 +5028,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public string referanseOppdatertAv {
             get {
                 return this.referanseOppdatertAvField;
@@ -5310,7 +5039,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string referanseOpprettetAv {
             get {
                 return this.referanseOpprettetAvField;
@@ -5321,7 +5050,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=7)]
         [System.Xml.Serialization.XmlArrayItemAttribute("hendelseslogg", IsNullable=false)]
         public HendelsesloggType[] logg {
             get {
@@ -5349,6 +5078,7 @@ namespace arkivverket.noark5tj.models {
         private System.DateTime hendelseDatoField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public HendelsetypeType hendelsetype {
             get {
                 return this.hendelsetypeField;
@@ -5359,7 +5089,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string beskrivelse {
             get {
                 return this.beskrivelseField;
@@ -5370,6 +5100,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime hendelseDato {
             get {
                 return this.hendelseDatoField;
@@ -5441,7 +5172,7 @@ namespace arkivverket.noark5tj.models {
         private string nyVerdiField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -5452,7 +5183,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string referanseArkivenhet {
             get {
                 return this.referanseArkivenhetField;
@@ -5463,7 +5194,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string referanseMetadata {
             get {
                 return this.referanseMetadataField;
@@ -5474,6 +5205,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public System.DateTime endretDato {
             get {
                 return this.endretDatoField;
@@ -5484,6 +5216,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string endretAv {
             get {
                 return this.endretAvField;
@@ -5494,6 +5227,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string referanseEndretAv {
             get {
                 return this.referanseEndretAvField;
@@ -5504,7 +5238,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string tidligereVerdi {
             get {
                 return this.tidligereVerdiField;
@@ -5515,13 +5249,414 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string nyVerdi {
             get {
                 return this.nyVerdiField;
             }
             set {
                 this.nyVerdiField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Dokumentobjekt", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class DokumentobjektType : AbstraktArkivenhetType {
+        
+        private string versjonsnummerField;
+        
+        private VariantformatType variantformatField;
+        
+        private FormatType formatField;
+        
+        private string formatDetaljerField;
+        
+        private System.Nullable<System.DateTime> opprettetDato1Field;
+        
+        private bool opprettetDato1FieldSpecified;
+        
+        private string opprettetAv1Field;
+        
+        private string referanseDokumentfilField;
+        
+        private string filnavnField;
+        
+        private string sjekksumField;
+        
+        private string mimeTypeField;
+        
+        private string sjekksumAlgoritmeField;
+        
+        private string filstoerrelseField;
+        
+        private ElektroniskSignaturType elektroniskSignaturField;
+        
+        private KonverteringType[] konverteringField;
+        
+        private DokumentbeskrivelseType dokumentbeskrivelseField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string versjonsnummer {
+            get {
+                return this.versjonsnummerField;
+            }
+            set {
+                this.versjonsnummerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VariantformatType variantformat {
+            get {
+                return this.variantformatField;
+            }
+            set {
+                this.variantformatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public FormatType format {
+            get {
+                return this.formatField;
+            }
+            set {
+                this.formatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string formatDetaljer {
+            get {
+                return this.formatDetaljerField;
+            }
+            set {
+                this.formatDetaljerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("opprettetDato", IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> opprettetDato1 {
+            get {
+                return this.opprettetDato1Field;
+            }
+            set {
+                this.opprettetDato1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool opprettetDato1Specified {
+            get {
+                return this.opprettetDato1FieldSpecified;
+            }
+            set {
+                this.opprettetDato1FieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("opprettetAv", IsNullable=true, Order=5)]
+        public string opprettetAv1 {
+            get {
+                return this.opprettetAv1Field;
+            }
+            set {
+                this.opprettetAv1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string referanseDokumentfil {
+            get {
+                return this.referanseDokumentfilField;
+            }
+            set {
+                this.referanseDokumentfilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string filnavn {
+            get {
+                return this.filnavnField;
+            }
+            set {
+                this.filnavnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public string sjekksum {
+            get {
+                return this.sjekksumField;
+            }
+            set {
+                this.sjekksumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string mimeType {
+            get {
+                return this.mimeTypeField;
+            }
+            set {
+                this.mimeTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public string sjekksumAlgoritme {
+            get {
+                return this.sjekksumAlgoritmeField;
+            }
+            set {
+                this.sjekksumAlgoritmeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public string filstoerrelse {
+            get {
+                return this.filstoerrelseField;
+            }
+            set {
+                this.filstoerrelseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public ElektroniskSignaturType elektroniskSignatur {
+            get {
+                return this.elektroniskSignaturField;
+            }
+            set {
+                this.elektroniskSignaturField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("konvertering", IsNullable=false)]
+        public KonverteringType[] konvertering {
+            get {
+                return this.konverteringField;
+            }
+            set {
+                this.konverteringField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public DokumentbeskrivelseType dokumentbeskrivelse {
+            get {
+                return this.dokumentbeskrivelseField;
+            }
+            set {
+                this.dokumentbeskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Variantformat", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class VariantformatType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Format", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class FormatType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("Konvertering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KonverteringType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private System.DateTime konvertertDatoField;
+        
+        private string konvertertAvField;
+        
+        private string konvertertFraFormatField;
+        
+        private string konvertertTilFormatField;
+        
+        private string konverteringsverktoeyField;
+        
+        private string konverteringskommentarField;
+        
+        private string referanseKonvertertAvField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime konvertertDato {
+            get {
+                return this.konvertertDatoField;
+            }
+            set {
+                this.konvertertDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string konvertertAv {
+            get {
+                return this.konvertertAvField;
+            }
+            set {
+                this.konvertertAvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string konvertertFraFormat {
+            get {
+                return this.konvertertFraFormatField;
+            }
+            set {
+                this.konvertertFraFormatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string konvertertTilFormat {
+            get {
+                return this.konvertertTilFormatField;
+            }
+            set {
+                this.konvertertTilFormatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string konverteringsverktoey {
+            get {
+                return this.konverteringsverktoeyField;
+            }
+            set {
+                this.konverteringsverktoeyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string konverteringskommentar {
+            get {
+                return this.konverteringskommentarField;
+            }
+            set {
+                this.konverteringskommentarField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string referanseKonvertertAv {
+            get {
+                return this.referanseKonvertertAvField;
+            }
+            set {
+                this.referanseKonvertertAvField = value;
             }
         }
     }
@@ -5568,6 +5703,7 @@ namespace arkivverket.noark5tj.models {
         private DokumentobjektType[] dokumentobjektField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public DokumenttypeType dokumenttype {
             get {
                 return this.dokumenttypeField;
@@ -5578,6 +5714,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public DokumentstatusType dokumentstatus {
             get {
                 return this.dokumentstatusField;
@@ -5588,6 +5725,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string tittel {
             get {
                 return this.tittelField;
@@ -5598,7 +5736,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string beskrivelse {
             get {
                 return this.beskrivelseField;
@@ -5609,7 +5747,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("forfatter", IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute("forfatter", IsNullable=true, Order=4)]
         public string[] forfatter {
             get {
                 return this.forfatterField;
@@ -5620,7 +5758,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public DokumentmediumType dokumentmedium {
             get {
                 return this.dokumentmediumField;
@@ -5631,7 +5769,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string oppbevaringssted {
             get {
                 return this.oppbevaringsstedField;
@@ -5642,7 +5780,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public KassasjonType kassasjon {
             get {
                 return this.kassasjonField;
@@ -5653,7 +5791,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public UtfoertKassasjonType utfoertKassasjon {
             get {
                 return this.utfoertKassasjonField;
@@ -5664,7 +5802,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
         public DokumentskjermingType skjerming {
             get {
                 return this.skjermingField;
@@ -5675,7 +5813,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
         public GraderingType gradering {
             get {
                 return this.graderingField;
@@ -5686,7 +5824,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
         public ElektroniskSignaturType elektroniskSignatur {
             get {
                 return this.elektroniskSignaturField;
@@ -5697,7 +5835,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
         public object virksomhetsspesifikkeMetadata {
             get {
                 return this.virksomhetsspesifikkeMetadataField;
@@ -5708,7 +5846,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=13)]
         [System.Xml.Serialization.XmlArrayItemAttribute("merknad", IsNullable=false)]
         public MerknadType[] merknad {
             get {
@@ -5720,6 +5858,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=14)]
         [System.Xml.Serialization.XmlArrayItemAttribute("dokumentlink", IsNullable=false)]
         public DokumentlinkType[] dokumentlink {
             get {
@@ -5731,7 +5870,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=15)]
         [System.Xml.Serialization.XmlArrayItemAttribute("dokumentobjekt", IsNullable=false)]
         public DokumentobjektType[] dokumentobjekt {
             get {
@@ -5827,6 +5966,7 @@ namespace arkivverket.noark5tj.models {
         private string referanseKassertAvField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public System.DateTime kassertDato {
             get {
                 return this.kassertDatoField;
@@ -5837,6 +5977,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string kassertAv {
             get {
                 return this.kassertAvField;
@@ -5847,6 +5988,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string referanseKassertAv {
             get {
                 return this.referanseKassertAvField;
@@ -6000,6 +6142,7 @@ namespace arkivverket.noark5tj.models {
         private DokumentbeskrivelseType dokumentbeskrivelseField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public TilknyttetRegistreringSomType tilknyttetRegistreringSom {
             get {
                 return this.tilknyttetRegistreringSomField;
@@ -6010,7 +6153,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
         public string dokumentnummer {
             get {
                 return this.dokumentnummerField;
@@ -6021,7 +6164,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
         public System.DateTime tilknyttetDato {
             get {
                 return this.tilknyttetDatoField;
@@ -6032,7 +6175,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string tilknyttetAv {
             get {
                 return this.tilknyttetAvField;
@@ -6043,7 +6186,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string referanseTilknyttetAv {
             get {
                 return this.referanseTilknyttetAvField;
@@ -6054,7 +6197,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public RegistreringType registrering {
             get {
                 return this.registreringField;
@@ -6065,7 +6208,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public DokumentbeskrivelseType dokumentbeskrivelse {
             get {
                 return this.dokumentbeskrivelseField;
@@ -6116,414 +6259,6 @@ namespace arkivverket.noark5tj.models {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Dokumentobjekt", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class DokumentobjektType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private string versjonsnummerField;
-        
-        private VariantformatType variantformatField;
-        
-        private FormatType formatField;
-        
-        private string formatDetaljerField;
-        
-        private System.Nullable<System.DateTime> opprettetDatoField;
-        
-        private bool opprettetDatoFieldSpecified;
-        
-        private string opprettetAvField;
-        
-        private string referanseDokumentfilField;
-        
-        private string filnavnField;
-        
-        private string sjekksumField;
-        
-        private string mimeTypeField;
-        
-        private string sjekksumAlgoritmeField;
-        
-        private string filstoerrelseField;
-        
-        private ElektroniskSignaturType elektroniskSignaturField;
-        
-        private KonverteringType[] konverteringField;
-        
-        private DokumentbeskrivelseType dokumentbeskrivelseField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
-        public string versjonsnummer {
-            get {
-                return this.versjonsnummerField;
-            }
-            set {
-                this.versjonsnummerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public VariantformatType variantformat {
-            get {
-                return this.variantformatField;
-            }
-            set {
-                this.variantformatField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public FormatType format {
-            get {
-                return this.formatField;
-            }
-            set {
-                this.formatField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string formatDetaljer {
-            get {
-                return this.formatDetaljerField;
-            }
-            set {
-                this.formatDetaljerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> opprettetDato {
-            get {
-                return this.opprettetDatoField;
-            }
-            set {
-                this.opprettetDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool opprettetDatoSpecified {
-            get {
-                return this.opprettetDatoFieldSpecified;
-            }
-            set {
-                this.opprettetDatoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string opprettetAv {
-            get {
-                return this.opprettetAvField;
-            }
-            set {
-                this.opprettetAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseDokumentfil {
-            get {
-                return this.referanseDokumentfilField;
-            }
-            set {
-                this.referanseDokumentfilField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string filnavn {
-            get {
-                return this.filnavnField;
-            }
-            set {
-                this.filnavnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string sjekksum {
-            get {
-                return this.sjekksumField;
-            }
-            set {
-                this.sjekksumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string mimeType {
-            get {
-                return this.mimeTypeField;
-            }
-            set {
-                this.mimeTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string sjekksumAlgoritme {
-            get {
-                return this.sjekksumAlgoritmeField;
-            }
-            set {
-                this.sjekksumAlgoritmeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string filstoerrelse {
-            get {
-                return this.filstoerrelseField;
-            }
-            set {
-                this.filstoerrelseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public ElektroniskSignaturType elektroniskSignatur {
-            get {
-                return this.elektroniskSignaturField;
-            }
-            set {
-                this.elektroniskSignaturField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("konvertering", IsNullable=false)]
-        public KonverteringType[] konvertering {
-            get {
-                return this.konverteringField;
-            }
-            set {
-                this.konverteringField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public DokumentbeskrivelseType dokumentbeskrivelse {
-            get {
-                return this.dokumentbeskrivelseField;
-            }
-            set {
-                this.dokumentbeskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Variantformat", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class VariantformatType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
-    [System.Xml.Serialization.XmlRootAttribute("Format", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
-    public partial class FormatType {
-        
-        private string kodeField;
-        
-        private string beskrivelseField;
-        
-        /// <remarks/>
-        public string kode {
-            get {
-                return this.kodeField;
-            }
-            set {
-                this.kodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string beskrivelse {
-            get {
-                return this.beskrivelseField;
-            }
-            set {
-                this.beskrivelseField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
-    [System.Xml.Serialization.XmlRootAttribute("Konvertering", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
-    public partial class KonverteringType : AbstraktResourceType {
-        
-        private string systemIDField;
-        
-        private System.DateTime konvertertDatoField;
-        
-        private string konvertertAvField;
-        
-        private string konvertertFraFormatField;
-        
-        private string konvertertTilFormatField;
-        
-        private string konverteringsverktoeyField;
-        
-        private string konverteringskommentarField;
-        
-        private string referanseKonvertertAvField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string systemID {
-            get {
-                return this.systemIDField;
-            }
-            set {
-                this.systemIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime konvertertDato {
-            get {
-                return this.konvertertDatoField;
-            }
-            set {
-                this.konvertertDatoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string konvertertAv {
-            get {
-                return this.konvertertAvField;
-            }
-            set {
-                this.konvertertAvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string konvertertFraFormat {
-            get {
-                return this.konvertertFraFormatField;
-            }
-            set {
-                this.konvertertFraFormatField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string konvertertTilFormat {
-            get {
-                return this.konvertertTilFormatField;
-            }
-            set {
-                this.konvertertTilFormatField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string konverteringsverktoey {
-            get {
-                return this.konverteringsverktoeyField;
-            }
-            set {
-                this.konverteringsverktoeyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string konverteringskommentar {
-            get {
-                return this.konverteringskommentarField;
-            }
-            set {
-                this.konverteringskommentarField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string referanseKonvertertAv {
-            get {
-                return this.referanseKonvertertAvField;
-            }
-            set {
-                this.referanseKonvertertAvField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
     [System.Xml.Serialization.XmlRootAttribute("Arkivskaper", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
     public partial class ArkivskaperType : AbstraktArkivenhetType {
         
@@ -6536,6 +6271,7 @@ namespace arkivverket.noark5tj.models {
         private ArkivType[] arkivField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string arkivskaperID {
             get {
                 return this.arkivskaperIDField;
@@ -6546,6 +6282,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string arkivskaperNavn {
             get {
                 return this.arkivskaperNavnField;
@@ -6556,7 +6293,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string beskrivelse {
             get {
                 return this.beskrivelseField;
@@ -6567,7 +6304,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=3)]
         [System.Xml.Serialization.XmlArrayItemAttribute("arkiv", IsNullable=false)]
         public ArkivType[] arkiv {
             get {
@@ -6613,6 +6350,7 @@ namespace arkivverket.noark5tj.models {
         private ArkivType[] underarkivField;
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string tittel {
             get {
                 return this.tittelField;
@@ -6623,7 +6361,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string beskrivelse {
             get {
                 return this.beskrivelseField;
@@ -6634,7 +6372,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public ArkivstatusType arkivstatus {
             get {
                 return this.arkivstatusField;
@@ -6645,7 +6383,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public DokumentmediumType dokumentmedium {
             get {
                 return this.dokumentmediumField;
@@ -6656,7 +6394,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute("oppbevaringssted", IsNullable=true, Order=4)]
         public string[] oppbevaringssted {
             get {
                 return this.oppbevaringsstedField;
@@ -6667,7 +6405,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public System.Nullable<System.DateTime> avsluttetDato {
             get {
                 return this.avsluttetDatoField;
@@ -6689,7 +6427,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string avsluttetAv {
             get {
                 return this.avsluttetAvField;
@@ -6700,7 +6438,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string referanseAvsluttetAv {
             get {
                 return this.referanseAvsluttetAvField;
@@ -6711,6 +6449,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
         [System.Xml.Serialization.XmlArrayItemAttribute("arkivskaper", IsNullable=false)]
         public ArkivskaperType[] arkivskaper {
             get {
@@ -6722,7 +6461,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=9)]
         [System.Xml.Serialization.XmlArrayItemAttribute("arkivdel", IsNullable=false)]
         public ArkivdelType[] arkivdel {
             get {
@@ -6734,7 +6473,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=10)]
         [System.Xml.Serialization.XmlArrayItemAttribute("arkiv", IsNullable=false)]
         public ArkivType[] underarkiv {
             get {
@@ -6819,10 +6558,8 @@ namespace arkivverket.noark5tj.models {
         
         private KlasseType[] sekundaerklassifikasjonField;
         
-        private AbstraktSakspartType[] sakspartField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true, Order=0)]
         public string saksaar {
             get {
                 return this.saksaarField;
@@ -6833,7 +6570,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", IsNullable=true, Order=1)]
         public string sakssekvensnummer {
             get {
                 return this.sakssekvensnummerField;
@@ -6844,7 +6581,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
         public System.DateTime saksdato {
             get {
                 return this.saksdatoField;
@@ -6855,7 +6592,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string administrativEnhet {
             get {
                 return this.administrativEnhetField;
@@ -6866,7 +6603,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string referanseAdministrativEnhet {
             get {
                 return this.referanseAdministrativEnhetField;
@@ -6877,6 +6614,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string saksansvarlig {
             get {
                 return this.saksansvarligField;
@@ -6887,7 +6625,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string referanseSaksansvarlig {
             get {
                 return this.referanseSaksansvarligField;
@@ -6898,7 +6636,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string journalenhet {
             get {
                 return this.journalenhetField;
@@ -6909,6 +6647,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public SaksstatusType saksstatus {
             get {
                 return this.saksstatusField;
@@ -6919,7 +6658,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true, Order=9)]
         public System.Nullable<System.DateTime> utlaantDato {
             get {
                 return this.utlaantDatoField;
@@ -6941,7 +6680,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
         public string utlaantTil {
             get {
                 return this.utlaantTilField;
@@ -6952,7 +6691,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
         public string referanseUtlaantTil {
             get {
                 return this.referanseUtlaantTilField;
@@ -6963,7 +6702,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=12)]
         [System.Xml.Serialization.XmlArrayItemAttribute("presedens", IsNullable=false)]
         public PresedensType[] presedens {
             get {
@@ -6975,7 +6714,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=13)]
         [System.Xml.Serialization.XmlArrayItemAttribute("klasse", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
         public KlasseType[] sekundaerklassifikasjon {
             get {
@@ -6983,18 +6722,6 @@ namespace arkivverket.noark5tj.models {
             }
             set {
                 this.sekundaerklassifikasjonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktsakspart", IsNullable=false)]
-        public AbstraktSakspartType[] sakspart {
-            get {
-                return this.sakspartField;
-            }
-            set {
-                this.sakspartField = value;
             }
         }
     }
@@ -7034,6 +6761,576 @@ namespace arkivverket.noark5tj.models {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartPersonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartInternType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KorrespondansepartEnhetType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("AbstraktKorrespondansepart", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public abstract partial class AbstraktKorrespondansepartType : AbstraktResourceType {
+        
+        private string systemIDField;
+        
+        private KorrespondanseparttypeType korrespondanseparttypeField;
+        
+        private System.Nullable<bool> skjermetKorrespondansepartField;
+        
+        private bool skjermetKorrespondansepartFieldSpecified;
+        
+        private object virksomhetsspesifikkeMetadataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string systemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public KorrespondanseparttypeType korrespondanseparttype {
+            get {
+                return this.korrespondanseparttypeField;
+            }
+            set {
+                this.korrespondanseparttypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<bool> skjermetKorrespondansepart {
+            get {
+                return this.skjermetKorrespondansepartField;
+            }
+            set {
+                this.skjermetKorrespondansepartField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool skjermetKorrespondansepartSpecified {
+            get {
+                return this.skjermetKorrespondansepartFieldSpecified;
+            }
+            set {
+                this.skjermetKorrespondansepartFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public object virksomhetsspesifikkeMetadata {
+            get {
+                return this.virksomhetsspesifikkeMetadataField;
+            }
+            set {
+                this.virksomhetsspesifikkeMetadataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata")]
+    [System.Xml.Serialization.XmlRootAttribute("Korrespondanseparttype", Namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata", IsNullable=false)]
+    public partial class KorrespondanseparttypeType {
+        
+        private string kodeField;
+        
+        private string beskrivelseField;
+        
+        /// <remarks/>
+        public string kode {
+            get {
+                return this.kodeField;
+            }
+            set {
+                this.kodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string beskrivelse {
+            get {
+                return this.beskrivelseField;
+            }
+            set {
+                this.beskrivelseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartPerson", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KorrespondansepartPersonType : AbstraktKorrespondansepartType {
+        
+        private string navnField;
+        
+        private EnkelAdresseType postadresseField;
+        
+        private EnkelAdresseType bostedsadresseField;
+        
+        private KontaktinformasjonType kontaktinformasjonField;
+        
+        private AbstraktPersonidentifikatorType[] personidentifikatorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string navn {
+            get {
+                return this.navnField;
+            }
+            set {
+                this.navnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public EnkelAdresseType postadresse {
+            get {
+                return this.postadresseField;
+            }
+            set {
+                this.postadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public EnkelAdresseType bostedsadresse {
+            get {
+                return this.bostedsadresseField;
+            }
+            set {
+                this.bostedsadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public KontaktinformasjonType kontaktinformasjon {
+            get {
+                return this.kontaktinformasjonField;
+            }
+            set {
+                this.kontaktinformasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("abstraktpersonidentifikator", IsNullable=false)]
+        public AbstraktPersonidentifikatorType[] personidentifikator {
+            get {
+                return this.personidentifikatorField;
+            }
+            set {
+                this.personidentifikatorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartIntern", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KorrespondansepartInternType : AbstraktKorrespondansepartType {
+        
+        private string administrativEnhetField;
+        
+        private string referanseAdministrativEnhetField;
+        
+        private string saksbehandlerField;
+        
+        private string referanseSaksbehandlerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string administrativEnhet {
+            get {
+                return this.administrativEnhetField;
+            }
+            set {
+                this.administrativEnhetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string referanseAdministrativEnhet {
+            get {
+                return this.referanseAdministrativEnhetField;
+            }
+            set {
+                this.referanseAdministrativEnhetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string saksbehandler {
+            get {
+                return this.saksbehandlerField;
+            }
+            set {
+                this.saksbehandlerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string referanseSaksbehandler {
+            get {
+                return this.referanseSaksbehandlerField;
+            }
+            set {
+                this.referanseSaksbehandlerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur")]
+    [System.Xml.Serialization.XmlRootAttribute("KorrespondansepartEnhet", Namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur", IsNullable=false)]
+    public partial class KorrespondansepartEnhetType : AbstraktKorrespondansepartType {
+        
+        private EnhetsidentifikatorType enhetsidentifikatorField;
+        
+        private string navnField;
+        
+        private EnkelAdresseType forretningsadresseField;
+        
+        private EnkelAdresseType postadresseField;
+        
+        private KontaktinformasjonType kontaktinformasjonField;
+        
+        private string kontaktpersonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public EnhetsidentifikatorType enhetsidentifikator {
+            get {
+                return this.enhetsidentifikatorField;
+            }
+            set {
+                this.enhetsidentifikatorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string navn {
+            get {
+                return this.navnField;
+            }
+            set {
+                this.navnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public EnkelAdresseType forretningsadresse {
+            get {
+                return this.forretningsadresseField;
+            }
+            set {
+                this.forretningsadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public EnkelAdresseType postadresse {
+            get {
+                return this.postadresseField;
+            }
+            set {
+                this.postadresseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public KontaktinformasjonType kontaktinformasjon {
+            get {
+                return this.kontaktinformasjonField;
+            }
+            set {
+                this.kontaktinformasjonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string kontaktperson {
+            get {
+                return this.kontaktpersonField;
+            }
+            set {
+                this.kontaktpersonField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv")]
+    [System.Xml.Serialization.XmlRootAttribute("Arkivnotat", Namespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv", IsNullable=false)]
+    public partial class ArkivnotatType : RegistreringType {
+        
+        private System.DateTime dokumentetsDatoField;
+        
+        private bool dokumentetsDatoFieldSpecified;
+        
+        private System.DateTime mottattDatoField;
+        
+        private bool mottattDatoFieldSpecified;
+        
+        private System.DateTime sendtDatoField;
+        
+        private bool sendtDatoFieldSpecified;
+        
+        private System.DateTime forfallsdatoField;
+        
+        private bool forfallsdatoFieldSpecified;
+        
+        private System.DateTime offentlighetsvurdertDatoField;
+        
+        private bool offentlighetsvurdertDatoFieldSpecified;
+        
+        private string antallVedleggField;
+        
+        private System.DateTime utlaantDatoField;
+        
+        private bool utlaantDatoFieldSpecified;
+        
+        private string utlaantTilField;
+        
+        private string referanseUtlaantTilField;
+        
+        private string journalenhetField;
+        
+        private DokumentflytType[] dokumentflytField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
+        public System.DateTime dokumentetsDato {
+            get {
+                return this.dokumentetsDatoField;
+            }
+            set {
+                this.dokumentetsDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool dokumentetsDatoSpecified {
+            get {
+                return this.dokumentetsDatoFieldSpecified;
+            }
+            set {
+                this.dokumentetsDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime mottattDato {
+            get {
+                return this.mottattDatoField;
+            }
+            set {
+                this.mottattDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool mottattDatoSpecified {
+            get {
+                return this.mottattDatoFieldSpecified;
+            }
+            set {
+                this.mottattDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime sendtDato {
+            get {
+                return this.sendtDatoField;
+            }
+            set {
+                this.sendtDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sendtDatoSpecified {
+            get {
+                return this.sendtDatoFieldSpecified;
+            }
+            set {
+                this.sendtDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime forfallsdato {
+            get {
+                return this.forfallsdatoField;
+            }
+            set {
+                this.forfallsdatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool forfallsdatoSpecified {
+            get {
+                return this.forfallsdatoFieldSpecified;
+            }
+            set {
+                this.forfallsdatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
+        public System.DateTime offentlighetsvurdertDato {
+            get {
+                return this.offentlighetsvurdertDatoField;
+            }
+            set {
+                this.offentlighetsvurdertDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool offentlighetsvurdertDatoSpecified {
+            get {
+                return this.offentlighetsvurdertDatoFieldSpecified;
+            }
+            set {
+                this.offentlighetsvurdertDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=5)]
+        public string antallVedlegg {
+            get {
+                return this.antallVedleggField;
+            }
+            set {
+                this.antallVedleggField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=6)]
+        public System.DateTime utlaantDato {
+            get {
+                return this.utlaantDatoField;
+            }
+            set {
+                this.utlaantDatoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool utlaantDatoSpecified {
+            get {
+                return this.utlaantDatoFieldSpecified;
+            }
+            set {
+                this.utlaantDatoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string utlaantTil {
+            get {
+                return this.utlaantTilField;
+            }
+            set {
+                this.utlaantTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string referanseUtlaantTil {
+            get {
+                return this.referanseUtlaantTilField;
+            }
+            set {
+                this.referanseUtlaantTilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string journalenhet {
+            get {
+                return this.journalenhetField;
+            }
+            set {
+                this.journalenhetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=10)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dokumentflyt", IsNullable=false)]
+        public DokumentflytType[] dokumentflyt {
+            get {
+                return this.dokumentflytField;
+            }
+            set {
+                this.dokumentflytField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7061,7 +7358,7 @@ namespace arkivverket.noark5tj.models {
         private bool slettField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -7072,6 +7369,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string rolle {
             get {
                 return this.rolleField;
@@ -7082,6 +7380,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public TilgangskategoriType tilgangskategori {
             get {
                 return this.tilgangskategoriField;
@@ -7092,7 +7391,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string referanseArkivenhet {
             get {
                 return this.referanseArkivenhetField;
@@ -7103,7 +7402,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public TilgangsrestriksjonType tilgangsrestriksjon {
             get {
                 return this.tilgangsrestriksjonField;
@@ -7114,6 +7413,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public bool les {
             get {
                 return this.lesField;
@@ -7124,6 +7424,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public bool ny {
             get {
                 return this.nyField;
@@ -7134,6 +7435,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public bool endre {
             get {
                 return this.endreField;
@@ -7144,6 +7446,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public bool slett {
             get {
                 return this.slettField;
@@ -7216,7 +7519,7 @@ namespace arkivverket.noark5tj.models {
         private AdministrativEnhetType[] enhetField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -7227,6 +7530,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string brukerNavn {
             get {
                 return this.brukerNavnField;
@@ -7237,6 +7541,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime opprettetDato {
             get {
                 return this.opprettetDatoField;
@@ -7247,7 +7552,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string opprettetAv {
             get {
                 return this.opprettetAvField;
@@ -7258,7 +7563,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public System.Nullable<System.DateTime> avsluttetDato {
             get {
                 return this.avsluttetDatoField;
@@ -7280,7 +7585,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public string kortnavn {
             get {
                 return this.kortnavnField;
@@ -7291,7 +7596,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public object virksomhetsspesifikkeMetadata {
             get {
                 return this.virksomhetsspesifikkeMetadataField;
@@ -7302,7 +7607,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=7)]
         [System.Xml.Serialization.XmlArrayItemAttribute("administrativenhet", IsNullable=false)]
         public AdministrativEnhetType[] enhet {
             get {
@@ -7346,7 +7651,7 @@ namespace arkivverket.noark5tj.models {
         private BrukerType[] brukerField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string systemID {
             get {
                 return this.systemIDField;
@@ -7357,6 +7662,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string administrativEnhetNavn {
             get {
                 return this.administrativEnhetNavnField;
@@ -7367,7 +7673,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string kortnavn {
             get {
                 return this.kortnavnField;
@@ -7378,6 +7684,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public System.DateTime opprettetDato {
             get {
                 return this.opprettetDatoField;
@@ -7388,7 +7695,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string opprettetAv {
             get {
                 return this.opprettetAvField;
@@ -7399,7 +7706,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public System.Nullable<System.DateTime> avsluttetDato {
             get {
                 return this.avsluttetDatoField;
@@ -7421,6 +7728,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string administrativEnhetsstatus {
             get {
                 return this.administrativEnhetsstatusField;
@@ -7431,7 +7739,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string referanseOverordnetEnhet {
             get {
                 return this.referanseOverordnetEnhetField;
@@ -7442,7 +7750,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public object virksomhetsspesifikkeMetadata {
             get {
                 return this.virksomhetsspesifikkeMetadataField;
@@ -7453,7 +7761,7 @@ namespace arkivverket.noark5tj.models {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=9)]
         [System.Xml.Serialization.XmlArrayItemAttribute("bruker", IsNullable=false)]
         public BrukerType[] bruker {
             get {
